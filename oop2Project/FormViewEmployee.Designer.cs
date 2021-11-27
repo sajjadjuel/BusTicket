@@ -1,7 +1,7 @@
 ﻿
 namespace oop2Project
 {
-    partial class Form4
+    partial class FormViewEmployee
     {
         /// <summary>
         /// Required designer variable.

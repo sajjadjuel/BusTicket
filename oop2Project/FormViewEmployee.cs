@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace oop2Project
 {
-    public partial class Form4 : Form
+    public partial class FormViewEmployee : Form
     {
-        public Form4()
+        public FormViewEmployee()
         {
             InitializeComponent();
         }

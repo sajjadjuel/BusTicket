@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace oop2Project
 {
-    public partial class Form7 : Form
+    public partial class FormForgotPass : Form
     {
         public int otp;
         SqlConnection con = new SqlConnection(ConString.con);
 
 
-        public Form7()
+        public FormForgotPass()
         {
             InitializeComponent();
         }

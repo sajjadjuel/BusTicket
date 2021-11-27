@@ -1,7 +1,7 @@
 ﻿
 namespace oop2Project
 {
-    partial class Form7
+    partial class FormForgotPass
     {
         /// <summary>
         /// Required designer variable.

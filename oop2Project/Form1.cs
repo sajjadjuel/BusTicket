@@ -31,7 +31,7 @@ namespace oop2Project
         private void button1_Click(object sender, EventArgs e)
         {
 
-            Form7 frgt = new Form7();
+            FormForgotPass frgt = new FormForgotPass();
             this.Hide();
             frgt.Tag = this;
             frgt.Show();
@@ -61,7 +61,7 @@ namespace oop2Project
                 if (sdr.HasRows)
                 {
                     user = txtusername.Text;
-                    Form6 Cus = new Form6();
+                    FormBooking Cus = new FormBooking();
                     this.Hide();
                     Cus.Tag = this;
                     Cus.Show();
@@ -74,7 +74,7 @@ namespace oop2Project
 
             else if (txtusername.Text == "admin" && txtpassword.Text == "123")
             {
-                Form3 admin = new Form3();
+                FormViewAdmin admin = new FormViewAdmin();
                 this.Hide();
                 admin.Tag = this;
                 admin.Show();
@@ -110,7 +110,7 @@ namespace oop2Project
 
         private void btnregistration_Click(object sender, EventArgs e)
         {
-            Form2 Reg = new Form2();
+            FormReg Reg = new FormReg();
             this.Hide();
             Reg.Tag = this;
             Reg.Show();

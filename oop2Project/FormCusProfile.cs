@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace oop2Project
 {
-    public partial class Form5 : Form
+    public partial class FormCusProfile : Form
     {
         SqlConnection con = new SqlConnection(ConString.con);
         private string vid;
-        public Form5()
+        public FormCusProfile()
         {
             InitializeComponent();
         }
@@ -47,20 +47,20 @@ namespace oop2Project
 
         private void butconfirm_Click(object sender, EventArgs e)
         {
-            if (textBox7.Text == textBox6.Text)
+            if (textConfirmPass.Text == textPass.Text)
             {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
 
-                cmd.CommandText = "update Cus set pass = '" + textBox7.Text + "' where email = '" + Form1.user + "'";
+                cmd.CommandText = "update Cus set pass = '" + textConfirmPass.Text + "' where email = '" + Form1.user + "'";
 
                 cmd.ExecuteNonQuery();
                 con.Close();
 
                 MessageBox.Show("Password Change Successfull");
-                this.textBox6.Text = "";
-                this.textBox7.Text = "";
+                this.textPass.Text = "";
+                this.textConfirmPass.Text = "";
 
                 /*Form1 f1 = new Form1();
                 this.Hide();
@@ -76,7 +76,7 @@ namespace oop2Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form6 cus = new Form6();
+            FormBooking cus = new FormBooking();
             this.Hide();
             cus.Tag = this;
             cus.Show();
@@ -109,11 +109,11 @@ namespace oop2Project
             SqlDataReader sdr = cmd.ExecuteReader();
             //string id1 = "1000";
             sdr.Read();
-            textBox4.Text = sdr.GetString(0);
-            textBox3.Text = sdr.GetString(1);
-            textBox2.Text = sdr.GetString(3);
-            textBox1.Text = sdr.GetString(6);
-            vid = textBox5.Text = sdr.GetString(8);
+            textName.Text = sdr.GetString(0);
+            textAddress.Text = sdr.GetString(1);
+            textPhone.Text = sdr.GetString(3);
+            textEmail.Text = sdr.GetString(6);
+            vid = textVac.Text = sdr.GetString(8);
             /* if (sdr.HasRows)
              {
                  sdr.Read();
@@ -137,7 +137,7 @@ namespace oop2Project
             con.Close();
             if (vid == "N/A" || vid == "")
             {
-                button1.Enabled = true;
+                btnUpdate.Enabled = true;
             }
         }
 
@@ -149,13 +149,13 @@ namespace oop2Project
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
 
-                cmd.CommandText = "update Cus set vac_id = '" + textBox5.Text + "' where email = '" + Form1.user + "'";
+                cmd.CommandText = "update Cus set vac_id = '" + textVac.Text + "' where email = '" + Form1.user + "'";
 
                 cmd.ExecuteNonQuery();
                 con.Close();
 
                 MessageBox.Show("Vaccine Information update Successfull");
-                button1.Enabled = false;
+                btnUpdate.Enabled = false;
 
             }
             /*else

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace oop2Project
 {
-    public partial class Form6 : Form
+    public partial class FormBooking : Form
     {
-        public Form6()
+        public FormBooking()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace oop2Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form5 book = new Form5();
+            FormCusProfile book = new FormCusProfile();
             this.Hide();
             book.Tag = this;
             book.Show();

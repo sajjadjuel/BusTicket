@@ -14,7 +14,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 namespace oop2Project
 {
-    public partial class Form2 : Form
+    public partial class FormReg : Form
     {
 
         string pattern = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
@@ -37,7 +37,7 @@ namespace oop2Project
         private string newPath;
 
         private string vac_id = "N/A";
-        public Form2()
+        public FormReg()
         {
             InitializeComponent();
         }

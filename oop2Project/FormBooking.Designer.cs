@@ -1,7 +1,7 @@
 ﻿
 namespace oop2Project
 {
-    partial class Form6
+    partial class FormBooking
     {
         /// <summary>
         /// Required designer variable.
@@ -30,23 +30,23 @@ namespace oop2Project
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.butbookticket = new System.Windows.Forms.Button();
-            this.btncancel = new System.Windows.Forms.Button();
+            this.btnBookTicket = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textFrom = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textTo = new System.Windows.Forms.TextBox();
+            this.textDate = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textSeat = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBus = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.textCost = new System.Windows.Forms.TextBox();
+            this.btnProfile = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,26 +61,26 @@ namespace oop2Project
             this.label1.TabIndex = 0;
             this.label1.Text = "Bus Booking Site.Com  ";
             // 
-            // butbookticket
+            // btnBookTicket
             // 
-            this.butbookticket.Location = new System.Drawing.Point(140, 312);
-            this.butbookticket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.butbookticket.Name = "butbookticket";
-            this.butbookticket.Size = new System.Drawing.Size(74, 32);
-            this.butbookticket.TabIndex = 2;
-            this.butbookticket.Text = "Book Ticket";
-            this.butbookticket.UseVisualStyleBackColor = true;
-            this.butbookticket.Click += new System.EventHandler(this.butbookticket_Click);
+            this.btnBookTicket.Location = new System.Drawing.Point(140, 312);
+            this.btnBookTicket.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBookTicket.Name = "btnBookTicket";
+            this.btnBookTicket.Size = new System.Drawing.Size(74, 32);
+            this.btnBookTicket.TabIndex = 2;
+            this.btnBookTicket.Text = "Book Ticket";
+            this.btnBookTicket.UseVisualStyleBackColor = true;
+            this.btnBookTicket.Click += new System.EventHandler(this.butbookticket_Click);
             // 
-            // btncancel
+            // btnCancel
             // 
-            this.btncancel.Location = new System.Drawing.Point(388, 305);
-            this.btncancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(83, 28);
-            this.btncancel.TabIndex = 3;
-            this.btncancel.Text = "Cancel Ticket ";
-            this.btncancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(388, 305);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(83, 28);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel Ticket ";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -92,13 +92,13 @@ namespace oop2Project
             this.label2.TabIndex = 4;
             this.label2.Text = "From     : ";
             // 
-            // textBox1
+            // textFrom
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 96);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 5;
+            this.textFrom.Location = new System.Drawing.Point(98, 96);
+            this.textFrom.Margin = new System.Windows.Forms.Padding(2);
+            this.textFrom.Name = "textFrom";
+            this.textFrom.Size = new System.Drawing.Size(120, 20);
+            this.textFrom.TabIndex = 5;
             // 
             // label3
             // 
@@ -110,21 +110,21 @@ namespace oop2Project
             this.label3.TabIndex = 6;
             this.label3.Text = "To         : ";
             // 
-            // textBox2
+            // textTo
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 133);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 20);
-            this.textBox2.TabIndex = 7;
+            this.textTo.Location = new System.Drawing.Point(98, 133);
+            this.textTo.Margin = new System.Windows.Forms.Padding(2);
+            this.textTo.Name = "textTo";
+            this.textTo.Size = new System.Drawing.Size(120, 20);
+            this.textTo.TabIndex = 7;
             // 
-            // textBox3
+            // textDate
             // 
-            this.textBox3.Location = new System.Drawing.Point(98, 167);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(120, 20);
-            this.textBox3.TabIndex = 8;
+            this.textDate.Location = new System.Drawing.Point(98, 167);
+            this.textDate.Margin = new System.Windows.Forms.Padding(2);
+            this.textDate.Name = "textDate";
+            this.textDate.Size = new System.Drawing.Size(120, 20);
+            this.textDate.TabIndex = 8;
             // 
             // label4
             // 
@@ -146,19 +146,19 @@ namespace oop2Project
             this.label5.TabIndex = 10;
             this.label5.Text = "Seat No  : ";
             // 
-            // textBox4
+            // textSeat
             // 
-            this.textBox4.Location = new System.Drawing.Point(98, 238);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(120, 20);
-            this.textBox4.TabIndex = 11;
+            this.textSeat.Location = new System.Drawing.Point(98, 238);
+            this.textSeat.Margin = new System.Windows.Forms.Padding(2);
+            this.textSeat.Name = "textSeat";
+            this.textSeat.Size = new System.Drawing.Size(120, 20);
+            this.textSeat.TabIndex = 11;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(388, 131);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -175,13 +175,13 @@ namespace oop2Project
             this.label6.TabIndex = 13;
             this.label6.Text = "Bus       :";
             // 
-            // textBox5
+            // textBus
             // 
-            this.textBox5.Location = new System.Drawing.Point(98, 205);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(120, 20);
-            this.textBox5.TabIndex = 14;
+            this.textBus.Location = new System.Drawing.Point(98, 205);
+            this.textBus.Margin = new System.Windows.Forms.Padding(2);
+            this.textBus.Name = "textBus";
+            this.textBus.Size = new System.Drawing.Size(120, 20);
+            this.textBus.TabIndex = 14;
             // 
             // label7
             // 
@@ -193,64 +193,64 @@ namespace oop2Project
             this.label7.TabIndex = 15;
             this.label7.Text = "Cost   :";
             // 
-            // textBox6
+            // textCost
             // 
-            this.textBox6.Location = new System.Drawing.Point(96, 276);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(120, 20);
-            this.textBox6.TabIndex = 16;
+            this.textCost.Location = new System.Drawing.Point(96, 276);
+            this.textCost.Margin = new System.Windows.Forms.Padding(2);
+            this.textCost.Name = "textCost";
+            this.textCost.Size = new System.Drawing.Size(120, 20);
+            this.textCost.TabIndex = 16;
             // 
-            // button1
+            // btnProfile
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(482, 79);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 31);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Profile ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnProfile.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.Location = new System.Drawing.Point(482, 79);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(86, 31);
+            this.btnProfile.TabIndex = 17;
+            this.btnProfile.Text = "Profile ";
+            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // btnLogout
             // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(512, 329);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 27);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Logout ";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnLogout.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(512, 329);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(56, 27);
+            this.btnLogout.TabIndex = 19;
+            this.btnLogout.Text = "Logout ";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Form6
+            // FormBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.btnProfile);
+            this.Controls.Add(this.textCost);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBus);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textSeat);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textDate);
+            this.Controls.Add(this.textTo);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textFrom);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btncancel);
-            this.Controls.Add(this.butbookticket);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnBookTicket);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form6";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "FormBooking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form6";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -262,22 +262,22 @@ namespace oop2Project
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button butbookticket;
-        private System.Windows.Forms.Button btncancel;
+        private System.Windows.Forms.Button btnBookTicket;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textFrom;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textTo;
+        private System.Windows.Forms.TextBox textDate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textSeat;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBus;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textCost;
+        private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
