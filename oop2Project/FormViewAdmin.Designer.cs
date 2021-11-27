@@ -1,7 +1,7 @@
 ﻿
 namespace oop2Project
 {
-    partial class Form3
+    partial class FormViewAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -63,7 +63,7 @@ namespace oop2Project
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(87, 160);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";

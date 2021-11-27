@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace oop2Project
 {
-    public partial class Form3 : Form
+    public partial class FormViewAdmin : Form
     {
-        public Form3()
+        public FormViewAdmin()
         {
             InitializeComponent();
         }
@@ -34,7 +34,7 @@ namespace oop2Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 Reg = new Form2();
+            FormReg Reg = new FormReg();
             this.Hide();
             Reg.Tag = this;
             Reg.Show();
