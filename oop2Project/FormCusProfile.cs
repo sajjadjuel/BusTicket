@@ -46,31 +46,38 @@ namespace oop2Project
         }
 
         private void butconfirm_Click(object sender, EventArgs e)
-        {
-            if (textConfirmPass.Text == textPass.Text)
+        {   if (textConfirmPass.Text != "" && textPass.Text!= "")
             {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
+                if (textConfirmPass.Text == textPass.Text)
+                {
+                    con.Open();
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
 
-                cmd.CommandText = "update Cus set pass = '" + textConfirmPass.Text + "' where email = '" + Form1.user + "'";
+                    cmd.CommandText = "update Cus set pass = '" + textConfirmPass.Text + "' where email = '" + Form1.user + "'";
 
-                cmd.ExecuteNonQuery();
-                con.Close();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
 
-                MessageBox.Show("Password Change Successfull");
-                this.textPass.Text = "";
-                this.textConfirmPass.Text = "";
+                    MessageBox.Show("Password Change Successfull");
+                    this.textPass.Text = "";
+                    this.textConfirmPass.Text = "";
 
-                /*Form1 f1 = new Form1();
-                this.Hide();
-                f1.Tag = this;
-                f1.Show();*/
+                    /*Form1 f1 = new Form1();
+                    this.Hide();
+                    f1.Tag = this;
+                    f1.Show();*/
 
+                }
+                else
+                {
+                    MessageBox.Show(" Password MissMatch ");
+                }
             }
-            else
+
+        else
             {
-                MessageBox.Show(" Password MissMatch ");
+                MessageBox.Show(" please enter Password  ");
             }
         }
 
