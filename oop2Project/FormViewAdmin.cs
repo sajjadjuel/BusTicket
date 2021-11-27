@@ -15,7 +15,7 @@ using System.IO;
 
 namespace oop2Project
 {
-   
+
     public partial class FormViewAdmin : Form
     {
         private string email;
@@ -26,11 +26,20 @@ namespace oop2Project
         private OpenFileDialog openFileDialog;
         private string fileExtension;
         private string newPath;
+        private string Name;
+        private string Address;
+        private string Cus_Id;
+        private string phn;
+        private string nid;
+        private string cpass;
+        private string vacc = "";
+
+        private string vac_id = "N/A";
 
         SqlConnection con = new SqlConnection(ConString.con);
 
         string pattern = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
-        
+
 
         public FormViewAdmin()
         {
@@ -86,6 +95,22 @@ namespace oop2Project
             }
 
         }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show(comboFilter.SelectedIndex);
+            if (comboBox1.SelectedIndex == 0)
+            {
+                vacc = "YES";
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                vacc = "NO";
+            }
+            else
+            {
+                MessageBox.Show("Select Status ");
+            }
+        }
 
         private void textBox4_Leave(object sender, EventArgs e)
         {
@@ -94,7 +119,7 @@ namespace oop2Project
                 textemail.Focus();
                 errorProvider1.SetError(this.textemail, "Email can'nt be empty");
             }
-            else if (Regex.IsMatch(textBox7.Text, pattern) == false)
+            else if (Regex.IsMatch(textemail.Text, pattern) == false)
             {
                 textemail.Focus();
                 errorProvider1.SetError(this.textemail, "Invalid Format");
@@ -113,7 +138,7 @@ namespace oop2Project
                 textpass.Focus();
                 errorProvider2.SetError(this.textpass, "Password can'nt be empty");
             }
-            
+
             else
             {
                 errorProvider2.Clear();
@@ -182,12 +207,22 @@ namespace oop2Project
         private void button6_Click(object sender, EventArgs e)
         {
             string role;
-          //  RadioButton rb = panelSignup.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            Name = textBox7.Text;
+            Address = textBox1.Text;
+            phn = textBox8.Text;
+            nid = textBox3.Text;
+            pass = textpass.Text;
+            //cpass = textBox6.Text;
+            email = textemail.Text;
+            OTP = textotp.Text;
+            //vacc = textBox1.Text;
+            ////vac_id = textBox9.Text ?? "N/A";
+            //  RadioButton rb = panelSignup.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
             if (radioButton2.Checked)
             {
                 role = "Customer";
             }
-            else if(radioButton1.Checked)
+            else if (radioButton1.Checked)
             {
                 role = "Employee";
             }
@@ -197,8 +232,10 @@ namespace oop2Project
                 return;
             }
 
+
+
             pass = textpass.Text;
-            
+
             email = textemail.Text;
             OTP = textotp.Text;
 
@@ -239,10 +276,14 @@ namespace oop2Project
                 }
 
                 sdr.Close();
-                string query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
+                if (role == "Customer")
+                {
+                    string query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
                     "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
                 "'" + vacc + "','" + vac_id + "','" + newPath + "')";
-                cmd.CommandText = query;
+                    cmd.CommandText = query;
+                }
+
                 cmd.ExecuteNonQuery();
                 con.Close();
                 /*
@@ -268,8 +309,24 @@ namespace oop2Project
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            this.openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Supported files|*.jpg;*.jpeg;*.png";
+            openFileDialog.ValidateNames = true;
+            openFileDialog.Multiselect = false;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.pictureBox1.Image = new Bitmap(openFileDialog.FileName);
+                filePath = openFileDialog.FileName;
+                this.fileExtension = Path.GetExtension(filePath); //Get the file extension
+            }
 
         }
-    }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -62,6 +62,10 @@ namespace oop2Project
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -82,7 +86,7 @@ namespace oop2Project
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(116, 204);
+            this.textBox1.Location = new System.Drawing.Point(116, 181);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(156, 22);
@@ -91,7 +95,7 @@ namespace oop2Project
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 154);
+            this.label3.Location = new System.Drawing.Point(25, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 8;
@@ -99,7 +103,7 @@ namespace oop2Project
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 204);
+            this.label4.Location = new System.Drawing.Point(26, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 17);
             this.label4.TabIndex = 9;
@@ -108,7 +112,7 @@ namespace oop2Project
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 340);
+            this.label5.Location = new System.Drawing.Point(20, 375);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 17);
             this.label5.TabIndex = 11;
@@ -116,7 +120,7 @@ namespace oop2Project
             // 
             // textpass
             // 
-            this.textpass.Location = new System.Drawing.Point(116, 340);
+            this.textpass.Location = new System.Drawing.Point(116, 375);
             this.textpass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textpass.Name = "textpass";
             this.textpass.Size = new System.Drawing.Size(156, 22);
@@ -126,7 +130,7 @@ namespace oop2Project
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 303);
+            this.label6.Location = new System.Drawing.Point(25, 338);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 17);
             this.label6.TabIndex = 13;
@@ -134,7 +138,7 @@ namespace oop2Project
             // 
             // textemail
             // 
-            this.textemail.Location = new System.Drawing.Point(116, 303);
+            this.textemail.Location = new System.Drawing.Point(116, 338);
             this.textemail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textemail.Name = "textemail";
             this.textemail.Size = new System.Drawing.Size(156, 22);
@@ -145,7 +149,7 @@ namespace oop2Project
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 376);
+            this.label7.Location = new System.Drawing.Point(26, 411);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 17);
             this.label7.TabIndex = 15;
@@ -153,7 +157,7 @@ namespace oop2Project
             // 
             // textotp
             // 
-            this.textotp.Location = new System.Drawing.Point(116, 376);
+            this.textotp.Location = new System.Drawing.Point(116, 411);
             this.textotp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textotp.Name = "textotp";
             this.textotp.Size = new System.Drawing.Size(156, 22);
@@ -222,7 +226,7 @@ namespace oop2Project
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 137);
+            this.label11.Location = new System.Drawing.Point(25, 114);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 17);
             this.label11.TabIndex = 25;
@@ -230,7 +234,7 @@ namespace oop2Project
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(116, 132);
+            this.textBox7.Location = new System.Drawing.Point(116, 109);
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(156, 22);
@@ -239,7 +243,7 @@ namespace oop2Project
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(25, 168);
+            this.label12.Location = new System.Drawing.Point(25, 145);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(61, 17);
             this.label12.TabIndex = 27;
@@ -247,7 +251,7 @@ namespace oop2Project
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(116, 165);
+            this.textBox8.Location = new System.Drawing.Point(116, 142);
             this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(156, 22);
@@ -256,7 +260,7 @@ namespace oop2Project
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(3, 487);
+            this.button7.Location = new System.Drawing.Point(3, 522);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(83, 34);
@@ -282,7 +286,7 @@ namespace oop2Project
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(197, 448);
+            this.button6.Location = new System.Drawing.Point(197, 483);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 30);
@@ -294,7 +298,7 @@ namespace oop2Project
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(116, 239);
+            this.button1.Location = new System.Drawing.Point(116, 207);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 30);
@@ -308,7 +312,7 @@ namespace oop2Project
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(197, 239);
+            this.button5.Location = new System.Drawing.Point(197, 207);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(64, 30);
@@ -319,7 +323,7 @@ namespace oop2Project
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(197, 411);
+            this.radioButton1.Location = new System.Drawing.Point(197, 446);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(91, 21);
             this.radioButton1.TabIndex = 32;
@@ -330,19 +334,22 @@ namespace oop2Project
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(102, 411);
+            this.radioButton2.Location = new System.Drawing.Point(102, 446);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(89, 21);
             this.radioButton2.TabIndex = 33;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Customer";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(314, 130);
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.GrayText;
+            this.pictureBox1.Location = new System.Drawing.Point(314, 114);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 96);
+            this.pictureBox1.Size = new System.Drawing.Size(109, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -361,7 +368,7 @@ namespace oop2Project
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(296, 339);
+            this.button2.Location = new System.Drawing.Point(296, 374);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 23);
             this.button2.TabIndex = 35;
@@ -369,12 +376,56 @@ namespace oop2Project
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 302);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 17);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Vaccinated? :";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(116, 250);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(156, 22);
+            this.textBox3.TabIndex = 39;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(25, 250);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 17);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "NID      :";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "YES",
+            "NO"});
+            this.comboBox1.Location = new System.Drawing.Point(116, 295);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
+            this.comboBox1.TabIndex = 40;
+            this.comboBox1.Text = "Yes/No";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // FormViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(930, 550);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.radioButton2);
@@ -452,5 +503,9 @@ namespace oop2Project
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -190,14 +190,14 @@ namespace oop2Project
         private void button1_Click(object sender, EventArgs e)
         {
             vacc = "Yes";
-            button1.BackColor = Color.Blue;
+            button1.BackColor = Color.Green;
             textBox9.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             vacc = "No";
-            button2.BackColor = Color.Blue;
+            button2.BackColor = Color.Green;
             textBox9.Enabled = false;
         }
 
