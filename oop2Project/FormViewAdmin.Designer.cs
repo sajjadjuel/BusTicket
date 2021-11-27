@@ -29,16 +29,17 @@ namespace oop2Project
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textpass = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textemail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textotp = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,8 +58,15 @@ namespace oop2Project
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -106,13 +114,14 @@ namespace oop2Project
             this.label5.TabIndex = 11;
             this.label5.Text = "Password :";
             // 
-            // textBox3
+            // textpass
             // 
-            this.textBox3.Location = new System.Drawing.Point(116, 340);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 22);
-            this.textBox3.TabIndex = 12;
+            this.textpass.Location = new System.Drawing.Point(116, 340);
+            this.textpass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textpass.Name = "textpass";
+            this.textpass.Size = new System.Drawing.Size(156, 22);
+            this.textpass.TabIndex = 12;
+            this.textpass.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label6
             // 
@@ -123,14 +132,15 @@ namespace oop2Project
             this.label6.TabIndex = 13;
             this.label6.Text = "Email      :";
             // 
-            // textBox4
+            // textemail
             // 
-            this.textBox4.Location = new System.Drawing.Point(116, 303);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(156, 22);
-            this.textBox4.TabIndex = 14;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textemail.Location = new System.Drawing.Point(116, 303);
+            this.textemail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textemail.Name = "textemail";
+            this.textemail.Size = new System.Drawing.Size(156, 22);
+            this.textemail.TabIndex = 14;
+            this.textemail.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textemail.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // label7
             // 
@@ -141,13 +151,14 @@ namespace oop2Project
             this.label7.TabIndex = 15;
             this.label7.Text = "OTP       :";
             // 
-            // textBox5
+            // textotp
             // 
-            this.textBox5.Location = new System.Drawing.Point(116, 376);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(156, 22);
-            this.textBox5.TabIndex = 16;
+            this.textotp.Location = new System.Drawing.Point(116, 376);
+            this.textotp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textotp.Name = "textotp";
+            this.textotp.Size = new System.Drawing.Size(156, 22);
+            this.textotp.TabIndex = 16;
+            this.textotp.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label8
             // 
@@ -261,7 +272,7 @@ namespace oop2Project
             "Customer",
             "Employee"});
             this.comboFilter.Location = new System.Drawing.Point(604, 411);
-            this.comboFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboFilter.Margin = new System.Windows.Forms.Padding(4);
             this.comboFilter.Name = "comboFilter";
             this.comboFilter.Size = new System.Drawing.Size(160, 24);
             this.comboFilter.TabIndex = 31;
@@ -278,6 +289,7 @@ namespace oop2Project
             this.button6.TabIndex = 29;
             this.button6.Text = "Add";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button1
             // 
@@ -333,6 +345,29 @@ namespace oop2Project
             this.pictureBox1.Size = new System.Drawing.Size(109, 96);
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(296, 339);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(106, 23);
+            this.button2.TabIndex = 35;
+            this.button2.Text = "Send OTP";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormViewAdmin
             // 
@@ -340,6 +375,7 @@ namespace oop2Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(930, 550);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -356,11 +392,11 @@ namespace oop2Project
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textotp);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textemail);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textpass);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -375,6 +411,9 @@ namespace oop2Project
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,11 +425,11 @@ namespace oop2Project
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textpass;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textemail;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textotp;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label9;
@@ -409,5 +448,9 @@ namespace oop2Project
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.Button button2;
     }
 }
