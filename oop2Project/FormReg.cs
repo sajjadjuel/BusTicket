@@ -114,7 +114,8 @@ namespace oop2Project
             }
             catch (Exception exc)
             {
-                MessageBox.Show(exc.ToString());
+                //MessageBox.Show(exc.ToString());
+                newPath = "";
             }
 
             if (otp.ToString() == OTP)

@@ -16,6 +16,7 @@ namespace oop2Project
         SqlConnection con = new SqlConnection(ConString.con);
         private string pass;
         public static string user;
+        public static string Cus_Id;
 
         public Form1()
         {
@@ -60,7 +61,9 @@ namespace oop2Project
                 sdr = cmd.ExecuteReader();
                 if (sdr.HasRows)
                 {
+                    sdr.Read();
                     user = txtusername.Text;
+                    Cus_Id = sdr.GetString(2);
                     FormBooking Cus = new FormBooking();
                     this.Hide();
                     Cus.Tag = this;
