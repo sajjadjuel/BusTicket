@@ -19,7 +19,7 @@ namespace oop2Project
         private string newPath;
         private string filePath;
         private string fileExtension;
-        
+
         SqlConnection con = new SqlConnection(ConString.con);
         private string vid;
         public FormCusProfile()
@@ -53,7 +53,8 @@ namespace oop2Project
         }
 
         private void butconfirm_Click(object sender, EventArgs e)
-        {   if (textConfirmPass.Text != "" && textPass.Text!= "")
+        {
+            if (textConfirmPass.Text != "" && textPass.Text != "")
             {
                 if (textConfirmPass.Text == textPass.Text)
                 {
@@ -82,7 +83,7 @@ namespace oop2Project
                 }
             }
 
-        else
+            else
             {
                 MessageBox.Show(" please enter Password  ");
             }
@@ -117,28 +118,28 @@ namespace oop2Project
                 this.pictureBox1.Image = new Bitmap(openFileDialog.FileName);
                 filePath = openFileDialog.FileName;
                 this.fileExtension = Path.GetExtension(filePath); //Get the file extension
+
+                try
+                {
+                    newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Form1.Cus_Id + Path.GetExtension(filePath));
+                    File.Copy(filePath, newPath, true);
+                }
+                catch (Exception exc)
+                {
+                    //MessageBox.Show(exc.ToString());
+                    newPath = "";
+                }
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+
+
+
+                string query = " update  Cus set newPath= '" + newPath + "' where Cus_Id= '" + Form1.Cus_Id + "' ";
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+                con.Close();
             }
-
-            try
-            {
-                newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Form1.Cus_Id + Path.GetExtension(filePath));
-                File.Copy(filePath, newPath, true);
-            }
-            catch (Exception exc)
-            {
-                //MessageBox.Show(exc.ToString());
-                newPath = "";
-            }
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-
-
-
-            string query = " update  Cus set newPath= '" + newPath +  "' where Cus_Id= '"+ Form1.Cus_Id+"' " ;
-            cmd.CommandText = query;
-            cmd.ExecuteNonQuery();
-            con.Close();
         }
 
         private void Form5_Load(object sender, EventArgs e)
@@ -172,9 +173,9 @@ namespace oop2Project
              }*/
 
             string imagePath = sdr.GetString(9);
-            if(imagePath!= "")
-            pictureBox1.Image = new Bitmap(imagePath);
-            
+            if (imagePath != "")
+                pictureBox1.Image = new Bitmap(imagePath);
+
             sdr.Close();
             /*string query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
                 "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +

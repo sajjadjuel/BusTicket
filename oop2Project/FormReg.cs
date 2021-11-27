@@ -107,17 +107,6 @@ namespace oop2Project
             //if (check(Name, Address, Cus_Id, phn, nid, pass, cpass, OTP, email, vacc))
             // MessageBox.Show("Please Fill");
 
-            try
-            {
-                newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));
-                File.Copy(filePath, newPath, true);
-            }
-            catch (Exception exc)
-            {
-                //MessageBox.Show(exc.ToString());
-                newPath = "";
-            }
-
             if (otp.ToString() == OTP)
             {
                 con.Open();
@@ -139,6 +128,19 @@ namespace oop2Project
                 else
                 {
                     Cus_Id = id1;
+                }
+
+                try
+                {
+                    newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));
+                    File.Copy(filePath, newPath, true);
+                }
+                catch (Exception exc)
+                {
+                    con.Close();
+                    Console.WriteLine(exc);
+                    MessageBox.Show("Please upload an image!");
+                    return;
                 }
 
                 sdr.Close();

@@ -8,6 +8,6 @@ namespace oop2Project
 {
     public class ConString
     {
-        public static string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Asus\Downloads\Customer.mdf;Integrated Security=True;Connect Timeout=30";
+        public static string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Safin\Documents\GitHub\BusTicket\Customer.mdf;Integrated Security=True;Connect Timeout=30";
     }
 }
