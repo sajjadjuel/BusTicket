@@ -13,7 +13,7 @@ namespace oop2Project
 {
     public partial class Form5 : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\SEMESTER 6\C#\CODE\oop2_1126Project\oop2Project\DATA\Customer.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(ConString.con);
         private string vid;
         public Form5()
         {
