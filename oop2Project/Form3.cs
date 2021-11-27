@@ -52,5 +52,17 @@ namespace oop2Project
             log.Tag = this;
             log.Show();
         }
+
+        private void comboFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(comboFilter.SelectedIndex.ToString());
+            /*if (comboFilter.SelectedIndex == 0) { 
+
+            }
+            else if (comboFilter.SelectedIndex == 1)
+            {
+
+            }*/
+        }
     }
 }
