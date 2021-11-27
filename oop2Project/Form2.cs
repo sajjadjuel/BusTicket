@@ -18,7 +18,7 @@ namespace oop2Project
     {
 
         string pattern = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\SEMESTER 6\C#\CODE\oop2_1126Project\oop2Project\DATA\Customer.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(ConString.con);
 
         private string Name;
         private string Address;
