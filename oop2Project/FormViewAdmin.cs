@@ -29,9 +29,13 @@ namespace oop2Project
         private string Name;
         private string Address;
         private string Cus_Id;
+        private string Emp_Id;
+        private string sal;
+        
+
         private string phn;
         private string nid;
-        private string cpass;
+       // private string cpass;
         private string vacc = "";
 
         private string vac_id = "N/A";
@@ -207,6 +211,7 @@ namespace oop2Project
         private void button6_Click(object sender, EventArgs e)
         {
             string role;
+            string query;
             Name = textBox7.Text;
             Address = textBox1.Text;
             phn = textBox8.Text;
@@ -218,13 +223,28 @@ namespace oop2Project
             //vacc = textBox1.Text;
             ////vac_id = textBox9.Text ?? "N/A";
             //  RadioButton rb = panelSignup.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+
+            SqlCommand cmd = con.CreateCommand();
+
             if (radioButton2.Checked)
             {
                 role = "Customer";
+
+                cmd.CommandType = CommandType.Text;
+
+                query = " select  Cus_Id from Cus order by Cus_Id desc";
+
             }
+
+            
             else if (radioButton1.Checked)
             {
                 role = "Employee";
+
+                cmd.CommandType = CommandType.Text;
+
+                query = " select  Emp_Id from Emp order by Emp_Id desc";
+
             }
             else
             {
@@ -238,34 +258,61 @@ namespace oop2Project
 
             email = textemail.Text;
             OTP = textotp.Text;
-
             if (otp.ToString() == OTP)
             {
                 con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                string query0 = " select  Cus_Id from Cus order by Cus_Id desc";
 
-                cmd.CommandText = query0;
+                cmd.CommandText = query;
+
+
                 SqlDataReader sdr = cmd.ExecuteReader();
                 string id1 = "1000";
+                string eid1 = "100";
+
                 if (sdr.HasRows)
                 {
+
+
                     sdr.Read();
+
+
                     id1 = sdr.GetString(0);
+
 
                     Cus_Id = (Convert.ToInt32(id1) + 1).ToString();
 
+                   
+
                 }
+
+                else if (sdr.HasRows)
+                {
+                    sdr.Read();
+
+
+                    eid1 = sdr.GetString(0);
+                    Emp_Id = (Convert.ToInt32(eid1) + 1).ToString();
+
+                }
+
                 else
                 {
-                    Cus_Id = id1;
+                    if (id1 == "1000")
+                    {
+                        Cus_Id = id1;
+                    }
+                    else
+                        Emp_Id = eid1;
+
+
+
                 }
 
                 try
                 {
                     newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));
                     File.Copy(filePath, newPath, true);
+
                 }
                 catch (Exception exc)
                 {
@@ -275,12 +322,23 @@ namespace oop2Project
                     return;
                 }
 
+
                 sdr.Close();
+
+
                 if (role == "Customer")
                 {
-                    string query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
+                    query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
                     "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
                 "'" + vacc + "','" + vac_id + "','" + newPath + "')";
+                    cmd.CommandText = query;
+                }
+
+                else if (role == "Employee")
+                {
+                    query = " Insert into Emp Values('" + Name + "','" + Address + "'," +
+                   "'" + Emp_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
+               "'" + vacc + "','" + vac_id + "','" + sal + "','" + newPath + "')";
                     cmd.CommandText = query;
                 }
 
@@ -298,6 +356,7 @@ namespace oop2Project
                 log.Tag = this;
                 log.Show();
             }
+        
             else
             {
                 MessageBox.Show("Wrong OTP");
