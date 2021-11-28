@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//test
+
 namespace oop2Project
 {
     public partial class FormBooking : Form
@@ -50,6 +50,11 @@ namespace oop2Project
             this.Hide();
             log.Tag = this;
             log.Show();
+        }
+
+        private void FormBooking_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
