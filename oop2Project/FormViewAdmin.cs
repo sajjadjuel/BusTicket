@@ -30,12 +30,10 @@ namespace oop2Project
         private string Address;
         private string Cus_Id;
         private string Emp_Id;
-        private string sal;
-        
 
         private string phn;
         private string nid;
-       // private string cpass;
+        // private string cpass;
         private string vacc = "";
 
         private string vac_id = "N/A";
@@ -62,6 +60,7 @@ namespace oop2Project
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            displayCusData();
 
         }
 
@@ -91,11 +90,11 @@ namespace oop2Project
         {
             if (comboFilter.SelectedIndex == 0)
             {
-
+                //hide salary
             }
             else if (comboFilter.SelectedIndex == 1)
             {
-
+                //view salary
             }
 
         }
@@ -212,39 +211,32 @@ namespace oop2Project
         {
             string role;
             string query;
-            Name = textBox7.Text;
-            Address = textBox1.Text;
-            phn = textBox8.Text;
-            nid = textBox3.Text;
+            string salary = textSalary.Text;
+            string cid = "1000";
+            string eid = "100";
+
+            Name = textName.Text;
+            Address = textAddress.Text;
+            phn = textPhone.Text;
+            nid = textNid.Text;
             pass = textpass.Text;
-            //cpass = textBox6.Text;
             email = textemail.Text;
             OTP = textotp.Text;
-            //vacc = textBox1.Text;
-            ////vac_id = textBox9.Text ?? "N/A";
-            //  RadioButton rb = panelSignup.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+
 
             SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
 
-            if (radioButton2.Checked)
+            // Radio button
+            if (rbtnCustomer.Checked)
             {
                 role = "Customer";
-
-                cmd.CommandType = CommandType.Text;
-
-                query = " select  Cus_Id from Cus order by Cus_Id desc";
-
+                cmd.CommandText = " select Cus_Id from Cus order by Cus_Id desc";
             }
-
-            
-            else if (radioButton1.Checked)
+            else if (rbtnEmployee.Checked)
             {
                 role = "Employee";
-
-                cmd.CommandType = CommandType.Text;
-
-                query = " select  Emp_Id from Emp order by Emp_Id desc";
-
+                cmd.CommandText = " select Emp_Id from Emp order by Emp_Id desc";
             }
             else
             {
@@ -252,118 +244,69 @@ namespace oop2Project
                 return;
             }
 
-
-
-            pass = textpass.Text;
-
-            email = textemail.Text;
-            OTP = textotp.Text;
-            if (otp.ToString() == OTP)
+            // Picture-box
+            try
             {
-                con.Open();
+                newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));
+                File.Copy(filePath, newPath, true);
+            }
+            catch (Exception exc)
+            {
+                con.Close();
+                Console.WriteLine(exc);
+                MessageBox.Show("Please upload an image!");
+                return;
+            }
 
-                cmd.CommandText = query;
+            // Otp
+            if (otp.ToString() != OTP)
+            {
+                MessageBox.Show("Wrong OTP");
+                return;
+            }
 
+            con.Open();
 
-                SqlDataReader sdr = cmd.ExecuteReader();
-                string id1 = "1000";
-                string eid1 = "100";
+            SqlDataReader sdr = cmd.ExecuteReader();
+            sdr.Read();
+
+            // Get Id && Insert Profile
+            if (role == "Customer")
+            {
 
                 if (sdr.HasRows)
                 {
-
-
-                    sdr.Read();
-
-
-                    id1 = sdr.GetString(0);
-
-
-                    Cus_Id = (Convert.ToInt32(id1) + 1).ToString();
-
-                   
-
+                    cid = sdr.GetString(0);
+                    Cus_Id = (Convert.ToInt32(cid) + 1).ToString();
                 }
+                else Cus_Id = cid;
 
-                else if (sdr.HasRows)
-                {
-                    sdr.Read();
-
-
-                    eid1 = sdr.GetString(0);
-                    Emp_Id = (Convert.ToInt32(eid1) + 1).ToString();
-
-                }
-
-                else
-                {
-                    if (id1 == "1000")
-                    {
-                        Cus_Id = id1;
-                    }
-                    else
-                        Emp_Id = eid1;
-
-
-
-                }
-
-                try
-                {
-                    newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));
-                    File.Copy(filePath, newPath, true);
-
-                }
-                catch (Exception exc)
-                {
-                    con.Close();
-                    Console.WriteLine(exc);
-                    MessageBox.Show("Please upload an image!");
-                    return;
-                }
-
-
-                sdr.Close();
-
-
-                if (role == "Customer")
-                {
-                    query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
-                    "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
+                query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
+                "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
                 "'" + vacc + "','" + vac_id + "','" + newPath + "')";
-                    cmd.CommandText = query;
-                }
-
-                else if (role == "Employee")
-                {
-                    query = " Insert into Emp Values('" + Name + "','" + Address + "'," +
-                   "'" + Emp_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
-               "'" + vacc + "','" + vac_id + "','" + sal + "','" + newPath + "')";
-                    cmd.CommandText = query;
-                }
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-                /*
-                SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                DataTable dtb11 = new DataTable();
-                sda.Fill(dtb11);*/
-
-
-                MessageBox.Show("Registration Successfull");
-                Form1 log = new Form1();
-                this.Hide();
-                log.Tag = this;
-                log.Show();
+                cmd.CommandText = query;
             }
-        
-            else
+
+            else if (role == "Employee")
             {
-                MessageBox.Show("Wrong OTP");
+                if (sdr.HasRows)
+                {
+                    eid = sdr.GetString(0);
+                    Emp_Id = (Convert.ToInt32(eid) + 1).ToString();
+                }
+                else Emp_Id = eid;
+
+                query = " Insert into Emp Values('" + Name + "','" + Address + "'," +
+                "'" + Emp_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
+                "'" + vacc + "','" + vac_id + "','" + salary + "','" + newPath + "')";
+                cmd.CommandText = query;
             }
 
+            sdr.Close();
+            cmd.ExecuteNonQuery();
+            con.Close();
 
-
+            MessageBox.Show(role + " Inserted");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -386,6 +329,46 @@ namespace oop2Project
 
         }
 
+        private void displayCusData()
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Cus";
+            cmd.ExecuteNonQuery();
 
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string imagePath;
+            textName.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            textAddress.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textPhone.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            textNid.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            textpass.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            textemail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+
+            if (comboFilter.SelectedValue.ToString() == "Employee")
+            {
+                textSalary.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                imagePath = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                textSalary.Visible = true;
+                labelSalary.Visible = true;
+            }
+            else
+            {
+                imagePath = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+            }
+
+            pictureBox1.Image = new Bitmap(imagePath);
+
+            //NID
+        }
     }
 }

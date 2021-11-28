@@ -91,7 +91,7 @@ namespace oop2Project
         private void btnsubmit1_Click(object sender, EventArgs e)
         {
 
-            Name = textBox1.Text;
+            Name = textBox1.Text.ToUpper();
             Address = textBox2.Text;
             // Cus_Id;
             // Cus_Id = "14";
@@ -138,7 +138,7 @@ namespace oop2Project
                 catch (Exception exc)
                 {
                     con.Close();
-                    Console.WriteLine(exc);
+                    //Console.WriteLine(exc);
                     MessageBox.Show("Please upload an image!");
                     return;
                 }

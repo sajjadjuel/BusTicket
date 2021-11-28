@@ -67,7 +67,7 @@ namespace oop2Project
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(232, 85);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(152, 20);
             this.textBox1.TabIndex = 1;
@@ -78,7 +78,7 @@ namespace oop2Project
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(327, 116);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 23);
             this.button1.TabIndex = 2;
@@ -100,7 +100,7 @@ namespace oop2Project
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(232, 167);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(152, 20);
             this.textBox2.TabIndex = 4;
@@ -120,7 +120,7 @@ namespace oop2Project
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(232, 222);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(152, 20);
             this.textBox3.TabIndex = 6;
@@ -129,7 +129,7 @@ namespace oop2Project
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(232, 271);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(152, 20);
             this.textBox4.TabIndex = 7;
@@ -150,10 +150,10 @@ namespace oop2Project
             // 
             this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(327, 303);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(318, 304);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 24);
+            this.button2.Size = new System.Drawing.Size(66, 24);
             this.button2.TabIndex = 9;
             this.button2.Text = "Confirm ";
             this.button2.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@ namespace oop2Project
             // 
             this.button3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(19, 328);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(56, 28);
             this.button3.TabIndex = 11;
@@ -198,7 +198,7 @@ namespace oop2Project
             // 
             this.errorProvider4.ContainerControl = this;
             // 
-            // Form7
+            // FormForgotPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -217,8 +217,8 @@ namespace oop2Project
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form7";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "FormForgotPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form7";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
