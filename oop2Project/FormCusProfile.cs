@@ -62,7 +62,7 @@ namespace oop2Project
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
 
-                    cmd.CommandText = "update Cus set pass = '" + textConfirmPass.Text + "' where email = '" + Form1.user + "'";
+                    cmd.CommandText = "update Cus set pass = '" + textConfirmPass.Text + "' where Cus_Id='" + Form1.Cus_Id + "'";
 
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -149,7 +149,7 @@ namespace oop2Project
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
 
-            string query0 = " select  * from Cus where email='" + Form1.user + "'";
+            string query0 = " select  * from Cus where Cus_Id='" + Form1.Cus_Id + "'";
             cmd.CommandText = query0;
             SqlDataReader sdr = cmd.ExecuteReader();
             //string id1 = "1000";
@@ -197,7 +197,7 @@ namespace oop2Project
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
 
-                cmd.CommandText = "update Cus set vac_id = '" + textVac.Text + "' where email = '" + Form1.user + "'";
+                cmd.CommandText = "update Cus set vac_id = '" + textVac.Text + "' where Cus_Id='" + Form1.Cus_Id + "'";
 
                 cmd.ExecuteNonQuery();
                 con.Close();

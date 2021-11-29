@@ -96,8 +96,7 @@ namespace oop2Project
                 Cus.Tag = this;
                 Cus.Show();
             }*/
-            else
-                MessageBox.Show("Invalid Username/Password");
+            else MessageBox.Show("Invalid Username/Password");
             con.Close();
         }
 

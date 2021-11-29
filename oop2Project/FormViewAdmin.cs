@@ -61,7 +61,6 @@ namespace oop2Project
         private void Form3_Load(object sender, EventArgs e)
         {
             displayCusData();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -88,26 +87,34 @@ namespace oop2Project
 
         private void comboFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboFilter.SelectedIndex == 0)
+            if (comboFilter.Text == "Customer")
             {
+                displayCusData();
                 //hide salary
-            }
-            else if (comboFilter.SelectedIndex == 1)
-            {
-                //view salary
-            }
+                textSalary.Visible = false;
+                labelSalary.Visible = false;
 
+            }
+            else if (comboFilter.Text == "Employee")
+            {
+                displayEmpData();
+                //view salary
+                textSalary.Visible = true;
+                labelSalary.Visible = true;
+
+
+            }
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //MessageBox.Show(comboFilter.SelectedIndex);
-            if (comboBox1.SelectedIndex == 0)
+            if (comboBox1.Text == "Yes")
             {
-                vacc = "YES";
+                vacc = "Yes";
             }
-            else if (comboBox1.SelectedIndex == 1)
+            else if (comboBox1.Text == "No")
             {
-                vacc = "NO";
+                vacc = "No";
             }
             else
             {
@@ -284,7 +291,6 @@ namespace oop2Project
                 query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
                 "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
                 "'" + vacc + "','" + vac_id + "','" + newPath + "')";
-                cmd.CommandText = query;
             }
 
             else if (role == "Employee")
@@ -299,10 +305,17 @@ namespace oop2Project
                 query = " Insert into Emp Values('" + Name + "','" + Address + "'," +
                 "'" + Emp_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
                 "'" + vacc + "','" + vac_id + "','" + salary + "','" + newPath + "')";
-                cmd.CommandText = query;
+            }
+            else
+            {
+                MessageBox.Show("Cannot found user");
+                sdr.Close();
+                con.Close();
+                return;
             }
 
             sdr.Close();
+            cmd.CommandText = query;
             cmd.ExecuteNonQuery();
             con.Close();
 
@@ -342,10 +355,32 @@ namespace oop2Project
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();
+
+            if (comboFilter.Text != "Customer")
+                comboFilter.Text = "Customer";
+        }
+
+        private void displayEmpData()
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Emp";
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+
+            if (comboFilter.Text != "Employee")
+                comboFilter.Text = "Employee";
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             string imagePath;
             textName.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             textAddress.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -353,22 +388,66 @@ namespace oop2Project
             textNid.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             textpass.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             textemail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            comboBox1.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
 
-            if (comboFilter.SelectedValue.ToString() == "Employee")
+            //if (comboFilter.Text == "Employee")
+            if (dataGridView1.CurrentRow.Cells[7].OwningColumn.Name == "salary")
             {
+                rbtnEmployee.Checked = true;
                 textSalary.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                comboFilter.Text = "Employee";
                 imagePath = dataGridView1.CurrentRow.Cells[10].Value.ToString();
                 textSalary.Visible = true;
                 labelSalary.Visible = true;
             }
             else
             {
+                rbtnCustomer.Checked = true;
                 imagePath = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                comboFilter.Text = "Customer";
+                textSalary.Visible = false;
+                labelSalary.Visible = false;
             }
 
-            pictureBox1.Image = new Bitmap(imagePath);
+            if (imagePath.Length > 0)
+                pictureBox1.Image = new Bitmap(imagePath);
+        }
 
-            //NID
+        private void comboFilter_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {/*
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            cmd.CommandText = "select * from Cus where Name = '%" + textSearch.Text + "%'";
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            sdr.Read();
+
+            if (sdr.HasRows)
+            {
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            else
+            {
+                sdr.Close();
+                cmd.CommandText = "select * from Emp where Name = '%" + textSearch.Text + "%'";
+                SqlDataReader sdr1 = cmd.ExecuteReader();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            con.Close();
+        */
         }
     }
 }

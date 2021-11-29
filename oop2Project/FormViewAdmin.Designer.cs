@@ -44,7 +44,7 @@ namespace oop2Project
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textSearch = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textName = new System.Windows.Forms.TextBox();
@@ -68,6 +68,7 @@ namespace oop2Project
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textSalary = new System.Windows.Forms.TextBox();
             this.labelSalary = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -92,7 +93,7 @@ namespace oop2Project
             this.textAddress.Location = new System.Drawing.Point(86, 123);
             this.textAddress.Margin = new System.Windows.Forms.Padding(2);
             this.textAddress.Name = "textAddress";
-            this.textAddress.Size = new System.Drawing.Size(118, 20);
+            this.textAddress.Size = new System.Drawing.Size(121, 20);
             this.textAddress.TabIndex = 7;
             // 
             // label3
@@ -129,7 +130,7 @@ namespace oop2Project
             this.textpass.Location = new System.Drawing.Point(86, 281);
             this.textpass.Margin = new System.Windows.Forms.Padding(2);
             this.textpass.Name = "textpass";
-            this.textpass.Size = new System.Drawing.Size(118, 20);
+            this.textpass.Size = new System.Drawing.Size(121, 20);
             this.textpass.TabIndex = 12;
             this.textpass.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -148,7 +149,7 @@ namespace oop2Project
             this.textemail.Location = new System.Drawing.Point(86, 251);
             this.textemail.Margin = new System.Windows.Forms.Padding(2);
             this.textemail.Name = "textemail";
-            this.textemail.Size = new System.Drawing.Size(118, 20);
+            this.textemail.Size = new System.Drawing.Size(121, 20);
             this.textemail.TabIndex = 14;
             this.textemail.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.textemail.Leave += new System.EventHandler(this.textBox4_Leave);
@@ -168,7 +169,7 @@ namespace oop2Project
             this.textotp.Location = new System.Drawing.Point(86, 314);
             this.textotp.Margin = new System.Windows.Forms.Padding(2);
             this.textotp.Name = "textotp";
-            this.textotp.Size = new System.Drawing.Size(118, 20);
+            this.textotp.Size = new System.Drawing.Size(121, 20);
             this.textotp.TabIndex = 16;
             this.textotp.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
@@ -186,12 +187,12 @@ namespace oop2Project
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(369, 87);
+            this.dataGridView1.Location = new System.Drawing.Point(369, 94);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(250, 223);
+            this.dataGridView1.Size = new System.Drawing.Size(294, 283);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -199,7 +200,7 @@ namespace oop2Project
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(366, 338);
+            this.label9.Location = new System.Drawing.Point(366, 395);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 17);
@@ -216,24 +217,25 @@ namespace oop2Project
             this.label10.TabIndex = 22;
             this.label10.Text = "Search :";
             // 
-            // textBox6
+            // textSearch
             // 
-            this.textBox6.Location = new System.Drawing.Point(424, 42);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(150, 20);
-            this.textBox6.TabIndex = 23;
+            this.textSearch.Location = new System.Drawing.Point(424, 42);
+            this.textSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(150, 20);
+            this.textSearch.TabIndex = 23;
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(517, 65);
+            this.button4.Location = new System.Drawing.Point(518, 65);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(56, 19);
+            this.button4.Size = new System.Drawing.Size(57, 25);
             this.button4.TabIndex = 24;
             this.button4.Text = "Search ";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // label11
             // 
@@ -250,7 +252,7 @@ namespace oop2Project
             this.textName.Location = new System.Drawing.Point(86, 65);
             this.textName.Margin = new System.Windows.Forms.Padding(2);
             this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(118, 20);
+            this.textName.Size = new System.Drawing.Size(121, 20);
             this.textName.TabIndex = 26;
             // 
             // label12
@@ -268,7 +270,7 @@ namespace oop2Project
             this.textPhone.Location = new System.Drawing.Point(86, 91);
             this.textPhone.Margin = new System.Windows.Forms.Padding(2);
             this.textPhone.Name = "textPhone";
-            this.textPhone.Size = new System.Drawing.Size(118, 20);
+            this.textPhone.Size = new System.Drawing.Size(121, 20);
             this.textPhone.TabIndex = 28;
             // 
             // button7
@@ -289,49 +291,55 @@ namespace oop2Project
             this.comboFilter.Items.AddRange(new object[] {
             "Customer",
             "Employee"});
-            this.comboFilter.Location = new System.Drawing.Point(424, 338);
+            this.comboFilter.Location = new System.Drawing.Point(424, 395);
             this.comboFilter.Name = "comboFilter";
             this.comboFilter.Size = new System.Drawing.Size(121, 21);
             this.comboFilter.TabIndex = 31;
-            this.comboFilter.Text = "Filter By-";
+            this.comboFilter.Text = "Filter by-";
             this.comboFilter.SelectedIndexChanged += new System.EventHandler(this.comboFilter_SelectedIndexChanged);
+            this.comboFilter.SelectedValueChanged += new System.EventHandler(this.comboFilter_SelectedValueChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(142, 405);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(56, 24);
+            this.btnAdd.Size = new System.Drawing.Size(53, 31);
             this.btnAdd.TabIndex = 29;
             this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.button6_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(86, 144);
+            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(86, 148);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 24);
+            this.button1.Size = new System.Drawing.Size(57, 24);
             this.button1.TabIndex = 0;
             this.button1.Text = "Update ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
             // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button5.BackColor = System.Drawing.Color.Tomato;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(147, 144);
+            this.button5.Location = new System.Drawing.Point(147, 148);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(48, 24);
+            this.button5.Size = new System.Drawing.Size(60, 24);
             this.button5.TabIndex = 4;
             this.button5.Text = "Delete ";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // rbtnEmployee
             // 
@@ -364,7 +372,7 @@ namespace oop2Project
             this.pictureBox1.Location = new System.Drawing.Point(236, 93);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(102, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
@@ -384,7 +392,7 @@ namespace oop2Project
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(221, 280);
+            this.button2.Location = new System.Drawing.Point(220, 317);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 19);
@@ -408,7 +416,7 @@ namespace oop2Project
             this.textNid.Location = new System.Drawing.Point(86, 179);
             this.textNid.Margin = new System.Windows.Forms.Padding(2);
             this.textNid.Name = "textNid";
-            this.textNid.Size = new System.Drawing.Size(118, 20);
+            this.textNid.Size = new System.Drawing.Size(121, 20);
             this.textNid.TabIndex = 39;
             // 
             // label13
@@ -425,8 +433,8 @@ namespace oop2Project
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "YES",
-            "NO"});
+            "Yes",
+            "No"});
             this.comboBox1.Location = new System.Drawing.Point(86, 216);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
@@ -439,7 +447,7 @@ namespace oop2Project
             this.textSalary.Location = new System.Drawing.Point(86, 342);
             this.textSalary.Margin = new System.Windows.Forms.Padding(2);
             this.textSalary.Name = "textSalary";
-            this.textSalary.Size = new System.Drawing.Size(118, 20);
+            this.textSalary.Size = new System.Drawing.Size(121, 20);
             this.textSalary.TabIndex = 42;
             this.textSalary.Visible = false;
             // 
@@ -454,12 +462,23 @@ namespace oop2Project
             this.labelSalary.Text = "Salary    :";
             this.labelSalary.Visible = false;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(267, 197);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(36, 13);
+            this.label14.TabIndex = 43;
+            this.label14.Text = "Image";
+            // 
             // FormViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(698, 447);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.textSalary);
             this.Controls.Add(this.labelSalary);
             this.Controls.Add(this.comboBox1);
@@ -478,7 +497,7 @@ namespace oop2Project
             this.Controls.Add(this.textName);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textSearch);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView1);
@@ -525,7 +544,7 @@ namespace oop2Project
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textSearch;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textName;
@@ -549,5 +568,6 @@ namespace oop2Project
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textSalary;
         private System.Windows.Forms.Label labelSalary;
+        private System.Windows.Forms.Label label14;
     }
 }

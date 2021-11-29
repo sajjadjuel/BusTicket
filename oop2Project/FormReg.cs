@@ -70,27 +70,13 @@ namespace oop2Project
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
+                Console.WriteLine("[Unsent OTP]", ex);
+                MessageBox.Show("Error sending OTP!");
             }
-        }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void Seq()
-        {
-
         }
 
         private void btnsubmit1_Click(object sender, EventArgs e)
         {
-
             Name = textBox1.Text.ToUpper();
             Address = textBox2.Text;
             // Cus_Id;
@@ -125,10 +111,7 @@ namespace oop2Project
                     Cus_Id = (Convert.ToInt32(id1) + 1).ToString();
 
                 }
-                else
-                {
-                    Cus_Id = id1;
-                }
+                else Cus_Id = id1;
 
                 try
                 {
@@ -166,9 +149,6 @@ namespace oop2Project
             {
                 MessageBox.Show("Wrong OTP");
             }
-
-
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -209,29 +189,14 @@ namespace oop2Project
             Send_OTP(email);
         }
 
-
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void textBox1_Leave(object sender, EventArgs e)
         {
-
 
             if (string.IsNullOrEmpty(textBox1.Text) == true)
             {
                 textBox1.Focus();
-                errorProvider1.SetError(this.textBox1, "name cannt be empty");
+                errorProvider1.SetError(this.textBox1, "name cannot be empty");
             }
-
 
             else
             {
@@ -242,7 +207,7 @@ namespace oop2Project
                 if (char.IsDigit(c) || c == '.')
                 {
                     textBox1.Focus();
-                    errorProvider1.SetError(this.textBox1, "Digit  cannt be Name");
+                    errorProvider1.SetError(this.textBox1, "Digit  cannot be Name");
                     break;
                 }
                 else
@@ -392,16 +357,6 @@ namespace oop2Project
             }
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             this.openFileDialog = new OpenFileDialog();
@@ -414,12 +369,6 @@ namespace oop2Project
                 filePath = openFileDialog.FileName;
                 this.fileExtension = Path.GetExtension(filePath); //Get the file extension
             }
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
