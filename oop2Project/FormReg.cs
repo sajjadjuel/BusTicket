@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
 namespace oop2Project
 {
     public partial class FormReg : Form
@@ -35,8 +34,9 @@ namespace oop2Project
         private OpenFileDialog openFileDialog;
         private string fileExtension;
         private string newPath;
+        private string vac_id;
+        private bool autocorrect = true;
 
-        private string vac_id = "N/A";
         public FormReg()
         {
             InitializeComponent();
@@ -44,9 +44,24 @@ namespace oop2Project
 
         private void Send_OTP(string email)
         {
+            // Validating E-mail
+            var data = ValidateEmail(email);
+            if (data["autocorrect"] != "" && autocorrect)
+            {
+                autocorrect = false;
+                MessageBox.Show("Is your e-mail " + data["autocorrect"] + "?", "Please re-check your e-mail");
+                return;
+            }
+
+            if (data["deliverability"] == "UNDELIVERABLE")
+            {
+                MessageBox.Show("Please provide a Valid E-mail!");
+                return;
+            }
+
+            // Sending OTP
             try
             {
-
                 MailMessage msg = new MailMessage();
                 msg.From = new MailAddress("busticket.booking01@gmail.com");
                 msg.To.Add(email);
@@ -65,7 +80,7 @@ namespace oop2Project
                 smt.Port = 587;
                 smt.Send(msg);
 
-                MessageBox.Show("Your Mail is sended");
+                MessageBox.Show("Your OTP is sent to your Mail.", "Please check your e-mail");
 
             }
             catch (Exception ex)
@@ -77,86 +92,88 @@ namespace oop2Project
 
         private void btnsubmit1_Click(object sender, EventArgs e)
         {
-            Name = textBox1.Text.ToUpper();
-            Address = textBox2.Text;
-            // Cus_Id;
-            // Cus_Id = "14";
-            phn = textBox3.Text;
-            nid = textBox4.Text;
-            pass = textBox5.Text;
-            cpass = textBox6.Text;
-            email = textBox7.Text;
-            OTP = textBox8.Text;
-            //vacc = textBox1.Text;
-            vac_id = textBox9.Text ?? "N/A";
-            //pictureBox1.Image = new Bitmap(filePath);
-            //if (check(Name, Address, Cus_Id, phn, nid, pass, cpass, OTP, email, vacc))
-            // MessageBox.Show("Please Fill");
+            Name = textName.Text.ToUpper();
+            Address = textAddress.Text;
+            phn = textPhone.Text;
+            nid = textNid.Text;
+            pass = textPass.Text;
+            cpass = textCPass.Text;
+            email = textEmail.Text;
+            OTP = textOtp.Text;
 
-            if (otp.ToString() == OTP)
+            if (vacc == "Yes") vac_id = textVacId.Text;
+            else vac_id = "N/A";
+
+            if (pictureBox1.Image == null)
             {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                string query0 = " select  Cus_Id from Cus order by Cus_Id desc";
-
-                cmd.CommandText = query0;
-                SqlDataReader sdr = cmd.ExecuteReader();
-                string id1 = "1000";
-                if (sdr.HasRows)
-                {
-                    sdr.Read();
-                    id1 = sdr.GetString(0);
-
-                    Cus_Id = (Convert.ToInt32(id1) + 1).ToString();
-
-                }
-                else Cus_Id = id1;
-
-                try
-                {
-                    newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));
-                    File.Copy(filePath, newPath, true);
-                }
-                catch (Exception exc)
-                {
-                    con.Close();
-                    //Console.WriteLine(exc);
-                    MessageBox.Show("Please upload an image!");
-                    return;
-                }
-
-                sdr.Close();
-                string query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
-                    "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
-                "'" + vacc + "','" + vac_id + "','" + newPath + "')";
-                cmd.CommandText = query;
-                cmd.ExecuteNonQuery();
-                con.Close();
-                /*
-                SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                DataTable dtb11 = new DataTable();
-                sda.Fill(dtb11);*/
-
-
-                MessageBox.Show("Registration Successfull");
-                Form1 log = new Form1();
-                this.Hide();
-                log.Tag = this;
-                log.Show();
+                MessageBox.Show("Please upload an Image!");
+                return;
             }
-            else
+
+            if (otp.ToString() != OTP)
             {
                 MessageBox.Show("Wrong OTP");
+                return;
             }
+
+            // Cus_Id
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            string query0 = " select  Cus_Id from Cus order by Cus_Id desc";
+
+            cmd.CommandText = query0;
+            SqlDataReader sdr = cmd.ExecuteReader();
+            string id1 = "1000";
+            if (sdr.HasRows)
+            {
+                sdr.Read();
+                id1 = sdr.GetString(0);
+
+                Cus_Id = (Convert.ToInt32(id1) + 1).ToString();
+            }
+            else Cus_Id = id1;
+
+            // Image copy
+            try
+            {
+                newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));
+                File.Copy(filePath, newPath, true);
+            }
+            catch (Exception exc)
+            {
+                con.Close();
+                Console.WriteLine(exc);
+                MessageBox.Show("Invalid path!");
+                return;
+            }
+
+            sdr.Close();
+            string query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
+                "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
+            "'" + vacc + "','" + vac_id + "','" + newPath + "')";
+            cmd.CommandText = query;
+            cmd.ExecuteNonQuery();
+            con.Close();
+            /*
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            DataTable dtb11 = new DataTable();
+            sda.Fill(dtb11);*/
+
+
+            MessageBox.Show("Registration Successfull");
+            Form1 log = new Form1();
+            this.Hide();
+            log.Tag = this;
+            log.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Form1 log = new Form1();
-            this.Hide();
             log.Tag = this;
             log.Show();
+            this.Close();
         }
         public static bool check(params string[] s)
         {
@@ -170,190 +187,165 @@ namespace oop2Project
         private void button1_Click(object sender, EventArgs e)
         {
             vacc = "Yes";
-            button1.BackColor = Color.Green;
-            textBox9.Enabled = true;
+            btnVacYes.BackColor = Color.Green;
+            if (btnVacNo.BackColor == Color.Green)
+                btnVacNo.UseVisualStyleBackColor = true;
+            textVacId.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             vacc = "No";
-            button2.BackColor = Color.Green;
-            textBox9.Enabled = false;
+            btnVacNo.BackColor = Color.Green;
+            if (btnVacYes.BackColor == Color.Green)
+                btnVacYes.UseVisualStyleBackColor = true;
+            textVacId.Enabled = false;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private async void button5_Click(object sender, EventArgs e)
         {
-            textBox8.Enabled = true;
-            button5.Enabled = false;
-            email = textBox7.Text;
+            textOtp.Enabled = true;
+            btnOtp.Enabled = false;
+
+            email = textEmail.Text;
             Send_OTP(email);
+            await Task.Delay(10000);
+            btnOtp.Enabled = true;
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(textBox1.Text) == true)
+            if (string.IsNullOrEmpty(textName.Text) == true)
             {
-                textBox1.Focus();
-                errorProvider1.SetError(this.textBox1, "name cannot be empty");
+                textName.Focus();
+                errorProvider1.SetError(this.textName, "name cannot be empty");
             }
-
             else
             {
-                errorProvider1.Clear();
-            }
-            foreach (char c in textBox1.Text)
-            {
-                if (char.IsDigit(c) || c == '.')
+                if (!textName.Text.All(i => char.IsLetter(i) || i == ' '))
                 {
-                    textBox1.Focus();
-                    errorProvider1.SetError(this.textBox1, "Digit  cannot be Name");
-                    break;
+                    textName.Focus();
+                    errorProvider1.SetError(this.textName, "Name cannot be alphanumeric!");
                 }
                 else
-                {
                     errorProvider1.Clear();
-
-                }
             }
         }
-
 
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox2.Text) == true)
+            if (string.IsNullOrEmpty(textAddress.Text) == true)
             {
-                textBox2.Focus();
-                errorProvider2.SetError(this.textBox2, "address can't be empty");
+                textAddress.Focus();
+                errorProvider2.SetError(this.textAddress, "address can't be empty");
             }
             else
-            {
                 errorProvider2.Clear();
-            }
+
         }
 
         private void textBox3_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox3.Text) == true)
+            if (string.IsNullOrEmpty(textPhone.Text) == true)
             {
-                textBox3.Focus();
-                errorProvider3.SetError(this.textBox3, "phone can'nt be empty");
+                textPhone.Focus();
+                errorProvider3.SetError(this.textPhone, "Phone Number can't be empty");
             }
             else
             {
-                errorProvider3.Clear();
-            }
-            foreach (char c in textBox3.Text)
-            {
-                if (!char.IsDigit(c) || c == '.')
+                if (!textPhone.Text.All(char.IsDigit))
                 {
-                    textBox3.Focus();
-                    errorProvider3.SetError(this.textBox3, "phone  cannt be Alphabate");
-                    break;
+                    textPhone.Focus();
+                    errorProvider3.SetError(this.textPhone, " Only Numeric digit !!");
                 }
                 else
-                {
                     errorProvider3.Clear();
-
-                }
             }
         }
 
         private void textBox4_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox4.Text) == true)
+            if (string.IsNullOrEmpty(textNid.Text) == true)
             {
-                textBox4.Focus();
-                errorProvider4.SetError(this.textBox4, " NID can'nt be empty");
+                textNid.Focus();
+                errorProvider4.SetError(this.textNid, " NID can't be empty");
             }
             else
             {
-
-                foreach (char c in textBox4.Text)
+                if (!textNid.Text.All(char.IsDigit))
                 {
-                    if (!char.IsDigit(c))
-                    {
-                        textBox4.Focus();
-                        errorProvider4.SetError(this.textBox4, " Only Numeric digit !!!");
-                        return;
-                    }
-
-
+                    textNid.Focus();
+                    errorProvider4.SetError(this.textNid, " Only Numeric digit !!");
                 }
-                errorProvider4.Clear();
+                else
+                    errorProvider4.Clear();
             }
-
         }
 
         private void textBox5_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox5.Text) == true)
+            if (string.IsNullOrEmpty(textPass.Text) == true)
             {
-                textBox5.Focus();
-                errorProvider5.SetError(this.textBox5, "password can'nt be empty");
+                textPass.Focus();
+                errorProvider5.SetError(this.textPass, "password can'nt be empty");
             }
             else
-            {
                 errorProvider5.Clear();
-            }
         }
 
         private void textBox6_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox6.Text) == true)
+            if (string.IsNullOrEmpty(textCPass.Text) == true)
             {
-                textBox6.Focus();
-                errorProvider6.SetError(this.textBox6, "Confirm password can'nt be empty");
+                textCPass.Focus();
+                errorProvider6.SetError(this.textCPass, "Confirm password can'nt be empty");
             }
-            else if (this.textBox6.Text != textBox5.Text)
+            else if (this.textCPass.Text != textPass.Text)
             {
-                textBox6.Focus();
-                errorProvider6.SetError(this.textBox6, "Password MisMatch");
+                textCPass.Focus();
+                errorProvider6.SetError(this.textCPass, "Password MisMatch");
             }
             else
             {
                 errorProvider6.Clear();
-                //errorProvider9.Clear();
             }
         }
 
         private void textBox7_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox7.Text) == true)
+            if (string.IsNullOrEmpty(textEmail.Text) == true)
             {
-                textBox7.Focus();
-                errorProvider7.SetError(this.textBox7, "Email can'nt be empty");
+                textEmail.Focus();
+                errorProvider7.SetError(this.textEmail, "Email canont be empty");
             }
-            else if (Regex.IsMatch(textBox7.Text, pattern) == false)
+            else if (Regex.IsMatch(textEmail.Text, pattern) == false)
             {
-                textBox7.Focus();
-                errorProvider1.SetError(this.textBox7, "Invalid Format");
+                textEmail.Focus();
+                errorProvider7.SetError(this.textEmail, "Invalid Format");
             }
             else
-            {
                 errorProvider7.Clear();
-            }
         }
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(textBox8.Text) == true)
+            if (string.IsNullOrEmpty(textOtp.Text) == true)
             {
-                textBox8.Focus();
-                errorProvider8.SetError(this.textBox8, " verrification can'nt be empty");
+                textOtp.Focus();
+                errorProvider8.SetError(this.textOtp, " verification cannot be empty");
 
             }
-            else if (textBox8.Text != otp.ToString())
+            else if (textOtp.Text != otp.ToString())
             {
-                textBox8.Focus();
-                errorProvider8.SetError(this.textBox8, " Wrong OTP!");
+                textOtp.Focus();
+                errorProvider8.SetError(this.textOtp, " Wrong OTP!");
             }
             else
             {
                 btnsubmit1.Enabled = true;
                 errorProvider8.Clear();
-
             }
         }
 
@@ -368,6 +360,56 @@ namespace oop2Project
                 this.pictureBox1.Image = new Bitmap(openFileDialog.FileName);
                 filePath = openFileDialog.FileName;
                 this.fileExtension = Path.GetExtension(filePath); //Get the file extension
+            }
+        }
+
+        private void textVacId_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textVacId.Text) == true)
+            {
+                textVacId.Focus();
+                errorProvider9.SetError(this.textVacId, "Vaccination Id cannot be empty");
+            }
+            else
+            {
+                if (!textVacId.Text.All(char.IsDigit))
+                {
+                    textVacId.Focus();
+                    errorProvider9.SetError(this.textVacId, " Only Numeric digit !!");
+                }
+                else
+                    errorProvider9.Clear();
+            }
+        }
+
+        private dynamic ValidateEmail(string emailToValidate)
+        {
+            dynamic data;
+            try
+            {
+                string apiKey = "a99e548d4e1b4684a2bcfc37b72f1a2f";    // Replace API_KEY with your API Key
+                string responseString = "";
+                string apiURL2 = "https://emailvalidation.abstractapi.com/v1/?api_key=" + apiKey + "&email=" + emailToValidate;
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(apiURL2);
+                request.Method = "GET";
+
+                using (WebResponse response = request.GetResponse())
+                {
+                    Encoding enc = Encoding.GetEncoding(1252); // Windows default Code Page
+                    using (StreamReader ostream = new StreamReader(response.GetResponseStream(), enc))
+                    {
+                        responseString = ostream.ReadToEnd();
+                    }
+                }
+
+                data = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(responseString);
+                return data;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.ToString());   //Catch Exception - All errors will be shown here - if there are issues with the API
+                return null;
             }
         }
     }

@@ -65,7 +65,7 @@ namespace oop2Project
             this.label2 = new System.Windows.Forms.Label();
             this.textNid = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboVac = new System.Windows.Forms.ComboBox();
             this.textSalary = new System.Windows.Forms.TextBox();
             this.labelSalary = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -151,7 +151,6 @@ namespace oop2Project
             this.textemail.Name = "textemail";
             this.textemail.Size = new System.Drawing.Size(121, 20);
             this.textemail.TabIndex = 14;
-            this.textemail.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.textemail.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // label7
@@ -276,7 +275,7 @@ namespace oop2Project
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(2, 424);
+            this.button7.Location = new System.Drawing.Point(0, 420);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(62, 28);
@@ -297,7 +296,6 @@ namespace oop2Project
             this.comboFilter.TabIndex = 31;
             this.comboFilter.Text = "Filter by-";
             this.comboFilter.SelectedIndexChanged += new System.EventHandler(this.comboFilter_SelectedIndexChanged);
-            this.comboFilter.SelectedValueChanged += new System.EventHandler(this.comboFilter_SelectedValueChanged);
             // 
             // btnAdd
             // 
@@ -429,18 +427,18 @@ namespace oop2Project
             this.label13.TabIndex = 38;
             this.label13.Text = "NID      :";
             // 
-            // comboBox1
+            // comboVac
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboVac.FormattingEnabled = true;
+            this.comboVac.Items.AddRange(new object[] {
             "Yes",
             "No"});
-            this.comboBox1.Location = new System.Drawing.Point(86, 216);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 40;
-            this.comboBox1.Text = "Yes/No";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboVac.Location = new System.Drawing.Point(86, 216);
+            this.comboVac.Name = "comboVac";
+            this.comboVac.Size = new System.Drawing.Size(121, 21);
+            this.comboVac.TabIndex = 40;
+            this.comboVac.Text = "Yes/No";
+            this.comboVac.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textSalary
             // 
@@ -478,10 +476,11 @@ namespace oop2Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(698, 447);
+            this.Controls.Add(this.comboFilter);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textSalary);
             this.Controls.Add(this.labelSalary);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboVac);
             this.Controls.Add(this.textNid);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label2);
@@ -489,7 +488,6 @@ namespace oop2Project
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rbtnCustomer);
             this.Controls.Add(this.rbtnEmployee);
-            this.Controls.Add(this.comboFilter);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.textPhone);
@@ -565,7 +563,7 @@ namespace oop2Project
         private System.Windows.Forms.TextBox textNid;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboVac;
         private System.Windows.Forms.TextBox textSalary;
         private System.Windows.Forms.Label labelSalary;
         private System.Windows.Forms.Label label14;

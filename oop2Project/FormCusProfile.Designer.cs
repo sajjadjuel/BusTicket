@@ -257,9 +257,9 @@ namespace oop2Project
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(1105, 407);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 13);
+            this.label11.Size = new System.Drawing.Size(77, 13);
             this.label11.TabIndex = 24;
-            this.label11.Text = "PDF ONLY ";
+            this.label11.Text = "*PDF ONLY ";
             // 
             // btnBack
             // 

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace oop2Project
@@ -14,7 +9,6 @@ namespace oop2Project
     public partial class Form1 : Form
     {
         SqlConnection con = new SqlConnection(ConString.con);
-        private string pass;
         public static string user;
         public static string Cus_Id;
 
@@ -23,15 +17,8 @@ namespace oop2Project
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void button1_Click(object sender, EventArgs e)
         {
-
             FormForgotPass frgt = new FormForgotPass();
             this.Hide();
             frgt.Tag = this;
@@ -40,10 +27,12 @@ namespace oop2Project
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            string email = txtusername.Text;
+
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Cus where email='" + txtusername.Text + "'";
+            cmd.CommandText = "select * from Cus where email='" + email + "'";
             /* pass = "select pass from Cus where email='" + txtusername.Text + "'";
              user = "select email from Cus where email='" + txtusername.Text + "'";*/
 
@@ -56,13 +45,13 @@ namespace oop2Project
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.HasRows == true)
             {
-                cmd.CommandText = ("select * from Cus where email='" + txtusername.Text + "'and pass='" + txtpassword.Text + "' ");
+                cmd.CommandText = ("select * from Cus where email='" + email + "'and pass='" + txtpassword.Text + "' ");
                 sdr.Close();
                 sdr = cmd.ExecuteReader();
                 if (sdr.HasRows)
                 {
                     sdr.Read();
-                    user = txtusername.Text;
+                    user = email;
                     Cus_Id = sdr.GetString(2);
                     FormBooking Cus = new FormBooking();
                     this.Hide();
@@ -75,7 +64,7 @@ namespace oop2Project
                 }
             }
 
-            else if (txtusername.Text == "admin" && txtpassword.Text == "123")
+            else if (email == "admin" && txtpassword.Text == "123")
             {
                 FormViewAdmin admin = new FormViewAdmin();
                 this.Hide();
@@ -118,19 +107,9 @@ namespace oop2Project
             Reg.Show();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
-        }
-
-        private void txtusername_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -37,24 +37,24 @@ namespace oop2Project
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textName = new System.Windows.Forms.TextBox();
+            this.textAddress = new System.Windows.Forms.TextBox();
+            this.textPhone = new System.Windows.Forms.TextBox();
+            this.textPass = new System.Windows.Forms.TextBox();
+            this.textCPass = new System.Windows.Forms.TextBox();
+            this.textEmail = new System.Windows.Forms.TextBox();
+            this.textOtp = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnsubmit1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textVacId = new System.Windows.Forms.TextBox();
+            this.btnVacYes = new System.Windows.Forms.Button();
+            this.btnVacNo = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textNid = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.btnOtp = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -65,8 +65,8 @@ namespace oop2Project
             this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnback = new System.Windows.Forms.Button();
             this.errorProvider9 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -149,69 +149,69 @@ namespace oop2Project
             this.label8.TabIndex = 7;
             this.label8.Text = "Varification Code ";
             // 
-            // textBox1
+            // textName
             // 
-            this.textBox1.Location = new System.Drawing.Point(176, 78);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.textName.Location = new System.Drawing.Point(176, 78);
+            this.textName.Margin = new System.Windows.Forms.Padding(2);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(162, 20);
+            this.textName.TabIndex = 1;
+            this.textName.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
-            // textBox2
+            // textAddress
             // 
-            this.textBox2.Location = new System.Drawing.Point(176, 108);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
+            this.textAddress.Location = new System.Drawing.Point(176, 108);
+            this.textAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.textAddress.Name = "textAddress";
+            this.textAddress.Size = new System.Drawing.Size(162, 20);
+            this.textAddress.TabIndex = 2;
+            this.textAddress.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
-            // textBox3
+            // textPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(176, 138);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 20);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
+            this.textPhone.Location = new System.Drawing.Point(176, 138);
+            this.textPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.textPhone.Name = "textPhone";
+            this.textPhone.Size = new System.Drawing.Size(162, 20);
+            this.textPhone.TabIndex = 3;
+            this.textPhone.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
-            // textBox5
+            // textPass
             // 
-            this.textBox5.Location = new System.Drawing.Point(176, 202);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(162, 20);
-            this.textBox5.TabIndex = 5;
-            this.textBox5.Leave += new System.EventHandler(this.textBox5_Leave);
+            this.textPass.Location = new System.Drawing.Point(176, 202);
+            this.textPass.Margin = new System.Windows.Forms.Padding(2);
+            this.textPass.Name = "textPass";
+            this.textPass.Size = new System.Drawing.Size(162, 20);
+            this.textPass.TabIndex = 5;
+            this.textPass.Leave += new System.EventHandler(this.textBox5_Leave);
             // 
-            // textBox6
+            // textCPass
             // 
-            this.textBox6.Location = new System.Drawing.Point(176, 233);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(162, 20);
-            this.textBox6.TabIndex = 6;
-            this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
+            this.textCPass.Location = new System.Drawing.Point(176, 233);
+            this.textCPass.Margin = new System.Windows.Forms.Padding(2);
+            this.textCPass.Name = "textCPass";
+            this.textCPass.Size = new System.Drawing.Size(162, 20);
+            this.textCPass.TabIndex = 6;
+            this.textCPass.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
-            // textBox7
+            // textEmail
             // 
-            this.textBox7.Location = new System.Drawing.Point(176, 264);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(162, 20);
-            this.textBox7.TabIndex = 7;
-            this.textBox7.Leave += new System.EventHandler(this.textBox7_Leave);
+            this.textEmail.Location = new System.Drawing.Point(176, 264);
+            this.textEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(162, 20);
+            this.textEmail.TabIndex = 7;
+            this.textEmail.Leave += new System.EventHandler(this.textBox7_Leave);
             // 
-            // textBox8
+            // textOtp
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(176, 296);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(162, 20);
-            this.textBox8.TabIndex = 8;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.textOtp.Enabled = false;
+            this.textOtp.Location = new System.Drawing.Point(176, 296);
+            this.textOtp.Margin = new System.Windows.Forms.Padding(2);
+            this.textOtp.Name = "textOtp";
+            this.textOtp.Size = new System.Drawing.Size(162, 20);
+            this.textOtp.TabIndex = 8;
+            this.textOtp.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label9
             // 
@@ -228,14 +228,17 @@ namespace oop2Project
             // 
             // btnsubmit1
             // 
+            this.btnsubmit1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnsubmit1.Enabled = false;
+            this.btnsubmit1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnsubmit1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsubmit1.Location = new System.Drawing.Point(262, 331);
             this.btnsubmit1.Margin = new System.Windows.Forms.Padding(2);
             this.btnsubmit1.Name = "btnsubmit1";
             this.btnsubmit1.Size = new System.Drawing.Size(74, 25);
             this.btnsubmit1.TabIndex = 17;
             this.btnsubmit1.Text = "Submit ";
-            this.btnsubmit1.UseVisualStyleBackColor = true;
+            this.btnsubmit1.UseVisualStyleBackColor = false;
             this.btnsubmit1.Click += new System.EventHandler(this.btnsubmit1_Click);
             // 
             // label10
@@ -249,36 +252,37 @@ namespace oop2Project
             this.label10.TabIndex = 18;
             this.label10.Text = "Vaccine Certificate ";
             // 
-            // textBox9
+            // textVacId
             // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(420, 127);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(117, 20);
-            this.textBox9.TabIndex = 9;
+            this.textVacId.Enabled = false;
+            this.textVacId.Location = new System.Drawing.Point(420, 127);
+            this.textVacId.Margin = new System.Windows.Forms.Padding(2);
+            this.textVacId.Name = "textVacId";
+            this.textVacId.Size = new System.Drawing.Size(117, 20);
+            this.textVacId.TabIndex = 9;
+            this.textVacId.Leave += new System.EventHandler(this.textVacId_Leave);
             // 
-            // button1
+            // btnVacYes
             // 
-            this.button1.Location = new System.Drawing.Point(420, 102);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 20);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Yes";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnVacYes.Location = new System.Drawing.Point(420, 102);
+            this.btnVacYes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVacYes.Name = "btnVacYes";
+            this.btnVacYes.Size = new System.Drawing.Size(40, 21);
+            this.btnVacYes.TabIndex = 20;
+            this.btnVacYes.Text = "Yes";
+            this.btnVacYes.UseVisualStyleBackColor = true;
+            this.btnVacYes.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnVacNo
             // 
-            this.button2.Location = new System.Drawing.Point(500, 102);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(37, 19);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "No";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnVacNo.Location = new System.Drawing.Point(500, 102);
+            this.btnVacNo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVacNo.Name = "btnVacNo";
+            this.btnVacNo.Size = new System.Drawing.Size(37, 21);
+            this.btnVacNo.TabIndex = 21;
+            this.btnVacNo.Text = "No";
+            this.btnVacNo.UseVisualStyleBackColor = true;
+            this.btnVacNo.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
@@ -290,14 +294,14 @@ namespace oop2Project
             this.label4.TabIndex = 3;
             this.label4.Text = "NID";
             // 
-            // textBox4
+            // textNid
             // 
-            this.textBox4.Location = new System.Drawing.Point(176, 170);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(162, 20);
-            this.textBox4.TabIndex = 4;
-            this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
+            this.textNid.Location = new System.Drawing.Point(176, 170);
+            this.textNid.Margin = new System.Windows.Forms.Padding(2);
+            this.textNid.Name = "textNid";
+            this.textNid.Size = new System.Drawing.Size(162, 20);
+            this.textNid.TabIndex = 4;
+            this.textNid.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // label11
             // 
@@ -310,27 +314,27 @@ namespace oop2Project
             this.label11.TabIndex = 22;
             this.label11.Text = "Upload picture ";
             // 
-            // button3
+            // btnUpload
             // 
-            this.button3.Location = new System.Drawing.Point(453, 287);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(73, 29);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Upload ";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnUpload.Location = new System.Drawing.Point(453, 287);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(73, 29);
+            this.btnUpload.TabIndex = 23;
+            this.btnUpload.Text = "Upload ";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button5
+            // btnOtp
             // 
-            this.button5.Location = new System.Drawing.Point(349, 264);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(72, 22);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "send OTP";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnOtp.Location = new System.Drawing.Point(349, 264);
+            this.btnOtp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOtp.Name = "btnOtp";
+            this.btnOtp.Size = new System.Drawing.Size(72, 22);
+            this.btnOtp.TabIndex = 25;
+            this.btnOtp.Text = "send OTP";
+            this.btnOtp.UseVisualStyleBackColor = true;
+            this.btnOtp.Click += new System.EventHandler(this.button5_Click);
             // 
             // label12
             // 
@@ -384,21 +388,21 @@ namespace oop2Project
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
+            // btnback
+            // 
+            this.btnback.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnback.Location = new System.Drawing.Point(10, 336);
+            this.btnback.Margin = new System.Windows.Forms.Padding(2);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(56, 33);
+            this.btnback.TabIndex = 24;
+            this.btnback.Text = "Back";
+            this.btnback.UseVisualStyleBackColor = true;
+            this.btnback.Click += new System.EventHandler(this.button4_Click);
+            // 
             // errorProvider9
             // 
             this.errorProvider9.ContainerControl = this;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(10, 336);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(56, 33);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Back";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FormReg
             // 
@@ -408,24 +412,24 @@ namespace oop2Project
             this.ClientSize = new System.Drawing.Size(600, 380);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnOtp);
+            this.Controls.Add(this.btnback);
+            this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.btnVacNo);
+            this.Controls.Add(this.btnVacYes);
+            this.Controls.Add(this.textVacId);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnsubmit1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textOtp);
+            this.Controls.Add(this.textEmail);
+            this.Controls.Add(this.textCPass);
+            this.Controls.Add(this.textPass);
+            this.Controls.Add(this.textNid);
+            this.Controls.Add(this.textPhone);
+            this.Controls.Add(this.textAddress);
+            this.Controls.Add(this.textName);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -462,24 +466,24 @@ namespace oop2Project
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textName;
+        private System.Windows.Forms.TextBox textAddress;
+        private System.Windows.Forms.TextBox textPhone;
+        private System.Windows.Forms.TextBox textPass;
+        private System.Windows.Forms.TextBox textCPass;
+        private System.Windows.Forms.TextBox textEmail;
+        private System.Windows.Forms.TextBox textOtp;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnsubmit1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textVacId;
+        private System.Windows.Forms.Button btnVacYes;
+        private System.Windows.Forms.Button btnVacNo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textNid;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Button btnOtp;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
@@ -490,7 +494,7 @@ namespace oop2Project
         private System.Windows.Forms.ErrorProvider errorProvider7;
         private System.Windows.Forms.ErrorProvider errorProvider8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnback;
         private System.Windows.Forms.ErrorProvider errorProvider9;
-        private System.Windows.Forms.Button button4;
     }
 }

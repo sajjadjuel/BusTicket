@@ -48,16 +48,6 @@ namespace oop2Project
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form3_Load(object sender, EventArgs e)
         {
             displayCusData();
@@ -69,11 +59,6 @@ namespace oop2Project
             this.Hide();
             Reg.Tag = this;
             Reg.Show();
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -93,7 +78,6 @@ namespace oop2Project
                 //hide salary
                 textSalary.Visible = false;
                 labelSalary.Visible = false;
-
             }
             else if (comboFilter.Text == "Employee")
             {
@@ -101,18 +85,16 @@ namespace oop2Project
                 //view salary
                 textSalary.Visible = true;
                 labelSalary.Visible = true;
-
-
             }
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //MessageBox.Show(comboFilter.SelectedIndex);
-            if (comboBox1.Text == "Yes")
+            if (comboVac.Text == "Yes")
             {
                 vacc = "Yes";
             }
-            else if (comboBox1.Text == "No")
+            else if (comboVac.Text == "No")
             {
                 vacc = "No";
             }
@@ -142,7 +124,6 @@ namespace oop2Project
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(textpass.Text) == true)
             {
                 textpass.Focus();
@@ -150,9 +131,7 @@ namespace oop2Project
             }
 
             else
-            {
                 errorProvider2.Clear();
-            }
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -160,7 +139,7 @@ namespace oop2Project
             if (string.IsNullOrEmpty(textotp.Text) == true)
             {
                 textotp.Focus();
-                errorProvider3.SetError(this.textotp, " OTP can'nt be empty");
+                errorProvider3.SetError(this.textotp, " OTP can't be empty");
 
             }
             else if (textotp.Text != otp.ToString())
@@ -180,7 +159,6 @@ namespace oop2Project
         {
             try
             {
-
                 MailMessage msg = new MailMessage();
                 msg.From = new MailAddress("busticket.booking01@gmail.com");
                 msg.To.Add(email);
@@ -388,7 +366,7 @@ namespace oop2Project
             textNid.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             textpass.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             textemail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            comboBox1.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            comboVac.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
 
             //if (comboFilter.Text == "Employee")
             if (dataGridView1.CurrentRow.Cells[7].OwningColumn.Name == "salary")
@@ -413,26 +391,23 @@ namespace oop2Project
                 pictureBox1.Image = new Bitmap(imagePath);
         }
 
-        private void comboFilter_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button4_Click_1(object sender, EventArgs e)
-        {/*
+        {
+            string search = textSearch.Text;
+
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
 
-            cmd.CommandText = "select * from Cus where Name = '%" + textSearch.Text + "%'";
+            cmd.CommandText = "select * from Cus where Name like '%" + search + "%'";
 
             SqlDataReader sdr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
-            sdr.Read();
+
 
             if (sdr.HasRows)
             {
-
+                sdr.Close();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -440,14 +415,18 @@ namespace oop2Project
             else
             {
                 sdr.Close();
-                cmd.CommandText = "select * from Emp where Name = '%" + textSearch.Text + "%'";
+                cmd.CommandText = "select * from Emp where Name like '%" + search + "%'";
                 SqlDataReader sdr1 = cmd.ExecuteReader();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                if (sdr1.HasRows)
+                {
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+                else
+                    MessageBox.Show("Unable to find any user with \"" + search + "\"", "No Result");
             }
             con.Close();
-        */
         }
     }
 }
