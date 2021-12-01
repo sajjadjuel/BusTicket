@@ -404,10 +404,10 @@ namespace oop2Project
             SqlDataReader sdr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
 
-
+           // SqlDataAdapter da = new SqlDataAdapter(cmd);
             if (sdr.HasRows)
             {
-                sdr.Close();
+               // sdr.Close();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -415,13 +415,17 @@ namespace oop2Project
             else
             {
                 sdr.Close();
-                cmd.CommandText = "select * from Emp where Name like '%" + search + "%'";
-                SqlDataReader sdr1 = cmd.ExecuteReader();
+               cmd.CommandText = "select * from Emp where Name like '%" + search + "%'";
+               SqlDataReader sdr1 = cmd.ExecuteReader();
                 if (sdr1.HasRows)
                 {
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    sdr1.Close();
+                  SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    
                     da.Fill(dt);
                     dataGridView1.DataSource = dt;
+
+                    comboFilter.Text = "Employee";
                 }
                 else
                     MessageBox.Show("Unable to find any user with \"" + search + "\"", "No Result");

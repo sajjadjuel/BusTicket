@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace oop2Project
 {
     public partial class FormViewEmployee : Form
     {
+        SqlConnection con = new SqlConnection(ConString.con);
         public FormViewEmployee()
         {
             InitializeComponent();
@@ -43,6 +45,43 @@ namespace oop2Project
         private void button4_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (employe_pass.Text != "" && employe_confrm_pass.Text != "")
+            {
+                if (employe_confrm_pass.Text == employe_pass.Text)
+                {
+                    con.Open();
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.CommandText = "update Emp set pass = '" + employe_confrm_pass.Text + "' where Emp_Id='" + Form1.Emp_Id + "'";
+
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    MessageBox.Show("Password Change Successfull");
+                    this.employe_pass.Text = "";
+                    this.employe_confrm_pass.Text = "";
+
+                    /*Form1 f1 = new Form1();
+                    this.Hide();
+                    f1.Tag = this;
+                    f1.Show();*/
+
+                }
+                else
+                {
+                    MessageBox.Show(" Password MissMatch ");
+                }
+            }
+
+            else
+            {
+                MessageBox.Show(" please enter Password  ");
+            }
         }
     }
 }

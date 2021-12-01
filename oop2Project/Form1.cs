@@ -11,6 +11,8 @@ namespace oop2Project
         SqlConnection con = new SqlConnection(ConString.con);
         public static string user;
         public static string Cus_Id;
+         public static string Emp_Id;
+
 
         public Form1()
         {
@@ -29,10 +31,8 @@ namespace oop2Project
         {
             string email = txtusername.Text;
 
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Cus where email='" + email + "'";
+            string pass = txtpassword.Text;
+
             /* pass = "select pass from Cus where email='" + txtusername.Text + "'";
              user = "select email from Cus where email='" + txtusername.Text + "'";*/
 
@@ -42,51 +42,72 @@ namespace oop2Project
 
             //dataGridView1.DataSource = dt;
 
-            SqlDataReader sdr = cmd.ExecuteReader();
-            if (sdr.HasRows == true)
-            {
-                cmd.CommandText = ("select * from Cus where email='" + email + "'and pass='" + txtpassword.Text + "' ");
-                sdr.Close();
-                sdr = cmd.ExecuteReader();
-                if (sdr.HasRows)
-                {
-                    sdr.Read();
-                    user = email;
-                    Cus_Id = sdr.GetString(2);
-                    FormBooking Cus = new FormBooking();
-                    this.Hide();
-                    Cus.Tag = this;
-                    Cus.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong Pass");
-                }
-            }
 
-            else if (email == "admin" && txtpassword.Text == "123")
+
+            if (email == "admin" && txtpassword.Text == "123")
             {
                 FormViewAdmin admin = new FormViewAdmin();
                 this.Hide();
                 admin.Tag = this;
                 admin.Show();
             }
-            /* else if (txtusername.Text == "emp" && txtpassword.Text == "456")
-             {
-                 Form4 Emp = new Form4();
-                 this.Hide();
-                 Emp.Tag = this;
-                 Emp.Show();
-             }/
-            else if (txtusername.Text == user && txtpassword.Text == pass)
+           else
             {
-                Form6 Cus = new Form6();
-                this.Hide();
-                Cus.Tag = this;
-                Cus.Show();
-            }*/
-            else MessageBox.Show("Invalid Username/Password");
-            con.Close();
+
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+
+                cmd.CommandText = "select * from Cus where email='" + email + "'";
+
+                SqlDataReader sdr = cmd.ExecuteReader();
+               
+                if (sdr.HasRows == true)
+                {
+                    cmd.CommandText = ("select * from Cus where email='" + email + "'and pass='" + pass + "' ");
+                    sdr.Close();
+                    sdr = cmd.ExecuteReader();
+                    if (sdr.HasRows)
+                    {
+                        sdr.Read();
+                        user = email;
+                        Cus_Id = sdr.GetString(2);
+                        FormBooking Cus = new FormBooking();
+                        this.Hide();
+                        Cus.Tag = this;
+                        Cus.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong Pass");
+                    }
+                }
+               else if (!sdr.HasRows)
+                {
+                    cmd.CommandText = ("select * from  Emp where email='" + email + "'and pass='" + pass + "' ");
+                    sdr.Close();
+                    sdr = cmd.ExecuteReader();
+                    if (sdr.HasRows)
+                    {
+                        sdr.Read();
+                        user = email;
+                        Emp_Id = sdr.GetString(2);
+
+                        FormViewEmployee Emp = new FormViewEmployee();
+                        this.Hide();
+                        Emp.Tag = this;
+                        Emp.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Username/Password");
+                    }
+                    
+                }
+                
+                     con.Close();
+            }
+             
         }
 
         private void btnlogin_MouseEnter(object sender, EventArgs e)

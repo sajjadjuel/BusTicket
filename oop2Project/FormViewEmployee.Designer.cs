@@ -45,9 +45,9 @@ namespace oop2Project
             this.label7 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.employe_pass = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.employe_confrm_pass = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -201,12 +201,12 @@ namespace oop2Project
             this.label8.TabIndex = 25;
             this.label8.Text = "New Password  :";
             // 
-            // textBox5
+            // employe_pass
             // 
-            this.textBox5.Location = new System.Drawing.Point(126, 320);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(163, 22);
-            this.textBox5.TabIndex = 26;
+            this.employe_pass.Location = new System.Drawing.Point(126, 320);
+            this.employe_pass.Name = "employe_pass";
+            this.employe_pass.Size = new System.Drawing.Size(163, 22);
+            this.employe_pass.TabIndex = 26;
             // 
             // label9
             // 
@@ -217,12 +217,12 @@ namespace oop2Project
             this.label9.TabIndex = 27;
             this.label9.Text = "Confirm Password:";
             // 
-            // textBox6
+            // employe_confrm_pass
             // 
-            this.textBox6.Location = new System.Drawing.Point(127, 361);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(163, 22);
-            this.textBox6.TabIndex = 28;
+            this.employe_confrm_pass.Location = new System.Drawing.Point(127, 361);
+            this.employe_confrm_pass.Name = "employe_confrm_pass";
+            this.employe_confrm_pass.Size = new System.Drawing.Size(163, 22);
+            this.employe_confrm_pass.TabIndex = 28;
             // 
             // button5
             // 
@@ -233,6 +233,7 @@ namespace oop2Project
             this.button5.TabIndex = 29;
             this.button5.Text = "Update ";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label10
             // 
@@ -265,7 +266,7 @@ namespace oop2Project
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // Form4
+            // FormViewEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -275,9 +276,9 @@ namespace oop2Project
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.employe_confrm_pass);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.employe_pass);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label7);
@@ -294,7 +295,7 @@ namespace oop2Project
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "Form4";
+            this.Name = "FormViewEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
@@ -322,9 +323,9 @@ namespace oop2Project
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox employe_pass;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox employe_confrm_pass;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridView1;
