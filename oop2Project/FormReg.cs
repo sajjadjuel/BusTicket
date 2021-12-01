@@ -46,6 +46,7 @@ namespace oop2Project
         {
             // Validating E-mail
             var data = ValidateEmail(email);
+
             if (data["autocorrect"] != "" && autocorrect)
             {
                 autocorrect = false;
@@ -58,6 +59,7 @@ namespace oop2Project
                 MessageBox.Show("Please provide a Valid E-mail!");
                 return;
             }
+
 
             // Sending OTP
             try
@@ -232,7 +234,6 @@ namespace oop2Project
                     errorProvider1.Clear();
             }
         }
-
 
         private void textBox2_Leave(object sender, EventArgs e)
         {

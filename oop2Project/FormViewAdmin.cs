@@ -30,11 +30,12 @@ namespace oop2Project
         private string Address;
         private string Cus_Id;
         private string Emp_Id;
-
+        private string id = "";
         private string phn;
         private string nid;
         // private string cpass;
-        private string vacc = "";
+        private string vacc = " ";
+        private string imagePath;
 
         private string vac_id = "N/A";
 
@@ -55,10 +56,66 @@ namespace oop2Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormReg Reg = new FormReg();
-            this.Hide();
-            Reg.Tag = this;
-            Reg.Show();
+            string name = textName.Text;
+            string phn = textPhone.Text;
+            string address = textAddress.Text;
+            string role;
+
+            // Empty Textbox
+            if (check(name, address, phn))
+            {
+                MessageBox.Show("Please fill Name, Address & Phone details");
+                return;
+            }
+            // Name Alphanumeric
+            if (!name.All(i => char.IsLetter(i) || i == ' '))
+            {
+                textName.Focus();
+                MessageBox.Show("Name cannot be alphanumeric!");
+                return;
+            }
+            // Phone Alphanumneric
+            if (!phn.All(char.IsDigit))
+            {
+                textPhone.Focus();
+                MessageBox.Show("Phone Number must be Numeric digit !!");
+                return;
+            }
+
+            if (con.State != ConnectionState.Closed)
+                con.Close();
+            con.Open();
+
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            // Radio button
+            if (rbtnCustomer.Checked && Convert.ToInt32(id) > 0)
+            {
+                role = "Customer";
+                cmd.CommandText = "update Cus set Name = '" + name + "', Address='" + address + "', phn='" + phn
+                    + "' where Cus_Id='" + id + "'";
+            }
+            else if (rbtnEmployee.Checked && Convert.ToInt32(id) > 0)
+            {
+                role = "Employee";
+                cmd.CommandText = "update Emp set Name = '" + name + "', Address='" + address + "', phn='" + phn
+                    + "' where Emp_Id='" + id + "'";
+            }
+            else
+            {
+                MessageBox.Show("Please Click on the User from below table", "No user selected!");
+                return;
+            }
+
+            int flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            if (flag > 0) MessageBox.Show(role + " has been updated!");
+            else MessageBox.Show("Error while updating " + role + "!");
+
+            if (role == "Customer") displayCusData();
+            else if (role == "Employee") displayEmpData();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -98,10 +155,7 @@ namespace oop2Project
             {
                 vacc = "No";
             }
-            else
-            {
-                MessageBox.Show("Select Status ");
-            }
+            else MessageBox.Show("Select Status ");
         }
 
         private void textBox4_Leave(object sender, EventArgs e)
@@ -116,27 +170,12 @@ namespace oop2Project
                 textemail.Focus();
                 errorProvider1.SetError(this.textemail, "Invalid Format");
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(textpass.Text) == true)
-            {
-                textpass.Focus();
-                errorProvider2.SetError(this.textpass, "Password can'nt be empty");
-            }
-
-            else
-                errorProvider2.Clear();
+            else errorProvider1.Clear();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textotp.Text) == true)
+            if (string.IsNullOrEmpty(textotp.Text))
             {
                 textotp.Focus();
                 errorProvider3.SetError(this.textotp, " OTP can't be empty");
@@ -151,7 +190,6 @@ namespace oop2Project
             {
                 //btnsubmit1.Enabled = true;
                 errorProvider3.Clear();
-
             }
         }
 
@@ -178,11 +216,9 @@ namespace oop2Project
                 smt.Send(msg);
 
                 MessageBox.Show("Your Mail is sended");
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -208,7 +244,6 @@ namespace oop2Project
             email = textemail.Text;
             OTP = textotp.Text;
 
-
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
 
@@ -229,27 +264,61 @@ namespace oop2Project
                 return;
             }
 
-            // Picture-box
-            try
+            // Empty Textbox
+            if (check(Name, Address, phn, nid, pass) || (role == "Employee" && check(salary)))
             {
-                newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));
-                File.Copy(filePath, newPath, true);
-            }
-            catch (Exception exc)
-            {
-                con.Close();
-                Console.WriteLine(exc);
-                MessageBox.Show("Please upload an image!");
+                MessageBox.Show("Please fill all details");
                 return;
             }
-
-            // Otp
+            // Name Alphanumeric
+            if (!Name.All(i => char.IsLetter(i) || i == ' '))
+            {
+                textName.Focus();
+                MessageBox.Show("Name cannot be alphanumeric!");
+                return;
+            }
+            // Phone Alphanumneric
+            if (!phn.All(char.IsDigit))
+            {
+                textPhone.Focus();
+                MessageBox.Show("Phone is Only Numeric digit !!");
+                return;
+            }
+            // NID Alphanumeric
+            if (!nid.All(char.IsDigit))
+            {
+                textNid.Focus();
+                MessageBox.Show("NID is Only Numeric digit !!");
+                return;
+            }
+            // Salary Alphanumneric
+            if (!salary.All(char.IsDigit))
+            {
+                textSalary.Focus();
+                MessageBox.Show("Salary is  Only Numeric digit !!");
+                return;
+            }
+            // No Picture
+            if (pictureBox1.Image == null)
+            {
+                MessageBox.Show("Please upload an Image!");
+                return;
+            }
+            // No Vaccine Status
+            if (comboVac.Text == "Yes/No")
+            {
+                MessageBox.Show("Please select vaccine status!");
+                return;
+            }
+            // Wrong Otp
             if (otp.ToString() != OTP)
             {
                 MessageBox.Show("Wrong OTP");
                 return;
             }
 
+            if (con.State != ConnectionState.Closed)
+                con.Close();
             con.Open();
 
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -258,13 +327,24 @@ namespace oop2Project
             // Get Id && Insert Profile
             if (role == "Customer")
             {
-
                 if (sdr.HasRows)
                 {
                     cid = sdr.GetString(0);
                     Cus_Id = (Convert.ToInt32(cid) + 1).ToString();
                 }
                 else Cus_Id = cid;
+
+                try
+                {
+                    newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));
+                    File.Copy(filePath, newPath, true);
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc);
+                    MessageBox.Show("Invalid path!");
+                    return;
+                }
 
                 query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
                 "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
@@ -279,6 +359,18 @@ namespace oop2Project
                     Emp_Id = (Convert.ToInt32(eid) + 1).ToString();
                 }
                 else Emp_Id = eid;
+
+                try
+                {
+                    newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Emp_Id + Path.GetExtension(filePath));
+                    File.Copy(filePath, newPath, true);
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc);
+                    MessageBox.Show("Invalid path!");
+                    return;
+                }
 
                 query = " Insert into Emp Values('" + Name + "','" + Address + "'," +
                 "'" + Emp_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
@@ -295,9 +387,12 @@ namespace oop2Project
             sdr.Close();
             cmd.CommandText = query;
             cmd.ExecuteNonQuery();
-            con.Close();
+
 
             MessageBox.Show(role + " Inserted");
+            if (role == "Customer") displayCusData();
+            else displayEmpData();
+            con.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -315,13 +410,10 @@ namespace oop2Project
 
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void displayCusData()
         {
+            if (con.State != ConnectionState.Closed)
+                con.Close();
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -340,6 +432,8 @@ namespace oop2Project
 
         private void displayEmpData()
         {
+            if (con.State != ConnectionState.Closed)
+                con.Close();
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -358,18 +452,21 @@ namespace oop2Project
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            string imagePath;
-            textName.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            if (dataGridView1.CurrentCell.Value.ToString() == "") return;
+            else MessageBox.Show(dataGridView1.CurrentCell.Value.ToString());
+            id = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            Name = textName.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             textAddress.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             textPhone.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             textNid.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             textpass.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             textemail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             comboVac.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            textotp.Text = "";
 
             //if (comboFilter.Text == "Employee")
-            if (dataGridView1.CurrentRow.Cells[7].OwningColumn.Name == "salary")
+            //if (dataGridView1.CurrentRow.Cells[7].OwningColumn.Name == "salary")
+            if (Convert.ToInt32(id) < 1000)
             {
                 rbtnEmployee.Checked = true;
                 textSalary.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
@@ -387,14 +484,19 @@ namespace oop2Project
                 labelSalary.Visible = false;
             }
 
-            if (imagePath.Length > 0)
-                pictureBox1.Image = new Bitmap(imagePath);
+            if (!File.Exists(imagePath)) Console.WriteLine("file nai", imagePath);
+            else pictureBox1.Image = new Bitmap(imagePath);
+
+
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
             string search = textSearch.Text;
+            if (search.Length < 1) return;
 
+            if (con.State != ConnectionState.Closed)
+                con.Close();
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -404,10 +506,10 @@ namespace oop2Project
             SqlDataReader sdr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
 
-           // SqlDataAdapter da = new SqlDataAdapter(cmd);
+            // SqlDataAdapter da = new SqlDataAdapter(cmd);
             if (sdr.HasRows)
             {
-               // sdr.Close();
+                // sdr.Close();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -415,22 +517,90 @@ namespace oop2Project
             else
             {
                 sdr.Close();
-               cmd.CommandText = "select * from Emp where Name like '%" + search + "%'";
-               SqlDataReader sdr1 = cmd.ExecuteReader();
+                cmd.CommandText = "select * from Emp where Name like '%" + search + "%'";
+                SqlDataReader sdr1 = cmd.ExecuteReader();
                 if (sdr1.HasRows)
                 {
                     sdr1.Close();
-                  SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+
                     da.Fill(dt);
                     dataGridView1.DataSource = dt;
-
+                    //con.Close();
                     comboFilter.Text = "Employee";
                 }
                 else
                     MessageBox.Show("Unable to find any user with \"" + search + "\"", "No Result");
+
             }
             con.Close();
+        }
+
+        private void rbtnCustomer_Click(object sender, EventArgs e)
+        {
+            //hide salary
+            textSalary.Visible = false;
+            labelSalary.Visible = false;
+        }
+
+        private void rbtnEmployee_Click(object sender, EventArgs e)
+        {
+            //view salary
+            textSalary.Visible = true;
+            labelSalary.Visible = true;
+        }
+
+        //Check All Boxes If null or Empty
+        public static bool check(params string[] s)
+        {
+            foreach (string i in s) if (i == null || i == String.Empty)
+                    return true;
+            return false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (id == "")
+            {
+                MessageBox.Show("Please Click on the User from below table", "No user selected!");
+                return;
+            }
+            // Id and Name no match
+            if (Name != textName.Text && imagePath.Length < 1)
+            {
+                MessageBox.Show("Please Click on the User from below table", "Error finding user!");
+                return;
+            }
+
+            // Delete Query
+            if (con.State != ConnectionState.Closed)
+                con.Close();
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            if (rbtnCustomer.Checked && id != "")
+                cmd.CommandText = "Delete from Cus where Cus_Id = '" + id + "'";
+
+            else if (rbtnEmployee.Checked && id != "")
+                cmd.CommandText = "Delete from Emp where Emp_Id = '" + id + "'";
+            else
+            {
+                MessageBox.Show("Please Click on the User from below table", "Error finding user!");
+                con.Close();
+                return;
+            }
+
+            //pictureBox1.Image.Dispose();
+            File.Delete(imagePath);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("User has been deleted", "Deleted!");
+
+            //else MessageBox.Show("No user was deleted", "Error!");
+            con.Close();
+
+            if (rbtnCustomer.Checked) displayCusData();
+            else displayEmpData();
         }
     }
 }

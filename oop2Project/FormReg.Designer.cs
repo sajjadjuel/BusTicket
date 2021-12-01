@@ -52,7 +52,6 @@ namespace oop2Project
             this.btnVacNo = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textNid = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnOtp = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -245,7 +244,7 @@ namespace oop2Project
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(417, 78);
+            this.label10.Location = new System.Drawing.Point(442, 78);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(134, 18);
@@ -255,7 +254,7 @@ namespace oop2Project
             // textVacId
             // 
             this.textVacId.Enabled = false;
-            this.textVacId.Location = new System.Drawing.Point(420, 127);
+            this.textVacId.Location = new System.Drawing.Point(445, 127);
             this.textVacId.Margin = new System.Windows.Forms.Padding(2);
             this.textVacId.Name = "textVacId";
             this.textVacId.Size = new System.Drawing.Size(117, 20);
@@ -264,7 +263,7 @@ namespace oop2Project
             // 
             // btnVacYes
             // 
-            this.btnVacYes.Location = new System.Drawing.Point(420, 102);
+            this.btnVacYes.Location = new System.Drawing.Point(445, 102);
             this.btnVacYes.Margin = new System.Windows.Forms.Padding(2);
             this.btnVacYes.Name = "btnVacYes";
             this.btnVacYes.Size = new System.Drawing.Size(40, 21);
@@ -275,10 +274,10 @@ namespace oop2Project
             // 
             // btnVacNo
             // 
-            this.btnVacNo.Location = new System.Drawing.Point(500, 102);
+            this.btnVacNo.Location = new System.Drawing.Point(522, 102);
             this.btnVacNo.Margin = new System.Windows.Forms.Padding(2);
             this.btnVacNo.Name = "btnVacNo";
-            this.btnVacNo.Size = new System.Drawing.Size(37, 21);
+            this.btnVacNo.Size = new System.Drawing.Size(40, 21);
             this.btnVacNo.TabIndex = 21;
             this.btnVacNo.Text = "No";
             this.btnVacNo.UseVisualStyleBackColor = true;
@@ -303,25 +302,14 @@ namespace oop2Project
             this.textNid.TabIndex = 4;
             this.textNid.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(442, 331);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 17);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Upload picture ";
-            // 
             // btnUpload
             // 
-            this.btnUpload.Location = new System.Drawing.Point(453, 287);
+            this.btnUpload.Location = new System.Drawing.Point(455, 281);
             this.btnUpload.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(73, 29);
+            this.btnUpload.Size = new System.Drawing.Size(93, 29);
             this.btnUpload.TabIndex = 23;
-            this.btnUpload.Text = "Upload ";
+            this.btnUpload.Text = "Upload Image";
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -339,7 +327,7 @@ namespace oop2Project
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(376, 129);
+            this.label12.Location = new System.Drawing.Point(401, 129);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 13);
@@ -380,7 +368,8 @@ namespace oop2Project
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(436, 159);
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.GrayText;
+            this.pictureBox1.Location = new System.Drawing.Point(445, 168);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(114, 109);
@@ -415,7 +404,6 @@ namespace oop2Project
             this.Controls.Add(this.btnOtp);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.btnUpload);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnVacNo);
             this.Controls.Add(this.btnVacYes);
             this.Controls.Add(this.textVacId);
@@ -481,7 +469,6 @@ namespace oop2Project
         private System.Windows.Forms.Button btnVacNo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textNid;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.Button btnOtp;
         private System.Windows.Forms.Label label12;

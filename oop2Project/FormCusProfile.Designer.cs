@@ -48,7 +48,6 @@ namespace oop2Project
             this.textVac = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,7 +64,7 @@ namespace oop2Project
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(267, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Customer Profile ";
+            this.label1.Text = "User Profile ";
             // 
             // label2
             // 
@@ -229,7 +228,6 @@ namespace oop2Project
             this.textVac.Name = "textVac";
             this.textVac.Size = new System.Drawing.Size(260, 22);
             this.textVac.TabIndex = 7;
-            this.textVac.Click += new System.EventHandler(this.textVac_Click);
             // 
             // btnUpdate
             // 
@@ -251,16 +249,6 @@ namespace oop2Project
             this.label10.Size = new System.Drawing.Size(162, 17);
             this.label10.TabIndex = 23;
             this.label10.Text = "Vaccine certificate   :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1105, 407);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(96, 17);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "*PDF ONLY ";
             // 
             // btnBack
             // 
@@ -302,7 +290,6 @@ namespace oop2Project
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.textVac);
@@ -355,7 +342,6 @@ namespace oop2Project
         private System.Windows.Forms.TextBox textVac;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureBox1;
