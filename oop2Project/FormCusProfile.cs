@@ -186,6 +186,7 @@ namespace oop2Project
             if (vid == "N/A" || vid == "")
             {
                 btnUpdate.Enabled = true;
+                textVac.Text = "N/A";
             }
         }
 
@@ -198,12 +199,14 @@ namespace oop2Project
                 cmd.CommandType = CommandType.Text;
 
                 cmd.CommandText = "update Cus set vac_id = '" + textVac.Text + "' where Cus_Id='" + Form1.Cus_Id + "'";
+                //cmd.CommandText = "update Cus set vacc = '" + "Yes" + "' where Cus_Id='" + Form1.Cus_Id + "'";
 
                 cmd.ExecuteNonQuery();
                 con.Close();
 
                 MessageBox.Show("Vaccine Information update Successfull");
                 btnUpdate.Enabled = false;
+                // textVac.Enabled = false;
 
             }
             /*else
@@ -211,6 +214,15 @@ namespace oop2Project
                 MessageBox.Show(" Already Updated ");
 
             }*/
+
+        }
+
+        private void textVac_Click(object sender, EventArgs e)
+        {
+            if (vid == "N/A" || vid == "")
+            {
+                textVac.Text = "";
+            }
 
         }
     }
