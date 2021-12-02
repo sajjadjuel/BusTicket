@@ -54,7 +54,7 @@ namespace oop2Project
 
         private void FormBooking_Load(object sender, EventArgs e)
         {
-
+            DPicker.Value = DateTime.Today;
         }
     }
 }

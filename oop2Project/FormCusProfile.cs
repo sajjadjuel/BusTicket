@@ -19,6 +19,7 @@ namespace oop2Project
         private string newPath;
         private string filePath;
         private string fileExtension;
+        private string role;
 
         SqlConnection con = new SqlConnection(ConString.con);
         private string vid;
@@ -62,25 +63,23 @@ namespace oop2Project
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
 
-                    cmd.CommandText = "update Cus set pass = '" + textConfirmPass.Text + "' where Cus_Id='" + Form1.Cus_Id + "'";
+                    if (role == "Customer")
+                        cmd.CommandText = "update Cus set pass = '" + textConfirmPass.Text + "' where Cus_Id='" + Form1.Cus_Id + "'";
+                    else
+                        cmd.CommandText = "update Emp set pass = '" + textConfirmPass.Text + "' where Emp_Id='" + Form1.Emp_Id + "'";
 
-                    cmd.ExecuteNonQuery();
+                    int flag = cmd.ExecuteNonQuery();
                     con.Close();
 
-                    MessageBox.Show("Password Change Successfull");
-                    this.textPass.Text = "";
-                    this.textConfirmPass.Text = "";
-
-                    /*Form1 f1 = new Form1();
-                    this.Hide();
-                    f1.Tag = this;
-                    f1.Show();*/
-
+                    if (flag > 0)
+                    {
+                        MessageBox.Show("Password Change Successfull");
+                        this.textPass.Text = "";
+                        this.textConfirmPass.Text = "";
+                    }
+                    else MessageBox.Show("Error changing Password!");
                 }
-                else
-                {
-                    MessageBox.Show(" Password MissMatch ");
-                }
+                else MessageBox.Show(" Password MissMatch ");
             }
 
             else
@@ -91,10 +90,20 @@ namespace oop2Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormBooking cus = new FormBooking();
-            this.Hide();
-            cus.Tag = this;
-            cus.Show();
+            if (role == "Customer")
+            {
+                FormBooking cus = new FormBooking();
+                this.Hide();
+                cus.Tag = this;
+                cus.Show();
+            }
+            else
+            {
+                FormViewEmployee emp = new FormViewEmployee();
+                this.Hide();
+                emp.Tag = this;
+                emp.Show();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -144,50 +153,52 @@ namespace oop2Project
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            string query;
+
+            if (Form1.Cus_Id != "" && Form1.Emp_Id == "")
+            {
+                query = " select  * from Cus where Cus_Id='" + Form1.Cus_Id + "'";
+                role = "Customer";
+            }
+
+            else if (Form1.Cus_Id == "" && Form1.Emp_Id != "")
+            {
+                query = " select  * from Emp where Emp_Id='" + Form1.Emp_Id + "'";
+                role = "Employee";
+            }
+            else return;
 
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
 
-            string query0 = " select  * from Cus where Cus_Id='" + Form1.Cus_Id + "'";
-            cmd.CommandText = query0;
             SqlDataReader sdr = cmd.ExecuteReader();
-            //string id1 = "1000";
             sdr.Read();
+
             textName.Text = sdr.GetString(0);
             textAddress.Text = sdr.GetString(1);
             textPhone.Text = sdr.GetString(3);
             textEmail.Text = sdr.GetString(6);
             vid = textVac.Text = sdr.GetString(8);
-            /* if (sdr.HasRows)
-             {
-                 sdr.Read();
-                 id1 = sdr.GetString(0);
+            string imagePath;
 
-                 Cus_Id = (Convert.ToInt32(id1) + 1).ToString();
+            if (role == "Employee")
+                imagePath = sdr.GetString(10);
+            else
+                imagePath = sdr.GetString(9);
 
-             }
-             else
-             {
-                 Cus_Id = id1;
-             }*/
-
-            string imagePath = sdr.GetString(9);
             if (imagePath != "")
                 pictureBox1.Image = new Bitmap(imagePath);
 
-            sdr.Close();
-            /*string query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
-                "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
-            "'" + vacc + "','" + vac_id + "','" + newPath + "')";
-            cmd.CommandText = query;
-            cmd.ExecuteNonQuery();*/
             con.Close();
+
             if (vid == "N/A" || vid == "")
             {
                 btnUpdate.Enabled = true;
                 textVac.Text = "N/A";
             }
+            else textVac.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -198,23 +209,17 @@ namespace oop2Project
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
 
-                cmd.CommandText = "update Cus set vac_id = '" + textVac.Text + "' where Cus_Id='" + Form1.Cus_Id + "'";
-                //cmd.CommandText = "update Cus set vacc = '" + "Yes" + "' where Cus_Id='" + Form1.Cus_Id + "'";
+                if (role == "Customer")
+                    cmd.CommandText = "update Cus set vacc = 'Yes', vac_id = '" + textVac.Text + "' where Cus_Id='" + Form1.Cus_Id + "'";
+                else
+                    cmd.CommandText = "update Emp set vacc = 'Yes', vac_id = '" + textVac.Text + "' where Emp_Id='" + Form1.Emp_Id + "'";
 
                 cmd.ExecuteNonQuery();
                 con.Close();
 
                 MessageBox.Show("Vaccine Information update Successfull");
                 btnUpdate.Enabled = false;
-                // textVac.Enabled = false;
-
             }
-            /*else
-            {
-                MessageBox.Show(" Already Updated ");
-
-            }*/
-
         }
 
         private void textVac_Click(object sender, EventArgs e)
@@ -223,7 +228,6 @@ namespace oop2Project
             {
                 textVac.Text = "";
             }
-
         }
     }
 }

@@ -19,21 +19,6 @@ namespace oop2Project
             InitializeComponent();
         }
 
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
             Form1 log = new Form1();
@@ -47,41 +32,87 @@ namespace oop2Project
             System.Windows.Forms.Application.Exit();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (employe_pass.Text != "" && employe_confrm_pass.Text != "")
+            string Bus_Id;
+
+        }
+
+        private void btnAddBus_Click(object sender, EventArgs e)
+        {
+            string BusName;
+            string Bus_Id;
+            string Route;
+            string Time;
+            string TFormat;
+
+            // No Route
+            if (comboRoute.Text == "")
             {
-                if (employe_confrm_pass.Text == employe_pass.Text)
-                {
-                    con.Open();
-                    SqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-
-                    cmd.CommandText = "update Emp set pass = '" + employe_confrm_pass.Text + "' where Emp_Id='" + Form1.Emp_Id + "'";
-
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-
-                    MessageBox.Show("Password Change Successfull");
-                    this.employe_pass.Text = "";
-                    this.employe_confrm_pass.Text = "";
-
-                    /*Form1 f1 = new Form1();
-                    this.Hide();
-                    f1.Tag = this;
-                    f1.Show();*/
-
-                }
-                else
-                {
-                    MessageBox.Show(" Password MissMatch ");
-                }
+                MessageBox.Show("Please select Route!");
+                return;
+            }
+            // No Time
+            if (comboTime.Text == "" ||
+                comboFormat.Text == "")
+            {
+                MessageBox.Show("Please select Time!");
+                return;
             }
 
-            else
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = " select Bus_Id from Bus order by Bus_Id desc";
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+            string id = "1000";
+
+            if (sdr.HasRows)
             {
-                MessageBox.Show(" please enter Password  ");
+                sdr.Read();
+                id = sdr.GetString(0);
+
+                Bus_Id = (Convert.ToInt32(id) + 1).ToString();
             }
+            else Bus_Id = id;
+            sdr.Close();
+
+            BusName = textBusName.Text.Trim(' ').Replace("-", ",");
+            Route = comboRoute.Text;
+            Time = comboTime.Text;
+            TFormat = comboFormat.Text;
+
+            cmd.CommandText = " Insert into Bus Values('" + Bus_Id + "','" + BusName + "'," +
+                "'" + Route + "','" + Time + "','" + TFormat + "')";
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show(BusName + " has been Added!");
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            FormCusProfile book = new FormCusProfile();
+            this.Hide();
+            book.Tag = this;
+            book.Show();
+        }
+
+        private void FormViewEmployee_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridBusList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridBusList.CurrentCell.Value.ToString() == "") return;
+
+            textBusName.Text = dataGridBusList.CurrentRow.Cells[1].Value.ToString();
+            textBusSerial.Text = dataGridBusList.CurrentRow.Cells[0].Value.ToString();
+            comboRoute.Text = dataGridBusList.CurrentRow.Cells[2].Value.ToString().Replace(",", " - ");
+            comboTime.Text = dataGridBusList.CurrentRow.Cells[3].Value.ToString();
+            comboFormat.Text = dataGridBusList.CurrentRow.Cells[4].Value.ToString();
         }
     }
 }

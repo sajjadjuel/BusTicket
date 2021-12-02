@@ -453,7 +453,7 @@ namespace oop2Project
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.CurrentCell.Value.ToString() == "") return;
-            else MessageBox.Show(dataGridView1.CurrentCell.Value.ToString());
+
             id = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             Name = textName.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             textAddress.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -509,10 +509,14 @@ namespace oop2Project
             // SqlDataAdapter da = new SqlDataAdapter(cmd);
             if (sdr.HasRows)
             {
-                // sdr.Close();
+                sdr.Close();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
+                comboFilter.Text = "Customer";
+                //view salary
+                textSalary.Visible = false;
+                labelSalary.Visible = false;
             }
             else
             {
@@ -528,6 +532,9 @@ namespace oop2Project
                     dataGridView1.DataSource = dt;
                     //con.Close();
                     comboFilter.Text = "Employee";
+                    //hide salary
+                    textSalary.Visible = true;
+                    labelSalary.Visible = true;
                 }
                 else
                     MessageBox.Show("Unable to find any user with \"" + search + "\"", "No Result");

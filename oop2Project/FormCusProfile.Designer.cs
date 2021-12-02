@@ -36,10 +36,6 @@ namespace oop2Project
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textEmail = new System.Windows.Forms.TextBox();
-            this.textPhone = new System.Windows.Forms.TextBox();
-            this.textAddress = new System.Windows.Forms.TextBox();
-            this.textName = new System.Windows.Forms.TextBox();
             this.textPass = new System.Windows.Forms.TextBox();
             this.textConfirmPass = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -51,6 +47,10 @@ namespace oop2Project
             this.btnBack = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textEmail = new System.Windows.Forms.TextBox();
+            this.textPhone = new System.Windows.Forms.TextBox();
+            this.textAddress = new System.Windows.Forms.TextBox();
+            this.textName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -282,6 +282,43 @@ namespace oop2Project
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
+            // textEmail
+            // 
+            this.textEmail.Enabled = false;
+            this.textEmail.Location = new System.Drawing.Point(363, 257);
+            this.textEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(255, 19);
+            this.textEmail.TabIndex = 3;
+            // 
+            // textPhone
+            // 
+            this.textPhone.Enabled = false;
+            this.textPhone.Location = new System.Drawing.Point(363, 225);
+            this.textPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.textPhone.Name = "textPhone";
+            this.textPhone.Size = new System.Drawing.Size(255, 19);
+            this.textPhone.TabIndex = 2;
+            this.textPhone.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // textAddress
+            // 
+            this.textAddress.Enabled = false;
+            this.textAddress.Location = new System.Drawing.Point(363, 193);
+            this.textAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.textAddress.Name = "textAddress";
+            this.textAddress.Size = new System.Drawing.Size(255, 19);
+            this.textAddress.TabIndex = 1;
+            // 
+            // textName
+            // 
+            this.textName.Enabled = false;
+            this.textName.Location = new System.Drawing.Point(363, 160);
+            this.textName.Margin = new System.Windows.Forms.Padding(4);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(255, 19);
+            this.textName.TabIndex = 0;
+            // 
             // FormCusProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -333,10 +370,6 @@ namespace oop2Project
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textEmail;
-        private System.Windows.Forms.TextBox textPhone;
-        private System.Windows.Forms.TextBox textAddress;
-        private System.Windows.Forms.TextBox textName;
         private System.Windows.Forms.TextBox textPass;
         private System.Windows.Forms.TextBox textConfirmPass;
         private System.Windows.Forms.Button btnConfirm;
@@ -348,5 +381,9 @@ namespace oop2Project
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textEmail;
+        private System.Windows.Forms.TextBox textPhone;
+        private System.Windows.Forms.TextBox textAddress;
+        private System.Windows.Forms.TextBox textName;
     }
 }

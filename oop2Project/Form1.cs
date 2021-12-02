@@ -115,5 +115,11 @@ namespace oop2Project
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Emp_Id = "";
+            Cus_Id = "";
+        }
     }
 }
