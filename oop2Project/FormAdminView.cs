@@ -15,8 +15,7 @@ using System.IO;
 
 namespace oop2Project
 {
-
-    public partial class FormViewAdmin : Form
+    public partial class FormAdminView : Form
     {
         private string email;
         private int otp;
@@ -26,7 +25,7 @@ namespace oop2Project
         private OpenFileDialog openFileDialog;
         private string fileExtension;
         private string newPath;
-        private string Name;
+        private string name;
         private string Address;
         private string Cus_Id;
         private string Emp_Id;
@@ -44,7 +43,7 @@ namespace oop2Project
         string pattern = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
 
 
-        public FormViewAdmin()
+        public FormAdminView()
         {
             InitializeComponent();
         }
@@ -236,7 +235,7 @@ namespace oop2Project
             string cid = "1000";
             string eid = "100";
 
-            Name = textName.Text;
+            name = textName.Text;
             Address = textAddress.Text;
             phn = textPhone.Text;
             nid = textNid.Text;
@@ -265,13 +264,13 @@ namespace oop2Project
             }
 
             // Empty Textbox
-            if (check(Name, Address, phn, nid, pass) || (role == "Employee" && check(salary)))
+            if (check(name, Address, phn, nid, pass) || (role == "Employee" && check(salary)))
             {
                 MessageBox.Show("Please fill all details");
                 return;
             }
             // Name Alphanumeric
-            if (!Name.All(i => char.IsLetter(i) || i == ' '))
+            if (!name.All(i => char.IsLetter(i) || i == ' '))
             {
                 textName.Focus();
                 MessageBox.Show("Name cannot be alphanumeric!");
@@ -346,7 +345,7 @@ namespace oop2Project
                     return;
                 }
 
-                query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
+                query = " Insert into Cus Values('" + name + "','" + Address + "'," +
                 "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
                 "'" + vacc + "','" + vac_id + "','" + newPath + "')";
             }
@@ -372,7 +371,7 @@ namespace oop2Project
                     return;
                 }
 
-                query = " Insert into Emp Values('" + Name + "','" + Address + "'," +
+                query = " Insert into Emp Values('" + name + "','" + Address + "'," +
                 "'" + Emp_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
                 "'" + vacc + "','" + vac_id + "','" + salary + "','" + newPath + "')";
             }
@@ -455,7 +454,7 @@ namespace oop2Project
             if (dataGridView1.CurrentCell.Value.ToString() == "") return;
 
             id = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            Name = textName.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            name = textName.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             textAddress.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             textPhone.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             textNid.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
@@ -573,7 +572,7 @@ namespace oop2Project
                 return;
             }
             // Id and Name no match
-            if (Name != textName.Text && imagePath.Length < 1)
+            if (name != textName.Text && imagePath.Length < 1)
             {
                 MessageBox.Show("Please Click on the User from below table", "Error finding user!");
                 return;

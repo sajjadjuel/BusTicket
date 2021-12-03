@@ -1,7 +1,7 @@
 ﻿
 namespace oop2Project
 {
-    partial class FormCusProfile
+    partial class FormProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -111,9 +111,9 @@ namespace oop2Project
             this.label5.Location = new System.Drawing.Point(58, 258);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 19);
+            this.label5.Size = new System.Drawing.Size(56, 19);
             this.label5.TabIndex = 4;
-            this.label5.Text = " Email :";
+            this.label5.Text = "Email :";
             // 
             // label6
             // 
@@ -139,39 +139,6 @@ namespace oop2Project
             this.label7.TabIndex = 6;
             this.label7.Text = "Confirm Password :";
             this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // textEmail
-            // 
-            this.textEmail.Location = new System.Drawing.Point(363, 257);
-            this.textEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(255, 19);
-            this.textEmail.TabIndex = 3;
-            // 
-            // textPhone
-            // 
-            this.textPhone.Location = new System.Drawing.Point(363, 225);
-            this.textPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.textPhone.Name = "textPhone";
-            this.textPhone.Size = new System.Drawing.Size(255, 19);
-            this.textPhone.TabIndex = 2;
-            this.textPhone.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // textAddress
-            // 
-            this.textAddress.Location = new System.Drawing.Point(363, 193);
-            this.textAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.textAddress.Name = "textAddress";
-            this.textAddress.Size = new System.Drawing.Size(255, 19);
-            this.textAddress.TabIndex = 1;
-            // 
-            // textName
-            // 
-            this.textName.Location = new System.Drawing.Point(363, 160);
-            this.textName.Margin = new System.Windows.Forms.Padding(4);
-            this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(255, 19);
-            this.textName.TabIndex = 0;
             // 
             // textPass
             // 
@@ -247,9 +214,9 @@ namespace oop2Project
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(748, 381);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(149, 19);
+            this.label10.Size = new System.Drawing.Size(163, 19);
             this.label10.TabIndex = 23;
-            this.label10.Text = "Vaccine certificate   :";
+            this.label10.Text = "Vaccine Certificate Id :";
             // 
             // btnBack
             // 
@@ -319,7 +286,7 @@ namespace oop2Project
             this.textName.Size = new System.Drawing.Size(255, 19);
             this.textName.TabIndex = 0;
             // 
-            // FormCusProfile
+            // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -351,7 +318,7 @@ namespace oop2Project
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormCusProfile";
+            this.Name = "FormProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PDF ONLY ";
             this.Load += new System.EventHandler(this.Form5_Load);

@@ -13,7 +13,7 @@ using System.IO;
 //ffffffff
 namespace oop2Project
 {
-    public partial class FormCusProfile : Form
+    public partial class FormProfile : Form
     {
         private OpenFileDialog openFileDialog;
         private string newPath;
@@ -23,7 +23,7 @@ namespace oop2Project
 
         SqlConnection con = new SqlConnection(ConString.con);
         private string vid;
-        public FormCusProfile()
+        public FormProfile()
         {
             InitializeComponent();
         }
@@ -99,7 +99,7 @@ namespace oop2Project
             }
             else
             {
-                FormViewEmployee emp = new FormViewEmployee();
+                FormEmployeeView emp = new FormEmployeeView();
                 this.Hide();
                 emp.Tag = this;
                 emp.Show();
@@ -135,7 +135,7 @@ namespace oop2Project
                 }
                 catch (Exception exc)
                 {
-                    //MessageBox.Show(exc.ToString());
+                    Console.WriteLine(exc.ToString());
                     newPath = "";
                 }
                 con.Open();

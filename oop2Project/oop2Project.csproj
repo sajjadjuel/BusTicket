@@ -64,23 +64,23 @@
     <Compile Include="FormReg.Designer.cs">
       <DependentUpon>FormReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormViewAdmin.cs">
+    <Compile Include="FormAdminView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormViewAdmin.Designer.cs">
-      <DependentUpon>FormViewAdmin.cs</DependentUpon>
+    <Compile Include="FormAdminView.Designer.cs">
+      <DependentUpon>FormAdminView.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormViewEmployee.cs">
+    <Compile Include="FormEmployeeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormViewEmployee.Designer.cs">
-      <DependentUpon>FormViewEmployee.cs</DependentUpon>
+    <Compile Include="FormEmployeeView.Designer.cs">
+      <DependentUpon>FormEmployeeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCusProfile.cs">
+    <Compile Include="FormProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCusProfile.Designer.cs">
-      <DependentUpon>FormCusProfile.cs</DependentUpon>
+    <Compile Include="FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBooking.cs">
       <SubType>Form</SubType>
@@ -102,14 +102,14 @@
     <EmbeddedResource Include="FormReg.resx">
       <DependentUpon>FormReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormViewAdmin.resx">
-      <DependentUpon>FormViewAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="FormAdminView.resx">
+      <DependentUpon>FormAdminView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormViewEmployee.resx">
-      <DependentUpon>FormViewEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="FormEmployeeView.resx">
+      <DependentUpon>FormEmployeeView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCusProfile.resx">
-      <DependentUpon>FormCusProfile.cs</DependentUpon>
+    <EmbeddedResource Include="FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBooking.resx">
       <DependentUpon>FormBooking.cs</DependentUpon>

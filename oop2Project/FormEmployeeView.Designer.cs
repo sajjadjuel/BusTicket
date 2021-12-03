@@ -1,7 +1,7 @@
 ﻿
 namespace oop2Project
 {
-    partial class FormViewEmployee
+    partial class FormEmployeeView
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@ namespace oop2Project
             this.btnCancel = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBusName = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelSerial = new System.Windows.Forms.Label();
             this.textBusSerial = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -48,10 +48,12 @@ namespace oop2Project
             this.button6 = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboRoute = new System.Windows.Forms.ComboBox();
+            this.comboFrom = new System.Windows.Forms.ComboBox();
             this.comboTime = new System.Windows.Forms.ComboBox();
             this.comboFormat = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.comboTo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBusList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,13 +72,14 @@ namespace oop2Project
             // btnAddBus
             // 
             this.btnAddBus.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBus.Location = new System.Drawing.Point(185, 391);
+            this.btnAddBus.Location = new System.Drawing.Point(177, 410);
             this.btnAddBus.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddBus.Name = "btnAddBus";
             this.btnAddBus.Size = new System.Drawing.Size(69, 23);
             this.btnAddBus.TabIndex = 10;
             this.btnAddBus.Text = "Add";
             this.btnAddBus.UseVisualStyleBackColor = true;
+            this.btnAddBus.Click += new System.EventHandler(this.btnAddBus_Click_1);
             // 
             // btnCancel
             // 
@@ -93,7 +96,7 @@ namespace oop2Project
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(121, 213);
+            this.label5.Location = new System.Drawing.Point(110, 238);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 15);
@@ -103,38 +106,40 @@ namespace oop2Project
             // textBusName
             // 
             this.textBusName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBusName.Location = new System.Drawing.Point(212, 207);
+            this.textBusName.Location = new System.Drawing.Point(201, 232);
             this.textBusName.Margin = new System.Windows.Forms.Padding(2);
             this.textBusName.Name = "textBusName";
-            this.textBusName.Size = new System.Drawing.Size(123, 22);
+            this.textBusName.Size = new System.Drawing.Size(127, 22);
             this.textBusName.TabIndex = 14;
             // 
-            // label6
+            // labelSerial
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(121, 252);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 15);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Serial No :";
+            this.labelSerial.AutoSize = true;
+            this.labelSerial.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSerial.Location = new System.Drawing.Point(112, 201);
+            this.labelSerial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelSerial.Name = "labelSerial";
+            this.labelSerial.Size = new System.Drawing.Size(66, 15);
+            this.labelSerial.TabIndex = 15;
+            this.labelSerial.Text = "Serial No :";
+            this.labelSerial.Visible = false;
             // 
             // textBusSerial
             // 
             this.textBusSerial.Enabled = false;
             this.textBusSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBusSerial.Location = new System.Drawing.Point(211, 249);
+            this.textBusSerial.Location = new System.Drawing.Point(201, 198);
             this.textBusSerial.Margin = new System.Windows.Forms.Padding(2);
             this.textBusSerial.Name = "textBusSerial";
-            this.textBusSerial.Size = new System.Drawing.Size(124, 22);
+            this.textBusSerial.Size = new System.Drawing.Size(127, 22);
             this.textBusSerial.TabIndex = 16;
+            this.textBusSerial.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(182, 168);
+            this.label3.Location = new System.Drawing.Point(178, 168);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 17);
@@ -144,7 +149,7 @@ namespace oop2Project
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(258, 391);
+            this.btnDelete.Location = new System.Drawing.Point(258, 410);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(69, 23);
@@ -256,28 +261,26 @@ namespace oop2Project
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(141, 293);
+            this.label11.Location = new System.Drawing.Point(135, 274);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 15);
+            this.label11.Size = new System.Drawing.Size(43, 15);
             this.label11.TabIndex = 35;
-            this.label11.Text = "Route :";
+            this.label11.Text = "From :";
             // 
-            // comboRoute
+            // comboFrom
             // 
-            this.comboRoute.FormattingEnabled = true;
-            this.comboRoute.Items.AddRange(new object[] {
-            "Dhaka - Coxs Bazaar",
-            "Dhaka - Sylhet",
-            "Dhaka - Barisal",
-            "Dhaka - Rajshahi"});
-            this.comboRoute.Location = new System.Drawing.Point(211, 291);
-            this.comboRoute.Name = "comboRoute";
-            this.comboRoute.Size = new System.Drawing.Size(124, 21);
-            this.comboRoute.TabIndex = 36;
+            this.comboFrom.AllowDrop = true;
+            this.comboFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboFrom.FormattingEnabled = true;
+            this.comboFrom.Location = new System.Drawing.Point(201, 272);
+            this.comboFrom.Name = "comboFrom";
+            this.comboFrom.Size = new System.Drawing.Size(127, 21);
+            this.comboFrom.TabIndex = 36;
             // 
             // comboTime
             // 
+            this.comboTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTime.FormattingEnabled = true;
             this.comboTime.Items.AddRange(new object[] {
             "1",
@@ -292,34 +295,56 @@ namespace oop2Project
             "10",
             "11",
             "12"});
-            this.comboTime.Location = new System.Drawing.Point(212, 335);
+            this.comboTime.Location = new System.Drawing.Point(201, 346);
             this.comboTime.Name = "comboTime";
             this.comboTime.Size = new System.Drawing.Size(60, 21);
             this.comboTime.TabIndex = 37;
             // 
             // comboFormat
             // 
+            this.comboFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboFormat.FormattingEnabled = true;
             this.comboFormat.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.comboFormat.Location = new System.Drawing.Point(278, 335);
+            this.comboFormat.Location = new System.Drawing.Point(267, 346);
             this.comboFormat.Name = "comboFormat";
-            this.comboFormat.Size = new System.Drawing.Size(58, 21);
+            this.comboFormat.Size = new System.Drawing.Size(61, 21);
             this.comboFormat.TabIndex = 38;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(144, 336);
+            this.label12.Location = new System.Drawing.Point(136, 348);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(42, 15);
             this.label12.TabIndex = 39;
             this.label12.Text = "Time :";
             // 
-            // FormViewEmployee
+            // comboTo
+            // 
+            this.comboTo.AllowDrop = true;
+            this.comboTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTo.FormattingEnabled = true;
+            this.comboTo.Location = new System.Drawing.Point(201, 310);
+            this.comboTo.Name = "comboTo";
+            this.comboTo.Size = new System.Drawing.Size(127, 21);
+            this.comboTo.TabIndex = 41;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(151, 312);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 15);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "To :";
+            // 
+            // FormEmployeeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -327,10 +352,12 @@ namespace oop2Project
             this.BackgroundImage = global::oop2Project.Properties.Resources.photo_1544620347_c4fd4a3d59571;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1086, 581);
+            this.Controls.Add(this.comboTo);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.comboFormat);
             this.Controls.Add(this.comboTime);
-            this.Controls.Add(this.comboRoute);
+            this.Controls.Add(this.comboFrom);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.button6);
@@ -344,14 +371,14 @@ namespace oop2Project
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBusSerial);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelSerial);
             this.Controls.Add(this.textBusName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAddBus);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FormViewEmployee";
+            this.Name = "FormEmployeeView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.FormViewEmployee_Load);
@@ -368,7 +395,7 @@ namespace oop2Project
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBusName;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelSerial;
         private System.Windows.Forms.TextBox textBusSerial;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDelete;
@@ -382,9 +409,11 @@ namespace oop2Project
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboRoute;
+        private System.Windows.Forms.ComboBox comboFrom;
         private System.Windows.Forms.ComboBox comboTime;
         private System.Windows.Forms.ComboBox comboFormat;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox comboTo;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -33,7 +33,7 @@ namespace oop2Project
 
             if (email == "admin" && txtpassword.Text == "123")
             {
-                FormViewAdmin admin = new FormViewAdmin();
+                FormAdminView admin = new FormAdminView();
                 this.Hide();
                 admin.Tag = this;
                 admin.Show();
@@ -80,7 +80,7 @@ namespace oop2Project
                             user = email;
                             Emp_Id = sdr.GetString(2);
 
-                            FormViewEmployee Emp = new FormViewEmployee();
+                            FormEmployeeView Emp = new FormEmployeeView();
                             this.Hide();
                             Emp.Tag = this;
                             Emp.Show();

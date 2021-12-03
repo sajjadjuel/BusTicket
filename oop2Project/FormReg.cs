@@ -19,7 +19,7 @@ namespace oop2Project
         string pattern = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
         SqlConnection con = new SqlConnection(ConString.con);
 
-        private string Name;
+        private string name;
         private string Address;
         private string Cus_Id;
         private string phn;
@@ -94,7 +94,7 @@ namespace oop2Project
 
         private void btnsubmit1_Click(object sender, EventArgs e)
         {
-            Name = textName.Text.ToUpper();
+            name = textName.Text.ToUpper();
             Address = textAddress.Text;
             phn = textPhone.Text;
             nid = textNid.Text;
@@ -151,7 +151,7 @@ namespace oop2Project
             }
 
             sdr.Close();
-            string query = " Insert into Cus Values('" + Name + "','" + Address + "'," +
+            string query = " Insert into Cus Values('" + name + "','" + Address + "'," +
                 "'" + Cus_Id + "','" + phn + "','" + nid + "','" + pass + "','" + email + "'," +
             "'" + vacc + "','" + vac_id + "','" + newPath + "')";
             cmd.CommandText = query;

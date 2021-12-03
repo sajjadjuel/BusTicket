@@ -1,7 +1,7 @@
 ﻿
 namespace oop2Project
 {
-    partial class FormViewAdmin
+    partial class FormAdminView
     {
         /// <summary>
         /// Required designer variable.
@@ -341,6 +341,7 @@ namespace oop2Project
             this.comboFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboFilter.FormattingEnabled = true;
             this.comboFilter.Items.AddRange(new object[] {
             "Customer",
@@ -350,7 +351,6 @@ namespace oop2Project
             this.comboFilter.Name = "comboFilter";
             this.comboFilter.Size = new System.Drawing.Size(160, 24);
             this.comboFilter.TabIndex = 31;
-            this.comboFilter.Text = "Filter by-";
             this.comboFilter.SelectedIndexChanged += new System.EventHandler(this.comboFilter_SelectedIndexChanged);
             // 
             // btnAdd
@@ -358,7 +358,7 @@ namespace oop2Project
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.BackColor = System.Drawing.Color.Lime;
+            this.btnAdd.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(231, 519);
@@ -375,7 +375,7 @@ namespace oop2Project
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Lime;
+            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(201, 215);
@@ -392,7 +392,7 @@ namespace oop2Project
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.OrangeRed;
+            this.button5.BackColor = System.Drawing.Color.Tomato;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -523,6 +523,7 @@ namespace oop2Project
             this.comboVac.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboVac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboVac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboVac.FormattingEnabled = true;
             this.comboVac.Items.AddRange(new object[] {
@@ -533,7 +534,6 @@ namespace oop2Project
             this.comboVac.Name = "comboVac";
             this.comboVac.Size = new System.Drawing.Size(160, 24);
             this.comboVac.TabIndex = 40;
-            this.comboVac.Text = "Yes/No";
             this.comboVac.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textSalary
