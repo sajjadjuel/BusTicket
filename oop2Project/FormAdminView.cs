@@ -598,7 +598,7 @@ namespace oop2Project
             }
 
             //pictureBox1.Image.Dispose();
-            File.Delete(imagePath);
+            File.Delete(filePath);
             cmd.ExecuteNonQuery();
             MessageBox.Show("User has been deleted", "Deleted!");
 
