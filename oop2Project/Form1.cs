@@ -29,7 +29,7 @@ namespace oop2Project
         private void btnlogin_Click(object sender, EventArgs e)
         {
             string email = txtusername.Text;
-            string pass = txtpassword.Text;
+            string pass = txtpassword.Text.Trim();
 
             if (email == "admin" && txtpassword.Text == "123")
             {

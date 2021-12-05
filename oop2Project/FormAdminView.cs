@@ -483,7 +483,7 @@ namespace oop2Project
                 labelSalary.Visible = false;
             }
 
-            if (!File.Exists(imagePath)) Console.WriteLine("file nai", imagePath);
+            if (!File.Exists(imagePath)) Console.WriteLine("File Not Found", imagePath);
             else pictureBox1.Image = new Bitmap(imagePath);
 
 
