@@ -94,7 +94,7 @@ namespace oop2Project
 
         private void btnsubmit1_Click(object sender, EventArgs e)
         {
-            name = textName.Text.ToUpper();
+            name = textName.Text;
             Address = textAddress.Text;
             phn = textPhone.Text;
             nid = textNid.Text;
@@ -213,6 +213,7 @@ namespace oop2Project
             Send_OTP(email);
             await Task.Delay(10000);
             btnOtp.Enabled = true;
+            textOtp.Focus();
         }
 
         private void textBox1_Leave(object sender, EventArgs e)

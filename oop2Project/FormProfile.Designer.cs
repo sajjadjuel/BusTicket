@@ -89,7 +89,6 @@ namespace oop2Project
             this.label3.Size = new System.Drawing.Size(65, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Adress :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -138,7 +137,6 @@ namespace oop2Project
             this.label7.Size = new System.Drawing.Size(139, 19);
             this.label7.TabIndex = 6;
             this.label7.Text = "Confirm Password :";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // textPass
             // 
@@ -147,7 +145,6 @@ namespace oop2Project
             this.textPass.Name = "textPass";
             this.textPass.Size = new System.Drawing.Size(255, 19);
             this.textPass.TabIndex = 4;
-            this.textPass.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textConfirmPass
             // 
@@ -156,7 +153,6 @@ namespace oop2Project
             this.textConfirmPass.Name = "textConfirmPass";
             this.textConfirmPass.Size = new System.Drawing.Size(255, 19);
             this.textConfirmPass.TabIndex = 5;
-            this.textConfirmPass.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // btnConfirm
             // 
@@ -266,7 +262,6 @@ namespace oop2Project
             this.textPhone.Name = "textPhone";
             this.textPhone.Size = new System.Drawing.Size(255, 19);
             this.textPhone.TabIndex = 2;
-            this.textPhone.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textAddress
             // 

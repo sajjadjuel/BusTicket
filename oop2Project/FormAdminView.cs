@@ -225,6 +225,8 @@ namespace oop2Project
         {
             email = textemail.Text;
             Send_OTP(email);
+            textotp.Enabled = true;
+            textotp.Focus();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -361,7 +363,7 @@ namespace oop2Project
 
                 try
                 {
-                    newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Emp_Id + Path.GetExtension(filePath));
+                    newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Employee\" + Emp_Id + Path.GetExtension(filePath));
                     File.Copy(filePath, newPath, true);
                 }
                 catch (Exception exc)
@@ -484,7 +486,13 @@ namespace oop2Project
             }
 
             if (!File.Exists(imagePath)) Console.WriteLine("File Not Found", imagePath);
-            else pictureBox1.Image = new Bitmap(imagePath);
+            else
+            {
+                if (pictureBox1.Image != null)
+                    pictureBox1.Image.Dispose();
+                pictureBox1.Image = null;
+                pictureBox1.Image = new Bitmap(imagePath);
+            }
 
 
         }
@@ -597,8 +605,10 @@ namespace oop2Project
                 return;
             }
 
-            //pictureBox1.Image.Dispose();
-            File.Delete(filePath);
+            pictureBox1.Image.Dispose();
+            pictureBox1.Image = null;
+            //File.GetAccessControl
+            File.Delete(imagePath);
             cmd.ExecuteNonQuery();
             MessageBox.Show("User has been deleted", "Deleted!");
 

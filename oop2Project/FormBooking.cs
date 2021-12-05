@@ -15,30 +15,26 @@ namespace oop2Project
     public partial class FormBooking : Form
     {
         SqlConnection con = new SqlConnection(ConString.con);
+
         List<string> RouteFrom = new List<string>();
-        List<string> RouteTo = new List<string>();
+        List<string> SeatNames = new List<string>();
+        string From { set; get; }
+        string To { set; get; }
+        string Time { set; get; }
+        int fare = 0;
 
         public FormBooking()
         {
             InitializeComponent();
-        }
-
-        private void butbookticket_Click(object sender, EventArgs e)
-        {
-            // Same Route
-            if (comboTo.Text == comboFrom.Text)
-            {
-                MessageBox.Show("From and To cannot be same.", "Please change route!");
-                return;
-            }
+            panelSeat.BackColor = Color.FromArgb(90, Color.AntiqueWhite);
         }
 
         private void FormBooking_Load(object sender, EventArgs e)
         {
-            //DPicker.Value = DateTime.Today;
+            DateTimePicker.Value = DateTime.Today;
             displayBusData();
             GetRoutes();
-            // ComboBox From Items
+            // ComboBoxFrom Items
             int _i = 0;
             while (_i < RouteFrom.Count)
             {
@@ -87,14 +83,13 @@ namespace oop2Project
 
         private void comboFrom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string From = comboFrom.Text;
+            From = comboFrom.Text;
             comboTo.Items.Clear();
 
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select Distinct BusTo from Bus Where BusFrom = '" + From + "'";
-            cmd.ExecuteNonQuery();
 
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.HasRows)
@@ -115,7 +110,6 @@ namespace oop2Project
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from Bus";
-            cmd.ExecuteNonQuery();
 
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.HasRows)
@@ -124,11 +118,6 @@ namespace oop2Project
                 {
                     if (!RouteFrom.Contains(sdr.GetString(2)))
                         RouteFrom.Add(sdr.GetString(2));
-                    else if (!RouteFrom.Contains(sdr.GetString(3)))
-                        RouteFrom.Add(sdr.GetString(3));
-
-                    if (!RouteFrom.Contains(sdr.GetString(3)))
-                        RouteFrom.Add(sdr.GetString(3));
                 }
             }
             con.Close();
@@ -136,15 +125,14 @@ namespace oop2Project
 
         private void comboTo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string From = comboFrom.Text;
-            string To = comboTo.Text;
+            From = comboFrom.Text;
+            To = comboTo.Text;
             comboTime.Items.Clear();
 
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select Time, TFormat from Bus Where BusFrom='" + From + "' And BusTo ='" + To + "' Order By TFormat";
-            cmd.ExecuteNonQuery();
 
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.HasRows)
@@ -162,15 +150,13 @@ namespace oop2Project
             // Enable Time
             comboTime.Enabled = true;
             DateTimePicker.Enabled = true;
-
-
         }
 
         private void comboTime_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string From = comboFrom.Text;
-            string To = comboTo.Text;
-            string BusTime = comboTime.Text.Split(' ')[0];
+            From = comboFrom.Text;
+            To = comboTo.Text;
+            Time = comboTime.Text.Split(' ')[0];
             string TimeFormat = comboTime.Text.Split(' ')[1];
 
             comboBus.Items.Clear();
@@ -179,8 +165,7 @@ namespace oop2Project
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select BusId, BusName from Bus Where BusFrom='" + From + "' And BusTo='" + To +
-                  "' And Time='" + BusTime + "' And TFormat='" + TimeFormat + "'";
-            cmd.ExecuteNonQuery();
+                  "' And Time='" + Time + "' And TFormat='" + TimeFormat + "'";
 
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.HasRows)
@@ -193,49 +178,70 @@ namespace oop2Project
             }
 
             con.Close();
-
-            // Enable Bus
-         //   if (DateTimePicker.Enabled && comboTime.Text!="")
             comboBus.Enabled = true;
-        }
-
-        private void DPicker_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            List<string> SeatName = new List<string>();
             String SeatNo = btn.Text;
 
             if (btn.BackColor != Color.Green)
-
             {
                 btn.BackColor = Color.Green;
-
-                SeatName.Add(SeatNo);
-
-
+                SeatNames.Add(SeatNo);
             }
-
             else
             {
                 btn.BackColor = Color.Transparent;
-               if( SeatName.Contains(SeatNo))
-                SeatName.Remove(SeatNo);
+                if (SeatNames.Contains(SeatNo))
+                    SeatNames.Remove(SeatNo);
             }
+
+            UpdateCost();
         }
-        
+
         private void comboBus_SelectedIndexChanged(object sender, EventArgs e)
         {
             string BusId = comboBus.Text.Split('-')[1];
-            
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            string fare = " select fare from Bus Where BusId= '" + BusId + "' ";
+            cmd.CommandText = "Select Fare From Bus Where BusId= '" + BusId + "'";
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+            sdr.Read();
+            fare = Convert.ToInt32(sdr.GetString(0));
+
+
+            textCost.Text = "0";
+            if (labelSelectBus.Visible)
+                labelSelectBus.Visible = false;
+
+            foreach (Button b in panelSeat.Controls.OfType<Button>())
+            {
+                if (b.Text != "Driver" && b.Text != "Door" && !b.Enabled)
+                    b.Enabled = true;
+                if (!b.Visible)
+                    b.Visible = true;
+            }
+        }
+
+        private void UpdateCost()
+        {
+            textCost.Text = (fare * SeatNames.Count).ToString();
+        }
+
+        private void btnBookTicket_Click(object sender, EventArgs e)
+        {
+            // Same Route
+            if (comboTo.Text == comboFrom.Text)
+            {
+                MessageBox.Show("Please change route!");
+                return;
+            }
+            DateTime Date = DateTimePicker.Value;
+
 
         }
     }

@@ -15,10 +15,6 @@ namespace oop2Project
 {
     public partial class FormProfile : Form
     {
-        private OpenFileDialog openFileDialog;
-        private string newPath;
-        private string filePath;
-        private string fileExtension;
         private string role;
 
         SqlConnection con = new SqlConnection(ConString.con);
@@ -26,31 +22,6 @@ namespace oop2Project
         public FormProfile()
         {
             InitializeComponent();
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void butconfirm_Click(object sender, EventArgs e)
@@ -111,46 +82,6 @@ namespace oop2Project
             System.Windows.Forms.Application.Exit();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Supported files|*.jpg;*.jpeg;*.png";
-            openFileDialog.ValidateNames = true;
-            openFileDialog.Multiselect = false;
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                this.pictureBox1.Image = new Bitmap(openFileDialog.FileName);
-                filePath = openFileDialog.FileName;
-                this.fileExtension = Path.GetExtension(filePath); //Get the file extension
-
-                try
-                {
-                    newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Form1.Cus_Id + Path.GetExtension(filePath));
-                    File.Copy(filePath, newPath, true);
-                }
-                catch (Exception exc)
-                {
-                    Console.WriteLine(exc.ToString());
-                    newPath = "";
-                }
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-
-
-
-                string query = " update  Cus set newPath= '" + newPath + "' where Cus_Id= '" + Form1.Cus_Id + "' ";
-                cmd.CommandText = query;
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
-        }
-
         private void Form5_Load(object sender, EventArgs e)
         {
             string query;
@@ -189,7 +120,12 @@ namespace oop2Project
                 imagePath = sdr.GetString(9);
 
             if (imagePath != "")
+            {
+                if (pictureBox1.Image != null)
+                    pictureBox1.Image.Dispose();
+                pictureBox1.Image = null;
                 pictureBox1.Image = new Bitmap(imagePath);
+            }
 
             con.Close();
 
@@ -219,14 +155,6 @@ namespace oop2Project
 
                 MessageBox.Show("Vaccine Information update Successfull");
                 btnUpdate.Enabled = false;
-            }
-        }
-
-        private void textVac_Click(object sender, EventArgs e)
-        {
-            if (vid == "N/A" || vid == "")
-            {
-                textVac.Text = "";
             }
         }
     }

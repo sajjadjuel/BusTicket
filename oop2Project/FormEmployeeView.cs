@@ -89,26 +89,28 @@ namespace oop2Project
         private void btnAddBus_Click_1(object sender, EventArgs e)
         {
             string id = "1000";
-            string BusName;
-            string From;
-            string To;
-            string Time;
-            string TFormat;
+            string BusName = textBusName.Text;
+            string From = comboFrom.Text;
+            string To = comboTo.Text;
+            string Time = comboTime.Text;
+            string TFormat = comboFormat.Text;
+            string Fare = textFare.Text;
 
             // No Route
-            if (comboFrom.Text == "" || comboTo.Text == "")
+            if (From == "" || To == "" || To == From)
             {
-                MessageBox.Show("Please select Startin!");
+                MessageBox.Show("Please select Route!");
                 return;
             }
-            // Same Route
-            if (comboTo.Text == comboFrom.Text)
+            // No Fare
+            if (Fare == "" || !Fare.All(char.IsDigit))
             {
-                MessageBox.Show("From and To cannot be same.", "Please change route!");
+                textFare.Focus();
+                MessageBox.Show("Please type Seat Fare in numeric!");
                 return;
             }
             // No Time
-            if (comboTime.Text == "" || comboFormat.Text == "")
+            if (Time == "" || TFormat == "")
             {
                 MessageBox.Show("Please select Time!");
                 return;
@@ -131,20 +133,15 @@ namespace oop2Project
             else BusId = id;
             sdr.Close();
 
-            BusName = textBusName.Text;
-            From = comboFrom.Text;
-            To = comboTo.Text;
-            Time = comboTime.Text;
-            TFormat = comboFormat.Text;
-
             cmd.CommandText = " Insert into Bus Values('" + BusId + "','" + BusName + "','" +
-                From + "','" + To + "','" + Time + "','" + TFormat + "')";
+                From + "','" + To + "','" + Time + "','" + TFormat + "','" + Fare + "')";
 
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show(BusName + " has been Added!");
             displayBusData();
-            textBusName.Text = textBusSerial.Text = comboFrom.Text = comboTo.Text = comboTime.Text = comboFormat.Text = BusId = null;
+            comboFrom.Text = comboTo.Text = comboTime.Text = comboFormat.Text = null;
+            textBusName.Text = textBusSerial.Text = textFare.Text = BusId = null;
             HideSerial();
         }
 
@@ -166,7 +163,8 @@ namespace oop2Project
 
             MessageBox.Show("Bus-" + BusId + " has been Deleted!");
             displayBusData();
-            textBusName.Text = textBusSerial.Text = comboFrom.Text = comboTo.Text = comboTime.Text = comboFormat.Text = BusId = null;
+            comboFrom.Text = comboTo.Text = comboTime.Text = comboFormat.Text = null;
+            textBusName.Text = textBusSerial.Text = textFare.Text = BusId = null;
             HideSerial();
         }
 
