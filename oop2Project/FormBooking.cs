@@ -161,6 +161,9 @@ namespace oop2Project
 
             // Enable Time
             comboTime.Enabled = true;
+            DateTimePicker.Enabled = true;
+
+
         }
 
         private void comboTime_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,7 +195,48 @@ namespace oop2Project
             con.Close();
 
             // Enable Bus
+         //   if (DateTimePicker.Enabled && comboTime.Text!="")
             comboBus.Enabled = true;
+        }
+
+        private void DPicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            List<string> SeatName = new List<string>();
+            String SeatNo = btn.Text;
+
+            if (btn.BackColor != Color.Green)
+
+            {
+                btn.BackColor = Color.Green;
+
+                SeatName.Add(SeatNo);
+
+
+            }
+
+            else
+            {
+                btn.BackColor = Color.Transparent;
+               if( SeatName.Contains(SeatNo))
+                SeatName.Remove(SeatNo);
+            }
+        }
+        
+        private void comboBus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string BusId = comboBus.Text.Split('-')[1];
+            
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            string fare = " select fare from Bus Where BusId= '" + BusId + "' ";
+
         }
     }
 }
