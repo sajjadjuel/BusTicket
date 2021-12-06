@@ -16,6 +16,8 @@ namespace oop2Project
         SqlConnection con = new SqlConnection(ConString.con);
         private string BusId = "";
         List<string> Route = new List<string>() { "Dhaka", "Coxs Bazar", "Sylhet", "Barisal", "Rajshashi" };
+        private string CancelId;
+        private string TicketId;
 
         public FormEmployeeView()
         {
@@ -46,6 +48,7 @@ namespace oop2Project
         private void FormViewEmployee_Load(object sender, EventArgs e)
         {
             displayBusData();
+            AddCancelRequests();
             // ComboBox From-To Items
             int _i = 0;
             while (_i < Route.Count)
@@ -83,6 +86,25 @@ namespace oop2Project
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridBusList.DataSource = dt;
+            con.Close();
+        }
+
+        private void AddCancelRequests()
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select CancelTicket.CancelId " +
+                "From ((CancelTicket " +
+                "INNER JOIN Ticket ON CancelTicket.TicketId = Ticket.TicketId) " +
+                "INNER JOIN Cus ON CancelTicket.Cus_Id = Cus.Cus_Id) " +
+                "ORDER By CancelTicket.CancelId;";
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+
+            if (sdr.HasRows) while (sdr.Read())
+                    comboRequests.Items.Add(sdr.GetString(0));
+
             con.Close();
         }
 
@@ -173,10 +195,70 @@ namespace oop2Project
             textBusSerial.Visible = false;
             labelSerial.Visible = false;
         }
+
         private void ShowSerial()
         {
             textBusSerial.Visible = true;
             labelSerial.Visible = true;
+        }
+
+        private void comboRequests_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CancelId = comboRequests.Text;
+
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select CancelTicket.Cus_Id, Cus.Name, CancelTicket.TicketId, Ticket.Seat " +
+                "From ((CancelTicket " +
+                "INNER JOIN Ticket ON CancelTicket.TicketId = Ticket.TicketId) " +
+                "INNER JOIN Cus ON CancelTicket.Cus_Id = Cus.Cus_Id) " +
+                "Where CancelTicket.CancelId='" + CancelId + "'";
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+            if (sdr.HasRows)
+            {
+                sdr.Read();
+                labelCus_Id.Text = sdr.GetString(0);
+                labelCusName.Text = sdr.GetString(1);
+                TicketId = labelTicketId.Text = sdr.GetString(2);
+                labelSeatNo.Text = sdr.GetString(3);
+
+                btnAccept.Enabled = true;
+                btnReject.Enabled = true;
+            }
+            else MessageBox.Show("Error receiving cancel request!");
+            con.Close();
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            cmd.CommandText = "Delete From CancelTicket Where CancelId = '" + CancelId + "';" +
+                "Delete From Ticket Where TicketId = '" + TicketId + "';";
+            if (cmd.ExecuteNonQuery() > 0) MessageBox.Show("Ticket has been cancelled!");
+            else MessageBox.Show("Error cancelling Ticket!");
+            con.Close();
+
+            labelCus_Id.Text = labelCusName.Text = labelTicketId.Text = labelSeatNo.Text = "_";
+            comboRequests.Items.Remove(CancelId);
+            btnAccept.Enabled = btnReject.Enabled = false;
+        }
+
+        private void btnReject_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            cmd.CommandText = "Delete From CancelTicket Where CancelId = '" + CancelId + "';";
+
+            if (cmd.ExecuteNonQuery() > 0) MessageBox.Show("Request has been rejected!");
+            else MessageBox.Show("Error rejecting Request!");
+            con.Close();
         }
     }
 }

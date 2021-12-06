@@ -31,7 +31,6 @@ namespace oop2Project
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnBookTicket = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,13 +41,9 @@ namespace oop2Project
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.dataGridBusList = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.comboFrom = new System.Windows.Forms.ComboBox();
             this.comboTo = new System.Windows.Forms.ComboBox();
             this.DateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.comboCancelTicket = new System.Windows.Forms.ComboBox();
             this.comboBus = new System.Windows.Forms.ComboBox();
             this.comboTime = new System.Windows.Forms.ComboBox();
             this.panelSeat = new System.Windows.Forms.Panel();
@@ -95,8 +90,8 @@ namespace oop2Project
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnHistory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBusList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panelSeat.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +109,7 @@ namespace oop2Project
             // 
             // btnBookTicket
             // 
+            this.btnBookTicket.Enabled = false;
             this.btnBookTicket.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBookTicket.Location = new System.Drawing.Point(165, 344);
             this.btnBookTicket.Margin = new System.Windows.Forms.Padding(2);
@@ -123,17 +119,6 @@ namespace oop2Project
             this.btnBookTicket.Text = "Book Ticket";
             this.btnBookTicket.UseVisualStyleBackColor = true;
             this.btnBookTicket.Click += new System.EventHandler(this.btnBookTicket_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(932, 495);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(57, 28);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel Ticket ";
-            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -219,7 +204,7 @@ namespace oop2Project
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(86, 31);
             this.btnProfile.TabIndex = 17;
-            this.btnProfile.Text = "Profile ";
+            this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
@@ -237,48 +222,19 @@ namespace oop2Project
             // 
             // dataGridBusList
             // 
+            this.dataGridBusList.AllowUserToAddRows = false;
+            this.dataGridBusList.AllowUserToDeleteRows = false;
+            this.dataGridBusList.AllowUserToResizeRows = false;
             this.dataGridBusList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridBusList.Location = new System.Drawing.Point(351, 126);
+            this.dataGridBusList.Location = new System.Drawing.Point(404, 136);
             this.dataGridBusList.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridBusList.Name = "dataGridBusList";
+            this.dataGridBusList.ReadOnly = true;
             this.dataGridBusList.RowHeadersWidth = 51;
             this.dataGridBusList.RowTemplate.Height = 24;
-            this.dataGridBusList.Size = new System.Drawing.Size(441, 250);
+            this.dataGridBusList.Size = new System.Drawing.Size(661, 250);
             this.dataGridBusList.TabIndex = 32;
-            this.dataGridBusList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBusList_CellContentClick);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(826, 128);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(276, 250);
-            this.dataGridView2.TabIndex = 34;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(879, 95);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 22);
-            this.label8.TabIndex = 35;
-            this.label8.Text = "Booking History";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(894, 434);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 17);
-            this.label9.TabIndex = 36;
-            this.label9.Text = "To Cancel Booking";
+            this.dataGridBusList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBusList_CellClick);
             // 
             // comboFrom
             // 
@@ -310,16 +266,7 @@ namespace oop2Project
             this.DateTimePicker.Name = "DateTimePicker";
             this.DateTimePicker.Size = new System.Drawing.Size(107, 20);
             this.DateTimePicker.TabIndex = 39;
-            // 
-            // comboCancelTicket
-            // 
-            this.comboCancelTicket.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboCancelTicket.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboCancelTicket.FormattingEnabled = true;
-            this.comboCancelTicket.Location = new System.Drawing.Point(893, 467);
-            this.comboCancelTicket.Name = "comboCancelTicket";
-            this.comboCancelTicket.Size = new System.Drawing.Size(140, 23);
-            this.comboCancelTicket.TabIndex = 41;
+            this.DateTimePicker.ValueChanged += new System.EventHandler(this.DateTimePicker_ValueChanged);
             // 
             // comboBus
             // 
@@ -853,13 +800,14 @@ namespace oop2Project
             // 
             // button9
             // 
+            this.button9.BackColor = System.Drawing.Color.Transparent;
             this.button9.Enabled = false;
             this.button9.Location = new System.Drawing.Point(143, 13);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(43, 29);
             this.button9.TabIndex = 92;
             this.button9.Text = "A2";
-            this.button9.UseVisualStyleBackColor = true;
+            this.button9.UseVisualStyleBackColor = false;
             this.button9.Visible = false;
             this.button9.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -923,6 +871,19 @@ namespace oop2Project
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnHistory
+            // 
+            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHistory.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.Location = new System.Drawing.Point(140, 90);
+            this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(86, 31);
+            this.btnHistory.TabIndex = 87;
+            this.btnHistory.Text = "History";
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
             // FormBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -931,16 +892,13 @@ namespace oop2Project
             this.BackgroundImage = global::oop2Project.Properties.Resources.photo_1544620347_c4fd4a3d59572;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1135, 613);
+            this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.panelSeat);
             this.Controls.Add(this.comboTime);
             this.Controls.Add(this.comboBus);
-            this.Controls.Add(this.comboCancelTicket);
             this.Controls.Add(this.DateTimePicker);
             this.Controls.Add(this.comboTo);
             this.Controls.Add(this.comboFrom);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridBusList);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnProfile);
@@ -951,7 +909,6 @@ namespace oop2Project
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnBookTicket);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -961,7 +918,6 @@ namespace oop2Project
             this.Text = "Form6";
             this.Load += new System.EventHandler(this.FormBooking_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBusList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panelSeat.ResumeLayout(false);
             this.panelSeat.PerformLayout();
             this.ResumeLayout(false);
@@ -973,7 +929,6 @@ namespace oop2Project
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBookTicket;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -984,13 +939,9 @@ namespace oop2Project
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.DataGridView dataGridBusList;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboFrom;
         private System.Windows.Forms.ComboBox comboTo;
         private System.Windows.Forms.DateTimePicker DateTimePicker;
-        private System.Windows.Forms.ComboBox comboCancelTicket;
         private System.Windows.Forms.ComboBox comboBus;
         private System.Windows.Forms.ComboBox comboTime;
         private System.Windows.Forms.Panel panelSeat;
@@ -1037,5 +988,6 @@ namespace oop2Project
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHistory;
     }
 }
