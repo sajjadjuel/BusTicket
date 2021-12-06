@@ -31,7 +31,7 @@ namespace oop2Project
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddBus = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAccept = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBusName = new System.Windows.Forms.TextBox();
             this.labelSerial = new System.Windows.Forms.Label();
@@ -39,9 +39,7 @@ namespace oop2Project
             this.label3 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textSeat = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridBusList = new System.Windows.Forms.DataGridView();
@@ -56,6 +54,15 @@ namespace oop2Project
             this.label6 = new System.Windows.Forms.Label();
             this.textFare = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.labelCus_Id = new System.Windows.Forms.Label();
+            this.labelTicketId = new System.Windows.Forms.Label();
+            this.labelCusName = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.labelSeatNo = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboRequests = new System.Windows.Forms.ComboBox();
+            this.btnReject = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBusList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,16 +90,18 @@ namespace oop2Project
             this.btnAddBus.UseVisualStyleBackColor = true;
             this.btnAddBus.Click += new System.EventHandler(this.btnAddBus_Click_1);
             // 
-            // btnCancel
+            // btnAccept
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(841, 267);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(64, 22);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "Cancel ";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnAccept.Enabled = false;
+            this.btnAccept.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccept.Location = new System.Drawing.Point(804, 270);
+            this.btnAccept.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(64, 22);
+            this.btnAccept.TabIndex = 12;
+            this.btnAccept.Text = "Accept";
+            this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // label5
             // 
@@ -164,41 +173,23 @@ namespace oop2Project
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(719, 201);
+            this.label2.Location = new System.Drawing.Point(639, 198);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 15);
+            this.label2.Size = new System.Drawing.Size(49, 15);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Email :";
-            // 
-            // textEmail
-            // 
-            this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEmail.Location = new System.Drawing.Point(778, 198);
-            this.textEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(128, 22);
-            this.textEmail.TabIndex = 20;
+            this.label2.Text = "Cus Id :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(704, 234);
+            this.label4.Location = new System.Drawing.Point(625, 236);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 15);
+            this.label4.Size = new System.Drawing.Size(63, 15);
             this.label4.TabIndex = 21;
-            this.label4.Text = "Seat No :";
-            // 
-            // textSeat
-            // 
-            this.textSeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSeat.Location = new System.Drawing.Point(778, 235);
-            this.textSeat.Margin = new System.Windows.Forms.Padding(2);
-            this.textSeat.Name = "textSeat";
-            this.textSeat.Size = new System.Drawing.Size(128, 22);
-            this.textSeat.TabIndex = 22;
+            this.label4.Text = "Ticket Id :";
             // 
             // label7
             // 
@@ -207,9 +198,9 @@ namespace oop2Project
             this.label7.Location = new System.Drawing.Point(730, 152);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 17);
+            this.label7.Size = new System.Drawing.Size(166, 17);
             this.label7.TabIndex = 23;
-            this.label7.Text = "Cancel Ticket Booking ";
+            this.label7.Text = "Cancel Ticket Requests";
             // 
             // button4
             // 
@@ -229,6 +220,7 @@ namespace oop2Project
             this.dataGridBusList.Location = new System.Drawing.Point(411, 315);
             this.dataGridBusList.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridBusList.Name = "dataGridBusList";
+            this.dataGridBusList.ReadOnly = true;
             this.dataGridBusList.RowHeadersWidth = 51;
             this.dataGridBusList.RowTemplate.Height = 24;
             this.dataGridBusList.Size = new System.Drawing.Size(630, 227);
@@ -366,6 +358,115 @@ namespace oop2Project
             this.label8.TabIndex = 42;
             this.label8.Text = "Fare :";
             // 
+            // labelCus_Id
+            // 
+            this.labelCus_Id.AutoSize = true;
+            this.labelCus_Id.BackColor = System.Drawing.Color.Transparent;
+            this.labelCus_Id.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCus_Id.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelCus_Id.Location = new System.Drawing.Point(696, 196);
+            this.labelCus_Id.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCus_Id.Name = "labelCus_Id";
+            this.labelCus_Id.Size = new System.Drawing.Size(16, 17);
+            this.labelCus_Id.TabIndex = 44;
+            this.labelCus_Id.Text = "_";
+            // 
+            // labelTicketId
+            // 
+            this.labelTicketId.AutoSize = true;
+            this.labelTicketId.BackColor = System.Drawing.Color.Transparent;
+            this.labelTicketId.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTicketId.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelTicketId.Location = new System.Drawing.Point(696, 234);
+            this.labelTicketId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTicketId.Name = "labelTicketId";
+            this.labelTicketId.Size = new System.Drawing.Size(16, 17);
+            this.labelTicketId.TabIndex = 45;
+            this.labelTicketId.Text = "_";
+            // 
+            // labelCusName
+            // 
+            this.labelCusName.AutoSize = true;
+            this.labelCusName.BackColor = System.Drawing.Color.Transparent;
+            this.labelCusName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCusName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelCusName.Location = new System.Drawing.Point(872, 198);
+            this.labelCusName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCusName.Name = "labelCusName";
+            this.labelCusName.Size = new System.Drawing.Size(16, 17);
+            this.labelCusName.TabIndex = 47;
+            this.labelCusName.Text = "_";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(798, 198);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 15);
+            this.label10.TabIndex = 46;
+            this.label10.Text = "Cus Name :";
+            // 
+            // labelSeatNo
+            // 
+            this.labelSeatNo.AutoSize = true;
+            this.labelSeatNo.BackColor = System.Drawing.Color.Transparent;
+            this.labelSeatNo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSeatNo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelSeatNo.Location = new System.Drawing.Point(692, 269);
+            this.labelSeatNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelSeatNo.Name = "labelSeatNo";
+            this.labelSeatNo.Size = new System.Drawing.Size(16, 17);
+            this.labelSeatNo.TabIndex = 49;
+            this.labelSeatNo.Text = "_";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(632, 271);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(56, 15);
+            this.label13.TabIndex = 48;
+            this.label13.Text = "Seat No :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(797, 236);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 15);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "Request Id :";
+            // 
+            // comboRequests
+            // 
+            this.comboRequests.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboRequests.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboRequests.FormattingEnabled = true;
+            this.comboRequests.Location = new System.Drawing.Point(875, 235);
+            this.comboRequests.Name = "comboRequests";
+            this.comboRequests.Size = new System.Drawing.Size(135, 23);
+            this.comboRequests.TabIndex = 51;
+            this.comboRequests.SelectedIndexChanged += new System.EventHandler(this.comboRequests_SelectedIndexChanged);
+            // 
+            // btnReject
+            // 
+            this.btnReject.Enabled = false;
+            this.btnReject.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReject.Location = new System.Drawing.Point(872, 269);
+            this.btnReject.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReject.Name = "btnReject";
+            this.btnReject.Size = new System.Drawing.Size(64, 22);
+            this.btnReject.TabIndex = 52;
+            this.btnReject.Text = "Reject";
+            this.btnReject.UseVisualStyleBackColor = true;
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
+            // 
             // FormEmployeeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,6 +475,15 @@ namespace oop2Project
             this.BackgroundImage = global::oop2Project.Properties.Resources.photo_1544620347_c4fd4a3d59571;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1086, 581);
+            this.Controls.Add(this.btnReject);
+            this.Controls.Add(this.comboRequests);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.labelSeatNo);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.labelCusName);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.labelTicketId);
+            this.Controls.Add(this.labelCus_Id);
             this.Controls.Add(this.textFare);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboTo);
@@ -388,9 +498,7 @@ namespace oop2Project
             this.Controls.Add(this.dataGridBusList);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textSeat);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label3);
@@ -398,7 +506,7 @@ namespace oop2Project
             this.Controls.Add(this.labelSerial);
             this.Controls.Add(this.textBusName);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnAddBus);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -416,7 +524,7 @@ namespace oop2Project
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddBus;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBusName;
         private System.Windows.Forms.Label labelSerial;
@@ -424,9 +532,7 @@ namespace oop2Project
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textSeat;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridBusList;
@@ -441,5 +547,14 @@ namespace oop2Project
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textFare;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelCus_Id;
+        private System.Windows.Forms.Label labelTicketId;
+        private System.Windows.Forms.Label labelCusName;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelSeatNo;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboRequests;
+        private System.Windows.Forms.Button btnReject;
     }
 }
