@@ -42,7 +42,6 @@ namespace oop2Project
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.dataGridBusList = new System.Windows.Forms.DataGridView();
             this.button6 = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@ namespace oop2Project
             this.label9 = new System.Windows.Forms.Label();
             this.comboRequests = new System.Windows.Forms.ComboBox();
             this.btnReject = new System.Windows.Forms.Button();
+            this.dataGridBusList = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBusList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -213,19 +213,6 @@ namespace oop2Project
             this.button4.Text = "Exit ";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // dataGridBusList
-            // 
-            this.dataGridBusList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridBusList.Location = new System.Drawing.Point(411, 315);
-            this.dataGridBusList.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridBusList.Name = "dataGridBusList";
-            this.dataGridBusList.ReadOnly = true;
-            this.dataGridBusList.RowHeadersWidth = 51;
-            this.dataGridBusList.RowTemplate.Height = 24;
-            this.dataGridBusList.Size = new System.Drawing.Size(630, 227);
-            this.dataGridBusList.TabIndex = 31;
-            this.dataGridBusList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBusList_CellClick);
             // 
             // button6
             // 
@@ -467,6 +454,19 @@ namespace oop2Project
             this.btnReject.UseVisualStyleBackColor = true;
             this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
             // 
+            // dataGridBusList
+            // 
+            this.dataGridBusList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridBusList.Location = new System.Drawing.Point(385, 315);
+            this.dataGridBusList.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridBusList.Name = "dataGridBusList";
+            this.dataGridBusList.ReadOnly = true;
+            this.dataGridBusList.RowHeadersWidth = 51;
+            this.dataGridBusList.RowTemplate.Height = 24;
+            this.dataGridBusList.Size = new System.Drawing.Size(677, 227);
+            this.dataGridBusList.TabIndex = 31;
+            this.dataGridBusList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBusList_CellClick);
+            // 
             // FormEmployeeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,7 +535,6 @@ namespace oop2Project
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridBusList;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Label label11;
@@ -556,5 +555,6 @@ namespace oop2Project
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboRequests;
         private System.Windows.Forms.Button btnReject;
+        private System.Windows.Forms.DataGridView dataGridBusList;
     }
 }

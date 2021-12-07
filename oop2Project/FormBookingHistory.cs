@@ -57,8 +57,17 @@ namespace oop2Project
             }
             sdr.Close();
 
-            cmd.CommandText = "Select CancelId From CancelTicket Order by CancelId desc";
+            cmd.CommandText = "Select TicketId From CancelTicket Where TicketId='" + TicketId + "'; " +
+                "Select CancelId From CancelTicket Order by CancelId desc; ";
             sdr = cmd.ExecuteReader();
+            if (sdr.HasRows)
+            {
+                MessageBox.Show("Already requested to cancel Ticket-" + TicketId);
+                con.Close();
+                return;
+            }
+
+            sdr.NextResult();
             if (sdr.HasRows)
             {
                 sdr.Read();
@@ -70,6 +79,7 @@ namespace oop2Project
             cmd.CommandText = " Insert into CancelTicket Values('" + CancelId + "','" + TicketId + "','" + Form1.Cus_Id + "')";
             if (cmd.ExecuteNonQuery() > 0) MessageBox.Show("Request sent to cancel the ticket!");
             else MessageBox.Show("Cancel request was not sent!", "Error Request");
+            con.Close();
         }
 
         private void displayHistory()
@@ -123,6 +133,16 @@ namespace oop2Project
             this.Hide();
             log.Tag = this;
             log.Show();
+        }
+
+        private void dataGridHistory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string TicketId = dataGridHistory.CurrentRow.Cells[0].Value.ToString();
+            if (comboTickets.Items.Contains(TicketId))
+            {
+                btnCancel.Enabled = true;
+                comboTickets.Text = TicketId;
+            }
         }
     }
 }

@@ -69,6 +69,7 @@ namespace oop2Project
             comboTo.Text = dataGridBusList.CurrentRow.Cells[3].Value.ToString().Replace(",", " - ");
             comboTime.Text = dataGridBusList.CurrentRow.Cells[4].Value.ToString();
             comboFormat.Text = dataGridBusList.CurrentRow.Cells[5].Value.ToString();
+            textFare.Text = dataGridBusList.CurrentRow.Cells[6].Value.ToString();
             ShowSerial();
         }
 
@@ -79,7 +80,7 @@ namespace oop2Project
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select BusId as [Serial No], BusName as [Bus Name], BusFrom as [From], BusTo as [To], Time, TFormat as [Format] from Bus";
+            cmd.CommandText = "select BusId as [Serial No], BusName as [Bus Name], BusFrom as [From], BusTo as [To], Time, TFormat as [Format], Fare From Bus";
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter sda = new SqlDataAdapter(cmd);

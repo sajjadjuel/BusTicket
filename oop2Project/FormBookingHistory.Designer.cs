@@ -83,6 +83,7 @@ namespace oop2Project
             this.dataGridHistory.RowTemplate.Height = 24;
             this.dataGridHistory.Size = new System.Drawing.Size(570, 312);
             this.dataGridHistory.TabIndex = 43;
+            this.dataGridHistory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridHistory_CellClick);
             // 
             // btnCancel
             // 
