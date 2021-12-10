@@ -94,13 +94,13 @@ namespace oop2Project
 
         private void btnsubmit1_Click(object sender, EventArgs e)
         {
-            name = textName.Text;
+            name = textName.Text.Trim();
             Address = textAddress.Text;
             phn = textPhone.Text;
             nid = textNid.Text;
             pass = textPass.Text;
             cpass = textCPass.Text;
-            email = textEmail.Text;
+            email = textEmail.Text.Trim();
             OTP = textOtp.Text;
 
             if (vacc == "Yes") vac_id = textVacId.Text;
@@ -262,6 +262,12 @@ namespace oop2Project
                     textPhone.Focus();
                     errorProvider3.SetError(this.textPhone, " Only Numeric digit !!");
                 }
+                else if (textPhone.Text.Length != 11)
+                {
+                    textPhone.Focus();
+                    errorProvider3.SetError(this.textPhone, " Must Be 11 Digit !!");
+                }
+
                 else
                     errorProvider3.Clear();
             }
@@ -293,6 +299,11 @@ namespace oop2Project
                 textPass.Focus();
                 errorProvider5.SetError(this.textPass, "password can'nt be empty");
             }
+            else if (textPass.Text.Trim().Length < 5)
+            {
+                textPass.Focus();
+                errorProvider5.SetError(this.textPass, "Password Can't Be less than 5");
+            }
             else
                 errorProvider5.Clear();
         }
@@ -313,22 +324,6 @@ namespace oop2Project
             {
                 errorProvider6.Clear();
             }
-        }
-
-        private void textBox7_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(textEmail.Text) == true)
-            {
-                textEmail.Focus();
-                errorProvider7.SetError(this.textEmail, "Email canont be empty");
-            }
-            else if (Regex.IsMatch(textEmail.Text, pattern) == false)
-            {
-                textEmail.Focus();
-                errorProvider7.SetError(this.textEmail, "Invalid Format");
-            }
-            else
-                errorProvider7.Clear();
         }
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
@@ -413,6 +408,54 @@ namespace oop2Project
                 Console.Write(ex.ToString());   //Catch Exception - All errors will be shown here - if there are issues with the API
                 return null;
             }
+        }
+
+        private void textEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textEmail.Text) == true)
+            {
+                textEmail.Focus();
+                errorProvider7.SetError(this.textEmail, "Email canont be empty");
+            }
+
+            else if (Regex.IsMatch(textEmail.Text, pattern) == false)
+            {
+                textEmail.Focus();
+                errorProvider7.SetError(this.textEmail, "Invalid Format");
+            }
+            else
+            {
+
+                string query1 = " select email from Cus where email= '" + textEmail.Text.Trim() + "'";
+                string query2 = " select email from Emp where email= '" + textEmail.Text.Trim() + "'";
+
+                SqlDataAdapter sda = new SqlDataAdapter(query1, con);
+                DataTable dtb11 = new DataTable();
+                SqlDataAdapter sdae = new SqlDataAdapter(query2, con);
+                DataTable dtb12 = new DataTable();
+                sda.Fill(dtb11);
+                sdae.Fill(dtb12);
+
+                if (dtb11.Rows.Count == 1)
+                {
+                    textEmail.Focus();
+                    errorProvider7.SetError(this.textEmail, "Email Already Exist");
+                    btnOtp.Enabled = false;
+                }
+                else if (dtb12.Rows.Count == 1)
+                {
+                    textEmail.Focus();
+                    errorProvider7.SetError(this.textEmail, "Email Already Exist");
+                    btnOtp.Enabled = false;
+                }
+
+                else
+                {
+                    errorProvider7.Clear();
+                    btnOtp.Enabled = true;
+                }
+            }
+
         }
     }
 }

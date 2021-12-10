@@ -82,10 +82,9 @@ namespace oop2Project
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 83);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(77, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
+            this.label1.Size = new System.Drawing.Size(55, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name ";
             // 
@@ -93,10 +92,9 @@ namespace oop2Project
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(58, 113);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(77, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
+            this.label2.Size = new System.Drawing.Size(72, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Address ";
             // 
@@ -104,10 +102,9 @@ namespace oop2Project
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(58, 143);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(77, 176);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 15);
+            this.label3.Size = new System.Drawing.Size(84, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Phone No ";
             // 
@@ -115,10 +112,9 @@ namespace oop2Project
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(61, 204);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(81, 251);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 15);
+            this.label5.Size = new System.Drawing.Size(81, 19);
             this.label5.TabIndex = 4;
             this.label5.Text = "Password";
             // 
@@ -126,10 +122,9 @@ namespace oop2Project
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(61, 235);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(81, 289);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 15);
+            this.label6.Size = new System.Drawing.Size(152, 19);
             this.label6.TabIndex = 5;
             this.label6.Text = "Confirm Password ";
             // 
@@ -137,10 +132,9 @@ namespace oop2Project
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(61, 266);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(81, 327);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 15);
+            this.label7.Size = new System.Drawing.Size(58, 19);
             this.label7.TabIndex = 6;
             this.label7.Text = "Email ";
             // 
@@ -148,74 +142,73 @@ namespace oop2Project
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(61, 296);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(81, 364);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 15);
+            this.label8.Size = new System.Drawing.Size(143, 19);
             this.label8.TabIndex = 7;
             this.label8.Text = "Varification Code ";
             // 
             // textName
             // 
-            this.textName.Location = new System.Drawing.Point(176, 78);
-            this.textName.Margin = new System.Windows.Forms.Padding(2);
+            this.textName.Location = new System.Drawing.Point(235, 96);
+            this.textName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(162, 20);
+            this.textName.Size = new System.Drawing.Size(215, 22);
             this.textName.TabIndex = 1;
             this.textName.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textAddress
             // 
-            this.textAddress.Location = new System.Drawing.Point(176, 108);
-            this.textAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.textAddress.Location = new System.Drawing.Point(235, 133);
+            this.textAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textAddress.Name = "textAddress";
-            this.textAddress.Size = new System.Drawing.Size(162, 20);
+            this.textAddress.Size = new System.Drawing.Size(215, 22);
             this.textAddress.TabIndex = 2;
             this.textAddress.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // textPhone
             // 
-            this.textPhone.Location = new System.Drawing.Point(176, 138);
-            this.textPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.textPhone.Location = new System.Drawing.Point(235, 170);
+            this.textPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textPhone.Name = "textPhone";
-            this.textPhone.Size = new System.Drawing.Size(162, 20);
+            this.textPhone.Size = new System.Drawing.Size(215, 22);
             this.textPhone.TabIndex = 3;
             this.textPhone.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // textPass
             // 
-            this.textPass.Location = new System.Drawing.Point(176, 202);
-            this.textPass.Margin = new System.Windows.Forms.Padding(2);
+            this.textPass.Location = new System.Drawing.Point(235, 249);
+            this.textPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textPass.Name = "textPass";
-            this.textPass.Size = new System.Drawing.Size(162, 20);
+            this.textPass.Size = new System.Drawing.Size(215, 22);
             this.textPass.TabIndex = 5;
             this.textPass.Leave += new System.EventHandler(this.textBox5_Leave);
             // 
             // textCPass
             // 
-            this.textCPass.Location = new System.Drawing.Point(176, 233);
-            this.textCPass.Margin = new System.Windows.Forms.Padding(2);
+            this.textCPass.Location = new System.Drawing.Point(235, 287);
+            this.textCPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textCPass.Name = "textCPass";
-            this.textCPass.Size = new System.Drawing.Size(162, 20);
+            this.textCPass.Size = new System.Drawing.Size(215, 22);
             this.textCPass.TabIndex = 6;
             this.textCPass.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
             // textEmail
             // 
-            this.textEmail.Location = new System.Drawing.Point(176, 264);
-            this.textEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.textEmail.Location = new System.Drawing.Point(235, 325);
+            this.textEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(162, 20);
+            this.textEmail.Size = new System.Drawing.Size(215, 22);
             this.textEmail.TabIndex = 7;
-            this.textEmail.Leave += new System.EventHandler(this.textBox7_Leave);
+            this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
             // 
             // textOtp
             // 
             this.textOtp.Enabled = false;
-            this.textOtp.Location = new System.Drawing.Point(176, 296);
-            this.textOtp.Margin = new System.Windows.Forms.Padding(2);
+            this.textOtp.Location = new System.Drawing.Point(235, 364);
+            this.textOtp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textOtp.Name = "textOtp";
-            this.textOtp.Size = new System.Drawing.Size(162, 20);
+            this.textOtp.Size = new System.Drawing.Size(215, 22);
             this.textOtp.TabIndex = 8;
             this.textOtp.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
@@ -225,10 +218,9 @@ namespace oop2Project
             this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(176, 20);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(235, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(258, 37);
+            this.label9.Size = new System.Drawing.Size(332, 45);
             this.label9.TabIndex = 16;
             this.label9.Text = "Registration Form ";
             // 
@@ -239,10 +231,10 @@ namespace oop2Project
             this.btnsubmit1.Enabled = false;
             this.btnsubmit1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnsubmit1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsubmit1.Location = new System.Drawing.Point(262, 331);
-            this.btnsubmit1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnsubmit1.Location = new System.Drawing.Point(349, 407);
+            this.btnsubmit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnsubmit1.Name = "btnsubmit1";
-            this.btnsubmit1.Size = new System.Drawing.Size(74, 25);
+            this.btnsubmit1.Size = new System.Drawing.Size(99, 31);
             this.btnsubmit1.TabIndex = 17;
             this.btnsubmit1.Text = "Submit ";
             this.btnsubmit1.UseVisualStyleBackColor = false;
@@ -252,29 +244,28 @@ namespace oop2Project
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(442, 78);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(589, 96);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(140, 19);
+            this.label10.Size = new System.Drawing.Size(177, 23);
             this.label10.TabIndex = 18;
             this.label10.Text = "Vaccine Certificate ";
             // 
             // textVacId
             // 
             this.textVacId.Enabled = false;
-            this.textVacId.Location = new System.Drawing.Point(445, 127);
-            this.textVacId.Margin = new System.Windows.Forms.Padding(2);
+            this.textVacId.Location = new System.Drawing.Point(593, 156);
+            this.textVacId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textVacId.Name = "textVacId";
-            this.textVacId.Size = new System.Drawing.Size(117, 20);
+            this.textVacId.Size = new System.Drawing.Size(155, 22);
             this.textVacId.TabIndex = 9;
             this.textVacId.Leave += new System.EventHandler(this.textVacId_Leave);
             // 
             // btnVacYes
             // 
-            this.btnVacYes.Location = new System.Drawing.Point(445, 102);
-            this.btnVacYes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVacYes.Location = new System.Drawing.Point(593, 126);
+            this.btnVacYes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVacYes.Name = "btnVacYes";
-            this.btnVacYes.Size = new System.Drawing.Size(40, 21);
+            this.btnVacYes.Size = new System.Drawing.Size(53, 26);
             this.btnVacYes.TabIndex = 20;
             this.btnVacYes.Text = "Yes";
             this.btnVacYes.UseVisualStyleBackColor = true;
@@ -282,10 +273,10 @@ namespace oop2Project
             // 
             // btnVacNo
             // 
-            this.btnVacNo.Location = new System.Drawing.Point(522, 102);
-            this.btnVacNo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVacNo.Location = new System.Drawing.Point(696, 126);
+            this.btnVacNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVacNo.Name = "btnVacNo";
-            this.btnVacNo.Size = new System.Drawing.Size(40, 21);
+            this.btnVacNo.Size = new System.Drawing.Size(53, 26);
             this.btnVacNo.TabIndex = 21;
             this.btnVacNo.Text = "No";
             this.btnVacNo.UseVisualStyleBackColor = true;
@@ -295,28 +286,27 @@ namespace oop2Project
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(61, 172);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(81, 212);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 15);
+            this.label4.Size = new System.Drawing.Size(39, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "NID";
             // 
             // textNid
             // 
-            this.textNid.Location = new System.Drawing.Point(176, 170);
-            this.textNid.Margin = new System.Windows.Forms.Padding(2);
+            this.textNid.Location = new System.Drawing.Point(235, 209);
+            this.textNid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNid.Name = "textNid";
-            this.textNid.Size = new System.Drawing.Size(162, 20);
+            this.textNid.Size = new System.Drawing.Size(215, 22);
             this.textNid.TabIndex = 4;
             this.textNid.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // btnUpload
             // 
-            this.btnUpload.Location = new System.Drawing.Point(455, 281);
-            this.btnUpload.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpload.Location = new System.Drawing.Point(607, 346);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(93, 29);
+            this.btnUpload.Size = new System.Drawing.Size(124, 36);
             this.btnUpload.TabIndex = 23;
             this.btnUpload.Text = "Upload Image";
             this.btnUpload.UseVisualStyleBackColor = true;
@@ -324,10 +314,11 @@ namespace oop2Project
             // 
             // btnOtp
             // 
-            this.btnOtp.Location = new System.Drawing.Point(349, 264);
-            this.btnOtp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOtp.Enabled = false;
+            this.btnOtp.Location = new System.Drawing.Point(465, 325);
+            this.btnOtp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOtp.Name = "btnOtp";
-            this.btnOtp.Size = new System.Drawing.Size(72, 22);
+            this.btnOtp.Size = new System.Drawing.Size(96, 27);
             this.btnOtp.TabIndex = 25;
             this.btnOtp.Text = "send OTP";
             this.btnOtp.UseVisualStyleBackColor = true;
@@ -336,10 +327,9 @@ namespace oop2Project
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(401, 129);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(535, 159);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.Size = new System.Drawing.Size(44, 17);
             this.label12.TabIndex = 26;
             this.label12.Text = "V_Id :";
             // 
@@ -378,10 +368,10 @@ namespace oop2Project
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.GrayText;
-            this.pictureBox1.Location = new System.Drawing.Point(445, 168);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(593, 207);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 109);
+            this.pictureBox1.Size = new System.Drawing.Size(152, 134);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -389,10 +379,10 @@ namespace oop2Project
             // btnback
             // 
             this.btnback.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnback.Location = new System.Drawing.Point(10, 336);
-            this.btnback.Margin = new System.Windows.Forms.Padding(2);
+            this.btnback.Location = new System.Drawing.Point(13, 414);
+            this.btnback.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(56, 33);
+            this.btnback.Size = new System.Drawing.Size(75, 41);
             this.btnback.TabIndex = 24;
             this.btnback.Text = "Back";
             this.btnback.UseVisualStyleBackColor = true;
@@ -404,11 +394,11 @@ namespace oop2Project
             // 
             // FormReg
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BackgroundImage = global::oop2Project.Properties.Resources.istockphoto_614316294_612x6121;
-            this.ClientSize = new System.Drawing.Size(600, 380);
+            this.ClientSize = new System.Drawing.Size(800, 468);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnOtp);
@@ -436,7 +426,7 @@ namespace oop2Project
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormReg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
