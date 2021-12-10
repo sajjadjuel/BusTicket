@@ -22,14 +22,14 @@ namespace oop2Project
         private string OTP;
         private string pass;
         private string filePath;
-        private OpenFileDialog openFileDialog;
+        private OpenFileDialog openFileDialog; //
         private string fileExtension;
         private string newPath;
         private string name;
         private string Address;
         private string Cus_Id;
         private string Emp_Id;
-        private string id = "";
+        private string id = ""; //
         private string phn;
         private string nid;
         // private string cpass;
@@ -50,7 +50,8 @@ namespace oop2Project
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            displayCusData();
+                 displayCusData();
+                
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,7 +84,8 @@ namespace oop2Project
 
             if (con.State != ConnectionState.Closed)
                 con.Close();
-            con.Open();
+
+                con.Open();
 
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -103,14 +105,14 @@ namespace oop2Project
             }
             else
             {
-                MessageBox.Show("Please Click on the User from below table", "No user selected!");
+                MessageBox.Show("Please Click on the User from the table", "No user selected!");
                 return;
             }
 
             int flag = cmd.ExecuteNonQuery();
             con.Close();
 
-            if (flag > 0) MessageBox.Show(role + " has been updated!");
+            if (flag > 0) MessageBox.Show(role + " has been updated!"); //
             else MessageBox.Show("Error while updating " + role + "!");
 
             if (role == "Customer") displayCusData();
@@ -148,13 +150,13 @@ namespace oop2Project
             //MessageBox.Show(comboFilter.SelectedIndex);
             if (comboVac.Text == "Yes")
             {
-                vacc = "Yes";
+                vacc = "Yes";//
             }
             else if (comboVac.Text == "No")
             {
-                vacc = "No";
+                vacc = "No";//
             }
-            else MessageBox.Show("Select Status ");
+            else MessageBox.Show("Select vaccine Status ");
         }
 
         private void textBox4_Leave(object sender, EventArgs e)
@@ -226,7 +228,7 @@ namespace oop2Project
             email = textemail.Text;
             Send_OTP(email);
             textotp.Enabled = true;
-            textotp.Focus();
+            textotp.Focus();//
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -249,10 +251,10 @@ namespace oop2Project
             cmd.CommandType = CommandType.Text;
 
             // Radio button
-            if (rbtnCustomer.Checked)
+            if (rbtnCustomer.Checked)//
             {
                 role = "Customer";
-                cmd.CommandText = " select Cus_Id from Cus order by Cus_Id desc";
+                cmd.CommandText = " select Cus_Id from Cus order by Cus_Id desc";//
             }
             else if (rbtnEmployee.Checked)
             {
@@ -337,10 +339,10 @@ namespace oop2Project
 
                 try
                 {
-                    newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));
-                    File.Copy(filePath, newPath, true);
+                    newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));//
+                    File.Copy(filePath, newPath, true);//
                 }
-                catch (Exception exc)
+                catch (Exception exc)//
                 {
                     Console.WriteLine(exc);
                     MessageBox.Show("Invalid path!");
@@ -387,7 +389,7 @@ namespace oop2Project
 
             sdr.Close();
             cmd.CommandText = query;
-            cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery(); //
 
 
             MessageBox.Show(role + " Inserted");
@@ -429,6 +431,16 @@ namespace oop2Project
 
             if (comboFilter.Text != "Customer")
                 comboFilter.Text = "Customer";
+            textName.Text = "";
+            textAddress.Text = "";
+            textPhone.Text = "";
+            textNid.Text = "";
+           // comboVac.Text = "NO/YES";
+            textemail.Text = "";
+            textpass.Text = "";
+            textotp.Text = "";
+            textSalary.Text = "";
+            pictureBox1.Image = null;
         }
 
         private void displayEmpData()
@@ -449,6 +461,16 @@ namespace oop2Project
 
             if (comboFilter.Text != "Employee")
                 comboFilter.Text = "Employee";
+            textName.Text = "";
+            textAddress.Text = "";
+            textPhone.Text = "";
+            textNid.Text = "";
+            //comboVac.Text = "NO/YES";
+            textemail.Text = "";
+            textpass.Text = "";
+            textotp.Text = "";
+            textSalary.Text = "";
+            pictureBox1.Image = null;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -488,8 +510,8 @@ namespace oop2Project
             if (!File.Exists(imagePath)) Console.WriteLine("File Not Found", imagePath);
             else
             {
-                if (pictureBox1.Image != null)
-                    pictureBox1.Image.Dispose();
+                if (pictureBox1.Image != null)//
+                    pictureBox1.Image.Dispose();//
                 pictureBox1.Image = null;
                 pictureBox1.Image = new Bitmap(imagePath);
             }
@@ -507,29 +529,40 @@ namespace oop2Project
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-
-            cmd.CommandText = "select * from Cus where Name like '%" + search + "%'";
-
-            SqlDataReader sdr = cmd.ExecuteReader();
-            DataTable dt = new DataTable();
-
-            // SqlDataAdapter da = new SqlDataAdapter(cmd);
-            if (sdr.HasRows)
+            //
+            if (comboFilter.Text == "Customer") //
             {
+                cmd.CommandText = "select * from Cus where Name like '%" + search + "%'";//
+
+                SqlDataReader sdr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+
+                // SqlDataAdapter da = new SqlDataAdapter(cmd);
+                if (sdr.HasRows)
+                {
+                    sdr.Close();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    comboFilter.Text = "Customer";//
+                                                  //view salary
+                    textSalary.Visible = false;
+                    labelSalary.Visible = false;
+                }
+                
+                else
+                {
+                    MessageBox.Show("Unable to find any user with \"" + search + "\"", "No Result");
+
+                }
                 sdr.Close();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-                comboFilter.Text = "Customer";
-                //view salary
-                textSalary.Visible = false;
-                labelSalary.Visible = false;
             }
             else
             {
-                sdr.Close();
+                //sdr.Close();
                 cmd.CommandText = "select * from Emp where Name like '%" + search + "%'";
                 SqlDataReader sdr1 = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
                 if (sdr1.HasRows)
                 {
                     sdr1.Close();
@@ -548,6 +581,7 @@ namespace oop2Project
 
             }
             con.Close();
+            textSearch.Text = "";
         }
 
         private void rbtnCustomer_Click(object sender, EventArgs e)

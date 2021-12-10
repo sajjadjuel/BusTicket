@@ -85,7 +85,7 @@ namespace oop2Project
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(430, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 24);
+            this.label1.Size = new System.Drawing.Size(163, 31);
             this.label1.TabIndex = 5;
             this.label1.Text = " Admin View";
             // 
@@ -98,7 +98,7 @@ namespace oop2Project
             this.textAddress.Location = new System.Drawing.Point(201, 184);
             this.textAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textAddress.Name = "textAddress";
-            this.textAddress.Size = new System.Drawing.Size(160, 22);
+            this.textAddress.Size = new System.Drawing.Size(160, 26);
             this.textAddress.TabIndex = 7;
             // 
             // label4
@@ -110,7 +110,7 @@ namespace oop2Project
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(97, 184);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 15);
+            this.label4.Size = new System.Drawing.Size(82, 19);
             this.label4.TabIndex = 9;
             this.label4.Text = "Address  :";
             // 
@@ -123,7 +123,7 @@ namespace oop2Project
             this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(97, 383);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 15);
+            this.label5.Size = new System.Drawing.Size(91, 19);
             this.label5.TabIndex = 11;
             this.label5.Text = "Password :";
             // 
@@ -136,7 +136,7 @@ namespace oop2Project
             this.textpass.Location = new System.Drawing.Point(201, 379);
             this.textpass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textpass.Name = "textpass";
-            this.textpass.Size = new System.Drawing.Size(160, 22);
+            this.textpass.Size = new System.Drawing.Size(160, 26);
             this.textpass.TabIndex = 12;
             // 
             // label6
@@ -148,7 +148,7 @@ namespace oop2Project
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(96, 342);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 15);
+            this.label6.Size = new System.Drawing.Size(84, 19);
             this.label6.TabIndex = 13;
             this.label6.Text = "Email      :";
             // 
@@ -161,7 +161,7 @@ namespace oop2Project
             this.textemail.Location = new System.Drawing.Point(201, 342);
             this.textemail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textemail.Name = "textemail";
-            this.textemail.Size = new System.Drawing.Size(160, 22);
+            this.textemail.Size = new System.Drawing.Size(160, 26);
             this.textemail.TabIndex = 14;
             this.textemail.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
@@ -174,7 +174,7 @@ namespace oop2Project
             this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(97, 423);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 15);
+            this.label7.Size = new System.Drawing.Size(76, 19);
             this.label7.TabIndex = 15;
             this.label7.Text = "OTP       :";
             // 
@@ -188,7 +188,7 @@ namespace oop2Project
             this.textotp.Location = new System.Drawing.Point(201, 420);
             this.textotp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textotp.Name = "textotp";
-            this.textotp.Size = new System.Drawing.Size(160, 22);
+            this.textotp.Size = new System.Drawing.Size(160, 26);
             this.textotp.TabIndex = 16;
             this.textotp.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
@@ -201,7 +201,7 @@ namespace oop2Project
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(227, 66);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 19);
+            this.label8.Size = new System.Drawing.Size(114, 23);
             this.label8.TabIndex = 17;
             this.label8.Text = "Update List ";
             // 
@@ -230,7 +230,7 @@ namespace oop2Project
             this.label9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(691, 475);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 17);
+            this.label9.Size = new System.Drawing.Size(63, 19);
             this.label9.TabIndex = 21;
             this.label9.Text = "Show : ";
             // 
@@ -241,9 +241,9 @@ namespace oop2Project
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(691, 70);
+            this.label10.Location = new System.Drawing.Point(680, 63);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 15);
+            this.label10.Size = new System.Drawing.Size(69, 19);
             this.label10.TabIndex = 22;
             this.label10.Text = "Search :";
             // 
@@ -255,7 +255,7 @@ namespace oop2Project
             this.textSearch.Location = new System.Drawing.Point(755, 63);
             this.textSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(199, 22);
+            this.textSearch.Size = new System.Drawing.Size(199, 26);
             this.textSearch.TabIndex = 23;
             // 
             // button4
@@ -282,7 +282,7 @@ namespace oop2Project
             this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(97, 107);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 15);
+            this.label11.Size = new System.Drawing.Size(61, 19);
             this.label11.TabIndex = 25;
             this.label11.Text = "Name :";
             // 
@@ -295,7 +295,7 @@ namespace oop2Project
             this.textName.Location = new System.Drawing.Point(202, 109);
             this.textName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(160, 22);
+            this.textName.Size = new System.Drawing.Size(160, 26);
             this.textName.TabIndex = 26;
             // 
             // label12
@@ -307,7 +307,7 @@ namespace oop2Project
             this.label12.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(97, 149);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 15);
+            this.label12.Size = new System.Drawing.Size(69, 19);
             this.label12.TabIndex = 27;
             this.label12.Text = "Phone  :";
             // 
@@ -320,7 +320,7 @@ namespace oop2Project
             this.textPhone.Location = new System.Drawing.Point(201, 145);
             this.textPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textPhone.Name = "textPhone";
-            this.textPhone.Size = new System.Drawing.Size(160, 22);
+            this.textPhone.Size = new System.Drawing.Size(160, 26);
             this.textPhone.TabIndex = 28;
             // 
             // button7
@@ -351,7 +351,7 @@ namespace oop2Project
             this.comboFilter.Location = new System.Drawing.Point(768, 473);
             this.comboFilter.Margin = new System.Windows.Forms.Padding(4);
             this.comboFilter.Name = "comboFilter";
-            this.comboFilter.Size = new System.Drawing.Size(160, 24);
+            this.comboFilter.Size = new System.Drawing.Size(160, 28);
             this.comboFilter.TabIndex = 31;
             this.comboFilter.SelectedIndexChanged += new System.EventHandler(this.comboFilter_SelectedIndexChanged);
             // 
@@ -417,7 +417,7 @@ namespace oop2Project
             this.rbtnEmployee.Location = new System.Drawing.Point(273, 493);
             this.rbtnEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbtnEmployee.Name = "rbtnEmployee";
-            this.rbtnEmployee.Size = new System.Drawing.Size(77, 19);
+            this.rbtnEmployee.Size = new System.Drawing.Size(99, 23);
             this.rbtnEmployee.TabIndex = 32;
             this.rbtnEmployee.TabStop = true;
             this.rbtnEmployee.Text = "Employee";
@@ -434,7 +434,7 @@ namespace oop2Project
             this.rbtnCustomer.Location = new System.Drawing.Point(177, 493);
             this.rbtnCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbtnCustomer.Name = "rbtnCustomer";
-            this.rbtnCustomer.Size = new System.Drawing.Size(76, 19);
+            this.rbtnCustomer.Size = new System.Drawing.Size(97, 23);
             this.rbtnCustomer.TabIndex = 33;
             this.rbtnCustomer.TabStop = true;
             this.rbtnCustomer.Text = "Customer";
@@ -491,7 +491,7 @@ namespace oop2Project
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(97, 305);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 15);
+            this.label2.Size = new System.Drawing.Size(98, 19);
             this.label2.TabIndex = 36;
             this.label2.Text = "Vaccinated :";
             // 
@@ -504,7 +504,7 @@ namespace oop2Project
             this.textNid.Location = new System.Drawing.Point(201, 259);
             this.textNid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNid.Name = "textNid";
-            this.textNid.Size = new System.Drawing.Size(160, 22);
+            this.textNid.Size = new System.Drawing.Size(160, 26);
             this.textNid.TabIndex = 39;
             // 
             // label13
@@ -516,7 +516,7 @@ namespace oop2Project
             this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(97, 259);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 15);
+            this.label13.Size = new System.Drawing.Size(69, 19);
             this.label13.TabIndex = 38;
             this.label13.Text = "NID      :";
             // 
@@ -534,7 +534,7 @@ namespace oop2Project
             this.comboVac.Location = new System.Drawing.Point(201, 299);
             this.comboVac.Margin = new System.Windows.Forms.Padding(4);
             this.comboVac.Name = "comboVac";
-            this.comboVac.Size = new System.Drawing.Size(160, 24);
+            this.comboVac.Size = new System.Drawing.Size(160, 28);
             this.comboVac.TabIndex = 40;
             this.comboVac.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -547,7 +547,7 @@ namespace oop2Project
             this.textSalary.Location = new System.Drawing.Point(201, 454);
             this.textSalary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textSalary.Name = "textSalary";
-            this.textSalary.Size = new System.Drawing.Size(160, 22);
+            this.textSalary.Size = new System.Drawing.Size(160, 26);
             this.textSalary.TabIndex = 42;
             this.textSalary.Visible = false;
             // 
@@ -560,7 +560,7 @@ namespace oop2Project
             this.labelSalary.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSalary.Location = new System.Drawing.Point(97, 457);
             this.labelSalary.Name = "labelSalary";
-            this.labelSalary.Size = new System.Drawing.Size(59, 15);
+            this.labelSalary.Size = new System.Drawing.Size(78, 19);
             this.labelSalary.TabIndex = 41;
             this.labelSalary.Text = "Salary    :";
             this.labelSalary.Visible = false;
@@ -573,13 +573,13 @@ namespace oop2Project
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(474, 243);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(46, 16);
+            this.label14.Size = new System.Drawing.Size(54, 20);
             this.label14.TabIndex = 43;
             this.label14.Text = "Image";
             // 
             // FormAdminView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BackgroundImage = global::oop2Project.Properties.Resources.photo_1544620347_c4fd4a3d59574;

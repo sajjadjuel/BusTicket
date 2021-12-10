@@ -22,13 +22,13 @@ namespace oop2Project
         {
             FormForgotPass frgt = new FormForgotPass();
             this.Hide();
-            frgt.Tag = this;
+            frgt.Tag = this;//
             frgt.Show();
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            string email = txtusername.Text;
+            string email = txtusername.Text.Trim();
             string pass = txtpassword.Text.Trim();
 
             if (email == "admin" && txtpassword.Text == "123")
@@ -45,7 +45,7 @@ namespace oop2Project
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "select * from Cus where email='" + email + "';" +
                     "select * from Emp where email='" + email + "';";
-
+                
                 SqlDataReader sdr = cmd.ExecuteReader();
 
                 if (sdr.HasRows == true)
@@ -67,7 +67,7 @@ namespace oop2Project
                 }
                 else
                 {
-                    sdr.NextResult();
+                    sdr.NextResult();//
                     if (sdr.HasRows)
                     {
                         sdr.Close();
@@ -100,7 +100,7 @@ namespace oop2Project
 
         private void btnlogin_MouseLeave(object sender, EventArgs e)
         {
-            btnlogin.BackColor = SystemColors.ActiveCaption;
+            btnlogin.BackColor = SystemColors.ActiveCaption;///
         }
 
         private void btnregistration_Click(object sender, EventArgs e)
@@ -118,8 +118,8 @@ namespace oop2Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Emp_Id = "";
-            Cus_Id = "";
+            Emp_Id = ""; //
+            Cus_Id = ""; //
         }
     }
 }

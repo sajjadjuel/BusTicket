@@ -44,7 +44,7 @@ namespace oop2Project
 
         private void Send_OTP(string email)
         {
-            // Validating E-mail
+            // Validating E-mail NOT WORKING 
             var data = ValidateEmail(email);
 
             if (data["autocorrect"] != "" && autocorrect)
@@ -98,7 +98,7 @@ namespace oop2Project
             Address = textAddress.Text;
             phn = textPhone.Text;
             nid = textNid.Text;
-            pass = textPass.Text;
+            pass = textPass.Text.Trim();
             cpass = textCPass.Text;
             email = textEmail.Text.Trim();
             OTP = textOtp.Text;
@@ -142,7 +142,7 @@ namespace oop2Project
                 newPath = Path.Combine(Environment.CurrentDirectory, @"Images\Customer\" + Cus_Id + Path.GetExtension(filePath));
                 File.Copy(filePath, newPath, true);
             }
-            catch (Exception exc)
+            catch (Exception exc)//
             {
                 con.Close();
                 Console.WriteLine(exc);
@@ -211,7 +211,7 @@ namespace oop2Project
 
             email = textEmail.Text;
             Send_OTP(email);
-            await Task.Delay(10000);
+            await Task.Delay(10000);//
             btnOtp.Enabled = true;
             textOtp.Focus();
         }
