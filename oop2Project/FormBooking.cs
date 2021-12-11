@@ -69,7 +69,7 @@ namespace oop2Project
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select BusId as [Serial No], BusName as [Bus Name], BusFrom as [From], BusTo as [To], Time, TFormat as [Format] from Bus";
+            cmd.CommandText = "select BusId as [Serial No], BusName as [Bus Name], BusFrom as [From], BusTo as [To], Time, TFormat as [Format] from Bus";//
             cmd.ExecuteNonQuery();
 
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -82,12 +82,12 @@ namespace oop2Project
         private void comboFrom_SelectedIndexChanged(object sender, EventArgs e)
         {
             From = comboFrom.Text;
-            comboTo.Items.Clear();
+            comboTo.Items.Clear();//
 
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Distinct BusTo from Bus Where BusFrom = '" + From + "'";
+            cmd.CommandText = "select Distinct BusTo from Bus Where BusFrom = '" + From + "'";//
 
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.HasRows)
@@ -109,14 +109,14 @@ namespace oop2Project
             // Clear Cost
             if (textCost.Text != "") textCost.Text = "";
             // Disable Seat
-            foreach (Button b in panelSeat.Controls.OfType<Button>())
+            foreach (Button b in panelSeat.Controls.OfType<Button>())//
             {
                 if (b.Enabled) b.Enabled = false;
                 if (b.Visible) b.Visible = false;
             }
 
             if (BookingSeats.Count > 0)
-                BookingSeats.Clear();
+                BookingSeats.Clear();//
         }
 
         private void comboTo_SelectedIndexChanged(object sender, EventArgs e)
@@ -127,7 +127,7 @@ namespace oop2Project
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Time, TFormat from Bus Where BusFrom='" + From + "' And BusTo ='" + To + "' Order By TFormat";
+            cmd.CommandText = "select Time, TFormat from Bus Where BusFrom='" + From + "' And BusTo ='" + To + "' Order By TFormat";//
 
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.HasRows)
@@ -136,7 +136,7 @@ namespace oop2Project
                 {
                     string BusTime = sdr.GetString(0) + " " + sdr.GetString(1);
                     if (!comboTime.Items.Contains(BusTime))
-                        comboTime.Items.Add(BusTime);
+                        comboTime.Items.Add(BusTime);//
                 }
             }
 
@@ -166,10 +166,11 @@ namespace oop2Project
 
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)    // Only checks booked seats to show
         {
+            
             if (labelSelectBus.Visible) return; // Seats are invisible anyway
 
-            BusId = comboBus.Text.Split('-')[1];
-            BusName = comboBus.Text.Split('-')[0];
+            BusId = comboBus.Text.Split('-')[1];//
+            BusName = comboBus.Text.Split('-')[0];//
             // Clear Temp Booked Seats
             BookedSeats.Clear();
 
@@ -201,6 +202,9 @@ namespace oop2Project
                 if (!BookedSeats.Contains(b.Text) && b.Text != "Driver" && b.Text != "Door" && !b.Enabled)
                     b.Enabled = true;
             }
+            if (BookingSeats.Count > 0)
+                BookingSeats.Clear();
+            textCost.Text = "0";
         }
 
         private void comboTime_SelectedIndexChanged(object sender, EventArgs e)
@@ -300,7 +304,7 @@ namespace oop2Project
             con.Close();
 
             textCost.Text = "0";
-            if (labelSelectBus.Visible) labelSelectBus.Visible = false;
+            if (labelSelectBus.Visible) labelSelectBus.Visible = false;//
 
             foreach (Button b in panelSeat.Controls.OfType<Button>())
             {
