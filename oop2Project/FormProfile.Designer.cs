@@ -29,6 +29,7 @@ namespace oop2Project
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfile));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,7 +63,7 @@ namespace oop2Project
             this.label1.Location = new System.Drawing.Point(206, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 31);
+            this.label1.Size = new System.Drawing.Size(194, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "User Profile ";
             // 
@@ -74,7 +75,7 @@ namespace oop2Project
             this.label2.Location = new System.Drawing.Point(58, 160);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 19);
+            this.label2.Size = new System.Drawing.Size(71, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Name :";
             // 
@@ -86,7 +87,7 @@ namespace oop2Project
             this.label3.Location = new System.Drawing.Point(58, 192);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 19);
+            this.label3.Size = new System.Drawing.Size(80, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Adress :";
             // 
@@ -98,7 +99,7 @@ namespace oop2Project
             this.label4.Location = new System.Drawing.Point(57, 226);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 19);
+            this.label4.Size = new System.Drawing.Size(74, 23);
             this.label4.TabIndex = 3;
             this.label4.Text = "Phone :";
             // 
@@ -110,7 +111,7 @@ namespace oop2Project
             this.label5.Location = new System.Drawing.Point(58, 258);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 19);
+            this.label5.Size = new System.Drawing.Size(70, 23);
             this.label5.TabIndex = 4;
             this.label5.Text = "Email :";
             // 
@@ -122,7 +123,7 @@ namespace oop2Project
             this.label6.Location = new System.Drawing.Point(57, 381);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 19);
+            this.label6.Size = new System.Drawing.Size(145, 23);
             this.label6.TabIndex = 5;
             this.label6.Text = "New Password :";
             // 
@@ -134,7 +135,7 @@ namespace oop2Project
             this.label7.Location = new System.Drawing.Point(57, 422);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(139, 19);
+            this.label7.Size = new System.Drawing.Size(176, 23);
             this.label7.TabIndex = 6;
             this.label7.Text = "Confirm Password :";
             // 
@@ -143,7 +144,7 @@ namespace oop2Project
             this.textPass.Location = new System.Drawing.Point(363, 383);
             this.textPass.Margin = new System.Windows.Forms.Padding(4);
             this.textPass.Name = "textPass";
-            this.textPass.Size = new System.Drawing.Size(255, 19);
+            this.textPass.Size = new System.Drawing.Size(255, 22);
             this.textPass.TabIndex = 4;
             // 
             // textConfirmPass
@@ -151,7 +152,7 @@ namespace oop2Project
             this.textConfirmPass.Location = new System.Drawing.Point(363, 424);
             this.textConfirmPass.Margin = new System.Windows.Forms.Padding(4);
             this.textConfirmPass.Name = "textConfirmPass";
-            this.textConfirmPass.Size = new System.Drawing.Size(255, 19);
+            this.textConfirmPass.Size = new System.Drawing.Size(255, 22);
             this.textConfirmPass.TabIndex = 5;
             // 
             // btnConfirm
@@ -171,7 +172,7 @@ namespace oop2Project
             this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(208, 327);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(163, 22);
+            this.label8.Size = new System.Drawing.Size(200, 26);
             this.label8.TabIndex = 19;
             this.label8.Text = "Change Password ";
             // 
@@ -181,7 +182,7 @@ namespace oop2Project
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(951, 329);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(148, 19);
+            this.label9.Size = new System.Drawing.Size(185, 23);
             this.label9.TabIndex = 20;
             this.label9.Text = "Update Vaccine Info ";
             // 
@@ -189,7 +190,7 @@ namespace oop2Project
             // 
             this.textVac.Location = new System.Drawing.Point(914, 382);
             this.textVac.Name = "textVac";
-            this.textVac.Size = new System.Drawing.Size(260, 19);
+            this.textVac.Size = new System.Drawing.Size(260, 22);
             this.textVac.TabIndex = 7;
             // 
             // btnUpdate
@@ -210,7 +211,7 @@ namespace oop2Project
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(748, 381);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(163, 19);
+            this.label10.Size = new System.Drawing.Size(206, 23);
             this.label10.TabIndex = 23;
             this.label10.Text = "Vaccine Certificate Id :";
             // 
@@ -251,7 +252,7 @@ namespace oop2Project
             this.textEmail.Location = new System.Drawing.Point(363, 257);
             this.textEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(255, 19);
+            this.textEmail.Size = new System.Drawing.Size(255, 22);
             this.textEmail.TabIndex = 3;
             // 
             // textPhone
@@ -260,7 +261,7 @@ namespace oop2Project
             this.textPhone.Location = new System.Drawing.Point(363, 225);
             this.textPhone.Margin = new System.Windows.Forms.Padding(4);
             this.textPhone.Name = "textPhone";
-            this.textPhone.Size = new System.Drawing.Size(255, 19);
+            this.textPhone.Size = new System.Drawing.Size(255, 22);
             this.textPhone.TabIndex = 2;
             // 
             // textAddress
@@ -269,7 +270,7 @@ namespace oop2Project
             this.textAddress.Location = new System.Drawing.Point(363, 193);
             this.textAddress.Margin = new System.Windows.Forms.Padding(4);
             this.textAddress.Name = "textAddress";
-            this.textAddress.Size = new System.Drawing.Size(255, 19);
+            this.textAddress.Size = new System.Drawing.Size(255, 22);
             this.textAddress.TabIndex = 1;
             // 
             // textName
@@ -278,12 +279,12 @@ namespace oop2Project
             this.textName.Location = new System.Drawing.Point(363, 160);
             this.textName.Margin = new System.Windows.Forms.Padding(4);
             this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(255, 19);
+            this.textName.Size = new System.Drawing.Size(255, 22);
             this.textName.TabIndex = 0;
             // 
             // FormProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BackgroundImage = global::oop2Project.Properties.Resources.photo_1544620347_c4fd4a3d59573;
@@ -312,10 +313,11 @@ namespace oop2Project
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PDF ONLY ";
+            this.Text = "Profile";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

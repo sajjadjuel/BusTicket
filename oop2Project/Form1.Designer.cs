@@ -29,6 +29,7 @@ namespace oop2Project
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.email = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.Label();
             this.txtusername = new System.Windows.Forms.TextBox();
@@ -206,10 +207,11 @@ namespace oop2Project
             this.Controls.Add(this.txtusername);
             this.Controls.Add(this.password);
             this.Controls.Add(this.email);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Welcome";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,6 +29,7 @@ namespace oop2Project
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBookingHistory));
             this.comboTickets = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -43,9 +44,10 @@ namespace oop2Project
             // 
             this.comboTickets.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTickets.FormattingEnabled = true;
-            this.comboTickets.Location = new System.Drawing.Point(413, 134);
+            this.comboTickets.Location = new System.Drawing.Point(551, 165);
+            this.comboTickets.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboTickets.Name = "comboTickets";
-            this.comboTickets.Size = new System.Drawing.Size(135, 23);
+            this.comboTickets.Size = new System.Drawing.Size(179, 27);
             this.comboTickets.TabIndex = 46;
             this.comboTickets.Text = "Select Ticket No-";
             this.comboTickets.SelectedIndexChanged += new System.EventHandler(this.comboCancelTicket_SelectedIndexChanged);
@@ -54,10 +56,9 @@ namespace oop2Project
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(414, 101);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(552, 124);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 17);
+            this.label9.Size = new System.Drawing.Size(167, 22);
             this.label9.TabIndex = 45;
             this.label9.Text = "To Cancel Booking";
             // 
@@ -66,22 +67,23 @@ namespace oop2Project
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(266, 29);
+            this.label8.Location = new System.Drawing.Point(355, 36);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(155, 24);
+            this.label8.Size = new System.Drawing.Size(206, 31);
             this.label8.TabIndex = 44;
             this.label8.Text = "Booking History";
             // 
             // dataGridHistory
             // 
             this.dataGridHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridHistory.Location = new System.Drawing.Point(67, 175);
-            this.dataGridHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridHistory.Location = new System.Drawing.Point(282, 217);
+            this.dataGridHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridHistory.Name = "dataGridHistory";
             this.dataGridHistory.ReadOnly = true;
             this.dataGridHistory.RowHeadersWidth = 51;
             this.dataGridHistory.RowTemplate.Height = 24;
-            this.dataGridHistory.Size = new System.Drawing.Size(570, 312);
+            this.dataGridHistory.Size = new System.Drawing.Size(625, 394);
             this.dataGridHistory.TabIndex = 43;
             this.dataGridHistory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridHistory_CellClick);
             // 
@@ -89,10 +91,10 @@ namespace oop2Project
             // 
             this.btnCancel.Enabled = false;
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(566, 132);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Location = new System.Drawing.Point(755, 162);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(57, 28);
+            this.btnCancel.Size = new System.Drawing.Size(76, 34);
             this.btnCancel.TabIndex = 42;
             this.btnCancel.Text = "Cancel Ticket ";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -101,10 +103,10 @@ namespace oop2Project
             // btnLogout
             // 
             this.btnLogout.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(1, 532);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogout.Location = new System.Drawing.Point(1, 655);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(62, 27);
+            this.btnLogout.Size = new System.Drawing.Size(83, 33);
             this.btnLogout.TabIndex = 47;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -113,10 +115,10 @@ namespace oop2Project
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(71, 532);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Location = new System.Drawing.Point(95, 655);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(62, 27);
+            this.btnBack.Size = new System.Drawing.Size(83, 33);
             this.btnBack.TabIndex = 48;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -124,11 +126,11 @@ namespace oop2Project
             // 
             // FormBookingHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::oop2Project.Properties.Resources.photo_1544620347_c4fd4a3d59574;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(700, 560);
+            this.ClientSize = new System.Drawing.Size(933, 689);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.comboTickets);
@@ -136,9 +138,11 @@ namespace oop2Project
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dataGridHistory);
             this.Controls.Add(this.btnCancel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormBookingHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormBookingHistory";
+            this.Text = "Ticket Booking History";
             this.Load += new System.EventHandler(this.FormBookingHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridHistory)).EndInit();
             this.ResumeLayout(false);
