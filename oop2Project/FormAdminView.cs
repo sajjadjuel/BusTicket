@@ -431,15 +431,16 @@ namespace oop2Project
 
             if (comboFilter.Text != "Customer")
                 comboFilter.Text = "Customer";
+           
             textName.Text = "";
             textAddress.Text = "";
             textPhone.Text = "";
             textNid.Text = "";
-            comboVac.Text = "";
-            textemail.Text = "";
-            textpass.Text = "";
-            textotp.Text = "";
-            textSalary.Text = "";
+            //comboVac.Text = "YES/NO";
+            //textemail.Text = "";
+            //textpass.Text = "";
+            //textotp.Text = "";
+           textSalary.Text = "";
             pictureBox1.Image = null;
         }
 
@@ -465,10 +466,10 @@ namespace oop2Project
             textAddress.Text = "";
             textPhone.Text = "";
             textNid.Text = "";
-            //comboVac.Text = "NO/YES";
-            textemail.Text = "";
-            textpass.Text = "";
-            textotp.Text = "";
+            //comboVac.Text = "YES/NO";
+           // textemail.Text = "";
+           // textpass.Text = "";
+           // textotp.Text = "";
             textSalary.Text = "";
             pictureBox1.Image = null;
         }
@@ -482,9 +483,9 @@ namespace oop2Project
             textAddress.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             textPhone.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             textNid.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            textpass.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            textemail.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            comboVac.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            textpass.Text = "";//dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            textemail.Text = ""; //dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            comboVac.Text = "";//dataGridView1.CurrentRow.Cells[7].Value.ToString();
             textotp.Text = "";
 
             //if (comboFilter.Text == "Employee")
@@ -556,6 +557,17 @@ namespace oop2Project
 
                 }
                 sdr.Close();
+
+                textName.Text = "";
+                textAddress.Text = "";
+                textPhone.Text = "";
+                textNid.Text = "";
+               comboVac.Text = "YES/NO";
+                textemail.Text = "";
+                textpass.Text = "";
+                textotp.Text = "";
+                textSalary.Text = "";
+                pictureBox1.Image = null;
             }
             else
             {
@@ -582,6 +594,17 @@ namespace oop2Project
             }
             con.Close();
             textSearch.Text = "";
+
+            textName.Text = "";
+            textAddress.Text = "";
+            textPhone.Text = "";
+            textNid.Text = "";
+            comboVac.Text = "YES/NO";
+            textemail.Text = "";
+            textpass.Text = "";
+            textotp.Text = "";
+            textSalary.Text = "";
+            pictureBox1.Image = null;
         }
 
         private void rbtnCustomer_Click(object sender, EventArgs e)

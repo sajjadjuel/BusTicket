@@ -143,6 +143,11 @@ namespace oop2Project
                 btnCancel.Enabled = true;
                 comboTickets.Text = TicketId;
             }
+            else
+            {
+                btnCancel.Enabled = false;
+                comboTickets.Text = "";
+            }
         }
     }
 }
