@@ -536,6 +536,7 @@ namespace oop2Project
             this.comboVac.Name = "comboVac";
             this.comboVac.Size = new System.Drawing.Size(160, 28);
             this.comboVac.TabIndex = 40;
+            this.comboVac.Tag = "";
             this.comboVac.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textSalary

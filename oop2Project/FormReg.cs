@@ -211,7 +211,7 @@ namespace oop2Project
 
             email = textEmail.Text;
             Send_OTP(email);
-            await Task.Delay(10000);//
+            await Task.Delay(10000); //
             btnOtp.Enabled = true;
             textOtp.Focus();
         }

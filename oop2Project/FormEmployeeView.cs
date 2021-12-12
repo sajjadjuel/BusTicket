@@ -257,7 +257,11 @@ namespace oop2Project
 
             cmd.CommandText = "Delete From CancelTicket Where CancelId = '" + CancelId + "';";
 
-            if (cmd.ExecuteNonQuery() > 0) MessageBox.Show("Request has been rejected!");
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Request has been rejected!");
+                comboRequests.Items.Remove(CancelId);
+            }
             else MessageBox.Show("Error rejecting Request!");
             con.Close();
         }

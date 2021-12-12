@@ -50,8 +50,8 @@ namespace oop2Project
 
         private void Form3_Load(object sender, EventArgs e)
         {
-                 displayCusData();
-                
+            displayCusData();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace oop2Project
             if (con.State != ConnectionState.Closed)
                 con.Close();
 
-                con.Open();
+            con.Open();
 
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -435,7 +435,7 @@ namespace oop2Project
             textAddress.Text = "";
             textPhone.Text = "";
             textNid.Text = "";
-           // comboVac.Text = "NO/YES";
+            comboVac.Text = "";
             textemail.Text = "";
             textpass.Text = "";
             textotp.Text = "";
@@ -549,7 +549,7 @@ namespace oop2Project
                     textSalary.Visible = false;
                     labelSalary.Visible = false;
                 }
-                
+
                 else
                 {
                     MessageBox.Show("Unable to find any user with \"" + search + "\"", "No Result");
