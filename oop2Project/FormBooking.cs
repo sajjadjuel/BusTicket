@@ -12,9 +12,13 @@ using System.Windows.Forms;
 
 namespace oop2Project
 {
+    
+
     public partial class FormBooking : Form
     {
+        
         SqlConnection con = new SqlConnection(ConString.con);
+
 
         List<string> RouteFrom = new List<string>();
         List<string> BookingSeats = new List<string>();
@@ -24,6 +28,8 @@ namespace oop2Project
         private string BusId { set; get; }
         private string BusName { set; get; }
         private int fare = 0;
+
+        
 
         public FormBooking()
         {
@@ -322,8 +328,16 @@ namespace oop2Project
 
         private void UpdateCost()
         {
-            textCost.Text = (fare * BookingSeats.Count).ToString();
+
+            fareclc calc1 = delfare1.dld;
+            
+            
+            textCost.Text = calc1(fare, BookingSeats.Count).ToString();
+
+                //(fare , BookingSeats.Count).ToString();
         }
+         
+        
 
         private void GetRoutes()
         {
@@ -421,4 +435,5 @@ namespace oop2Project
             comboBus.Text = Bus;
         }
     }
+    
 }

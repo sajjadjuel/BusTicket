@@ -235,7 +235,7 @@ namespace oop2Project
             this.comboFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboFrom.FormattingEnabled = true;
             this.comboFrom.Location = new System.Drawing.Point(159, 188);
-            this.comboFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboFrom.Margin = new System.Windows.Forms.Padding(4);
             this.comboFrom.Name = "comboFrom";
             this.comboFrom.Size = new System.Drawing.Size(265, 24);
             this.comboFrom.TabIndex = 37;
@@ -247,7 +247,7 @@ namespace oop2Project
             this.comboTo.Enabled = false;
             this.comboTo.FormattingEnabled = true;
             this.comboTo.Location = new System.Drawing.Point(157, 235);
-            this.comboTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTo.Margin = new System.Windows.Forms.Padding(4);
             this.comboTo.Name = "comboTo";
             this.comboTo.Size = new System.Drawing.Size(267, 24);
             this.comboTo.TabIndex = 38;
@@ -259,7 +259,7 @@ namespace oop2Project
             this.DateTimePicker.Enabled = false;
             this.DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateTimePicker.Location = new System.Drawing.Point(159, 277);
-            this.DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DateTimePicker.Name = "DateTimePicker";
             this.DateTimePicker.Size = new System.Drawing.Size(141, 22);
             this.DateTimePicker.TabIndex = 39;
@@ -271,7 +271,7 @@ namespace oop2Project
             this.comboBus.Enabled = false;
             this.comboBus.FormattingEnabled = true;
             this.comboBus.Location = new System.Drawing.Point(159, 320);
-            this.comboBus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBus.Margin = new System.Windows.Forms.Padding(4);
             this.comboBus.Name = "comboBus";
             this.comboBus.Size = new System.Drawing.Size(265, 24);
             this.comboBus.TabIndex = 42;
@@ -296,7 +296,7 @@ namespace oop2Project
             "11",
             "12"});
             this.comboTime.Location = new System.Drawing.Point(325, 277);
-            this.comboTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTime.Margin = new System.Windows.Forms.Padding(4);
             this.comboTime.Name = "comboTime";
             this.comboTime.Size = new System.Drawing.Size(97, 24);
             this.comboTime.TabIndex = 84;
@@ -349,7 +349,7 @@ namespace oop2Project
             this.panelSeat.Controls.Add(this.button2);
             this.panelSeat.Controls.Add(this.button1);
             this.panelSeat.Location = new System.Drawing.Point(159, 503);
-            this.panelSeat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelSeat.Margin = new System.Windows.Forms.Padding(4);
             this.panelSeat.Name = "panelSeat";
             this.panelSeat.Size = new System.Drawing.Size(897, 225);
             this.panelSeat.TabIndex = 86;
@@ -372,7 +372,7 @@ namespace oop2Project
             this.button42.Enabled = false;
             this.button42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button42.Location = new System.Drawing.Point(12, 172);
-            this.button42.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button42.Margin = new System.Windows.Forms.Padding(4);
             this.button42.Name = "button42";
             this.button42.Size = new System.Drawing.Size(65, 36);
             this.button42.TabIndex = 128;
@@ -384,7 +384,7 @@ namespace oop2Project
             // 
             this.button38.Enabled = false;
             this.button38.Location = new System.Drawing.Point(813, 172);
-            this.button38.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button38.Margin = new System.Windows.Forms.Padding(4);
             this.button38.Name = "button38";
             this.button38.Size = new System.Drawing.Size(57, 36);
             this.button38.TabIndex = 127;
@@ -397,7 +397,7 @@ namespace oop2Project
             // 
             this.button39.Enabled = false;
             this.button39.Location = new System.Drawing.Point(813, 129);
-            this.button39.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button39.Margin = new System.Windows.Forms.Padding(4);
             this.button39.Name = "button39";
             this.button39.Size = new System.Drawing.Size(57, 36);
             this.button39.TabIndex = 126;
@@ -410,7 +410,7 @@ namespace oop2Project
             // 
             this.button40.Enabled = false;
             this.button40.Location = new System.Drawing.Point(813, 59);
-            this.button40.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button40.Margin = new System.Windows.Forms.Padding(4);
             this.button40.Name = "button40";
             this.button40.Size = new System.Drawing.Size(57, 36);
             this.button40.TabIndex = 125;
@@ -423,7 +423,7 @@ namespace oop2Project
             // 
             this.button41.Enabled = false;
             this.button41.Location = new System.Drawing.Point(813, 16);
-            this.button41.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button41.Margin = new System.Windows.Forms.Padding(4);
             this.button41.Name = "button41";
             this.button41.Size = new System.Drawing.Size(57, 36);
             this.button41.TabIndex = 124;
@@ -436,7 +436,7 @@ namespace oop2Project
             // 
             this.button34.Enabled = false;
             this.button34.Location = new System.Drawing.Point(739, 172);
-            this.button34.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button34.Margin = new System.Windows.Forms.Padding(4);
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(57, 36);
             this.button34.TabIndex = 123;
@@ -449,7 +449,7 @@ namespace oop2Project
             // 
             this.button35.Enabled = false;
             this.button35.Location = new System.Drawing.Point(739, 129);
-            this.button35.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button35.Margin = new System.Windows.Forms.Padding(4);
             this.button35.Name = "button35";
             this.button35.Size = new System.Drawing.Size(57, 36);
             this.button35.TabIndex = 122;
@@ -462,7 +462,7 @@ namespace oop2Project
             // 
             this.button36.Enabled = false;
             this.button36.Location = new System.Drawing.Point(739, 59);
-            this.button36.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button36.Margin = new System.Windows.Forms.Padding(4);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(57, 36);
             this.button36.TabIndex = 121;
@@ -475,7 +475,7 @@ namespace oop2Project
             // 
             this.button37.Enabled = false;
             this.button37.Location = new System.Drawing.Point(739, 16);
-            this.button37.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button37.Margin = new System.Windows.Forms.Padding(4);
             this.button37.Name = "button37";
             this.button37.Size = new System.Drawing.Size(57, 36);
             this.button37.TabIndex = 120;
@@ -488,7 +488,7 @@ namespace oop2Project
             // 
             this.button30.Enabled = false;
             this.button30.Location = new System.Drawing.Point(661, 172);
-            this.button30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button30.Margin = new System.Windows.Forms.Padding(4);
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(57, 36);
             this.button30.TabIndex = 119;
@@ -501,7 +501,7 @@ namespace oop2Project
             // 
             this.button31.Enabled = false;
             this.button31.Location = new System.Drawing.Point(661, 129);
-            this.button31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button31.Margin = new System.Windows.Forms.Padding(4);
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(57, 36);
             this.button31.TabIndex = 118;
@@ -514,7 +514,7 @@ namespace oop2Project
             // 
             this.button32.Enabled = false;
             this.button32.Location = new System.Drawing.Point(661, 59);
-            this.button32.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button32.Margin = new System.Windows.Forms.Padding(4);
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(57, 36);
             this.button32.TabIndex = 117;
@@ -527,7 +527,7 @@ namespace oop2Project
             // 
             this.button33.Enabled = false;
             this.button33.Location = new System.Drawing.Point(661, 16);
-            this.button33.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button33.Margin = new System.Windows.Forms.Padding(4);
             this.button33.Name = "button33";
             this.button33.Size = new System.Drawing.Size(57, 36);
             this.button33.TabIndex = 116;
@@ -540,7 +540,7 @@ namespace oop2Project
             // 
             this.button26.Enabled = false;
             this.button26.Location = new System.Drawing.Point(583, 172);
-            this.button26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button26.Margin = new System.Windows.Forms.Padding(4);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(57, 36);
             this.button26.TabIndex = 115;
@@ -553,7 +553,7 @@ namespace oop2Project
             // 
             this.button27.Enabled = false;
             this.button27.Location = new System.Drawing.Point(583, 129);
-            this.button27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button27.Margin = new System.Windows.Forms.Padding(4);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(57, 36);
             this.button27.TabIndex = 114;
@@ -566,7 +566,7 @@ namespace oop2Project
             // 
             this.button28.Enabled = false;
             this.button28.Location = new System.Drawing.Point(583, 59);
-            this.button28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button28.Margin = new System.Windows.Forms.Padding(4);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(57, 36);
             this.button28.TabIndex = 113;
@@ -579,7 +579,7 @@ namespace oop2Project
             // 
             this.button29.Enabled = false;
             this.button29.Location = new System.Drawing.Point(583, 16);
-            this.button29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button29.Margin = new System.Windows.Forms.Padding(4);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(57, 36);
             this.button29.TabIndex = 112;
@@ -592,7 +592,7 @@ namespace oop2Project
             // 
             this.button22.Enabled = false;
             this.button22.Location = new System.Drawing.Point(504, 172);
-            this.button22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button22.Margin = new System.Windows.Forms.Padding(4);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(57, 36);
             this.button22.TabIndex = 111;
@@ -605,7 +605,7 @@ namespace oop2Project
             // 
             this.button23.Enabled = false;
             this.button23.Location = new System.Drawing.Point(504, 129);
-            this.button23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button23.Margin = new System.Windows.Forms.Padding(4);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(57, 36);
             this.button23.TabIndex = 110;
@@ -618,7 +618,7 @@ namespace oop2Project
             // 
             this.button24.Enabled = false;
             this.button24.Location = new System.Drawing.Point(504, 59);
-            this.button24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button24.Margin = new System.Windows.Forms.Padding(4);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(57, 36);
             this.button24.TabIndex = 109;
@@ -631,7 +631,7 @@ namespace oop2Project
             // 
             this.button25.Enabled = false;
             this.button25.Location = new System.Drawing.Point(504, 16);
-            this.button25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button25.Margin = new System.Windows.Forms.Padding(4);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(57, 36);
             this.button25.TabIndex = 108;
@@ -644,7 +644,7 @@ namespace oop2Project
             // 
             this.button18.Enabled = false;
             this.button18.Location = new System.Drawing.Point(425, 172);
-            this.button18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button18.Margin = new System.Windows.Forms.Padding(4);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(57, 36);
             this.button18.TabIndex = 107;
@@ -657,7 +657,7 @@ namespace oop2Project
             // 
             this.button19.Enabled = false;
             this.button19.Location = new System.Drawing.Point(425, 129);
-            this.button19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button19.Margin = new System.Windows.Forms.Padding(4);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(57, 36);
             this.button19.TabIndex = 106;
@@ -670,7 +670,7 @@ namespace oop2Project
             // 
             this.button20.Enabled = false;
             this.button20.Location = new System.Drawing.Point(425, 59);
-            this.button20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button20.Margin = new System.Windows.Forms.Padding(4);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(57, 36);
             this.button20.TabIndex = 105;
@@ -683,7 +683,7 @@ namespace oop2Project
             // 
             this.button21.Enabled = false;
             this.button21.Location = new System.Drawing.Point(425, 16);
-            this.button21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button21.Margin = new System.Windows.Forms.Padding(4);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(57, 36);
             this.button21.TabIndex = 104;
@@ -696,7 +696,7 @@ namespace oop2Project
             // 
             this.button14.Enabled = false;
             this.button14.Location = new System.Drawing.Point(347, 172);
-            this.button14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button14.Margin = new System.Windows.Forms.Padding(4);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(57, 36);
             this.button14.TabIndex = 103;
@@ -709,7 +709,7 @@ namespace oop2Project
             // 
             this.button15.Enabled = false;
             this.button15.Location = new System.Drawing.Point(347, 129);
-            this.button15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button15.Margin = new System.Windows.Forms.Padding(4);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(57, 36);
             this.button15.TabIndex = 102;
@@ -722,7 +722,7 @@ namespace oop2Project
             // 
             this.button16.Enabled = false;
             this.button16.Location = new System.Drawing.Point(347, 59);
-            this.button16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button16.Margin = new System.Windows.Forms.Padding(4);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(57, 36);
             this.button16.TabIndex = 101;
@@ -735,7 +735,7 @@ namespace oop2Project
             // 
             this.button17.Enabled = false;
             this.button17.Location = new System.Drawing.Point(347, 16);
-            this.button17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button17.Margin = new System.Windows.Forms.Padding(4);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(57, 36);
             this.button17.TabIndex = 100;
@@ -748,7 +748,7 @@ namespace oop2Project
             // 
             this.button10.Enabled = false;
             this.button10.Location = new System.Drawing.Point(269, 172);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(57, 36);
             this.button10.TabIndex = 99;
@@ -761,7 +761,7 @@ namespace oop2Project
             // 
             this.button11.Enabled = false;
             this.button11.Location = new System.Drawing.Point(269, 129);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(57, 36);
             this.button11.TabIndex = 98;
@@ -774,7 +774,7 @@ namespace oop2Project
             // 
             this.button12.Enabled = false;
             this.button12.Location = new System.Drawing.Point(269, 59);
-            this.button12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button12.Margin = new System.Windows.Forms.Padding(4);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(57, 36);
             this.button12.TabIndex = 97;
@@ -787,7 +787,7 @@ namespace oop2Project
             // 
             this.button13.Enabled = false;
             this.button13.Location = new System.Drawing.Point(269, 16);
-            this.button13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button13.Margin = new System.Windows.Forms.Padding(4);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(57, 36);
             this.button13.TabIndex = 96;
@@ -800,7 +800,7 @@ namespace oop2Project
             // 
             this.button6.Enabled = false;
             this.button6.Location = new System.Drawing.Point(191, 172);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(57, 36);
             this.button6.TabIndex = 95;
@@ -813,7 +813,7 @@ namespace oop2Project
             // 
             this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(191, 129);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(57, 36);
             this.button7.TabIndex = 94;
@@ -826,7 +826,7 @@ namespace oop2Project
             // 
             this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(191, 59);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(57, 36);
             this.button8.TabIndex = 93;
@@ -840,7 +840,7 @@ namespace oop2Project
             this.button9.BackColor = System.Drawing.Color.Transparent;
             this.button9.Enabled = false;
             this.button9.Location = new System.Drawing.Point(191, 16);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(57, 36);
             this.button9.TabIndex = 92;
@@ -854,7 +854,7 @@ namespace oop2Project
             this.button5.Enabled = false;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(4, 16);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(73, 36);
             this.button5.TabIndex = 91;
@@ -866,7 +866,7 @@ namespace oop2Project
             // 
             this.button4.Enabled = false;
             this.button4.Location = new System.Drawing.Point(125, 172);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(57, 36);
             this.button4.TabIndex = 90;
@@ -879,7 +879,7 @@ namespace oop2Project
             // 
             this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(125, 129);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(57, 36);
             this.button3.TabIndex = 89;
@@ -892,7 +892,7 @@ namespace oop2Project
             // 
             this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(125, 59);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(57, 36);
             this.button2.TabIndex = 88;
@@ -905,7 +905,7 @@ namespace oop2Project
             // 
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(125, 16);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(57, 36);
             this.button1.TabIndex = 87;
@@ -954,6 +954,7 @@ namespace oop2Project
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBookTicket);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;

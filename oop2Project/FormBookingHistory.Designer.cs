@@ -45,7 +45,7 @@ namespace oop2Project
             this.comboTickets.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTickets.FormattingEnabled = true;
             this.comboTickets.Location = new System.Drawing.Point(551, 165);
-            this.comboTickets.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTickets.Margin = new System.Windows.Forms.Padding(4);
             this.comboTickets.Name = "comboTickets";
             this.comboTickets.Size = new System.Drawing.Size(179, 27);
             this.comboTickets.TabIndex = 46;
@@ -138,8 +138,10 @@ namespace oop2Project
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dataGridHistory);
             this.Controls.Add(this.btnCancel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FormBookingHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ticket Booking History";

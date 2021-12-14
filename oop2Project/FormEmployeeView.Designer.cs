@@ -248,7 +248,7 @@ namespace oop2Project
             this.comboFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboFrom.FormattingEnabled = true;
             this.comboFrom.Location = new System.Drawing.Point(268, 335);
-            this.comboFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboFrom.Margin = new System.Windows.Forms.Padding(4);
             this.comboFrom.Name = "comboFrom";
             this.comboFrom.Size = new System.Drawing.Size(168, 24);
             this.comboFrom.TabIndex = 36;
@@ -271,7 +271,7 @@ namespace oop2Project
             "11",
             "12"});
             this.comboTime.Location = new System.Drawing.Point(268, 471);
-            this.comboTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTime.Margin = new System.Windows.Forms.Padding(4);
             this.comboTime.Name = "comboTime";
             this.comboTime.Size = new System.Drawing.Size(79, 24);
             this.comboTime.TabIndex = 37;
@@ -284,7 +284,7 @@ namespace oop2Project
             "AM",
             "PM"});
             this.comboFormat.Location = new System.Drawing.Point(356, 471);
-            this.comboFormat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboFormat.Margin = new System.Windows.Forms.Padding(4);
             this.comboFormat.Name = "comboFormat";
             this.comboFormat.Size = new System.Drawing.Size(80, 24);
             this.comboFormat.TabIndex = 38;
@@ -305,7 +305,7 @@ namespace oop2Project
             this.comboTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTo.FormattingEnabled = true;
             this.comboTo.Location = new System.Drawing.Point(268, 382);
-            this.comboTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTo.Margin = new System.Windows.Forms.Padding(4);
             this.comboTo.Name = "comboTo";
             this.comboTo.Size = new System.Drawing.Size(168, 24);
             this.comboTo.TabIndex = 41;
@@ -423,7 +423,7 @@ namespace oop2Project
             this.comboRequests.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboRequests.FormattingEnabled = true;
             this.comboRequests.Location = new System.Drawing.Point(1167, 289);
-            this.comboRequests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboRequests.Margin = new System.Windows.Forms.Padding(4);
             this.comboRequests.Name = "comboRequests";
             this.comboRequests.Size = new System.Drawing.Size(179, 27);
             this.comboRequests.TabIndex = 51;
@@ -497,8 +497,10 @@ namespace oop2Project
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnAddBus);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "FormEmployeeView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee";
